@@ -1,0 +1,9 @@
+{
+  "name": "rule-x-landing",
+  "version": "1.0.0",
+  "description": "Rule-X public landing page",
+  "scripts": {
+    "dev": "npx serve . -p 5173",
+    "build": "echo 'No build needed - static site'"
+  }
+}
