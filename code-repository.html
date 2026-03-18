@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rule-X Code Repository docs: repositories, collaboration, pull requests, integrations, and troubleshooting." />
+  <title>Code Repository Docs — Rule-X Developer Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main style="padding-top:104px;">
+    <div class="page-hero" style="padding-bottom:56px;">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="container">
+        <span class="tag">Code Repository</span>
+        <h1>Rule-X Code <span class="grad-text">Repository</span> Docs</h1>
+        <p>Design, collaborate, review, and promote rule changes with a PR-driven developer workflow.</p>
+        <div class="docs-meta-bar">
+          <div class="docs-meta-left">
+            <span>Last updated: Mar 17, 2026</span>
+            <span>•</span>
+            <span>Page: Code Repository Docs</span>
+          </div>
+          <a class="docs-meta-link" href="https://developer.harness.io/docs/">Reference style guide ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="devhub-topnav-wrap">
+      <div class="devhub-topnav">
+        <a href="docs.html">Home</a>
+        <a href="platform.html">Platform</a>
+        <a href="code-repository.html" class="active">Code Repository</a>
+        <a href="api-reference.html">API Reference</a>
+        <a href="release-notes.html">Release Notes</a>
+        <div class="docs-topbar-tools">
+          <span id="docsVersionBadge" class="docs-version-pill">V1</span>
+          <select class="docs-version-switch" aria-label="Docs version">
+            <option value="v1">v1</option>
+            <option value="v2">v2</option>
+          </select>
+          <div class="global-search-wrap">
+            <input id="globalDocsSearch" class="global-search-input" type="text" placeholder="Search docs..." />
+            <div id="globalSearchResults" class="global-search-results"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="docs-main-panel">
+          <h2>New to Rule-X Code?</h2>
+          <p>Use this guide for concepts, setup, collaboration, pull requests, and integration workflows.</p>
+
+          <div class="docs-topic-grid">
+            <a class="docs-topic-card" href="#"><div class="docs-topic-title">Overview &amp; Key Concepts</div><div class="docs-topic-desc">Core object model for repositories and rule artifacts.</div></a>
+            <a class="docs-topic-card" href="#"><div class="docs-topic-title">Get Started</div><div class="docs-topic-desc">Initialize repository structure and first rule set.</div></a>
+            <a class="docs-topic-card" href="#"><div class="docs-topic-title">Use Harness Code</div><div class="docs-topic-desc">Author rules and collaborate using PR lifecycle.</div></a>
+            <a class="docs-topic-card" href="#"><div class="docs-topic-title">Manage Repositories</div><div class="docs-topic-desc">Repository settings, access model, and lifecycle.</div></a>
+          </div>
+
+          <h3 style="margin-top:26px;">Collaboration &amp; Delivery</h3>
+          <div class="docs-topic-grid">
+            <a class="docs-topic-card" href="#"><div class="docs-topic-title">Collaborate &amp; Develop</div><div class="docs-topic-desc">Branching patterns, review comments, and merge controls.</div></a>
+            <a class="docs-topic-card" href="api-reference.html#studio-api"><div class="docs-topic-title">Run Pipelines</div><div class="docs-topic-desc">Connect PR merge with deployment and validation pipelines.</div></a>
+            <a class="docs-topic-card" href="api-reference.html#studio-api"><div class="docs-topic-title">Pull Requests</div><div class="docs-topic-desc">Approve, reject, close, reopen, merge, and bypass flows.</div></a>
+            <a class="docs-topic-card" href="#"><div class="docs-topic-title">Code Integrations</div><div class="docs-topic-desc">Connect external Git providers and tooling.</div></a>
+          </div>
+
+          <h3 style="margin-top:26px;">Troubleshooting &amp; Resources</h3>
+          <div class="docs-topic-grid">
+            <a class="docs-topic-card" href="#"><div class="docs-topic-title">What's Supported</div><div class="docs-topic-desc">Supported features and known constraints.</div></a>
+            <a class="docs-topic-card" href="#"><div class="docs-topic-title">Subscriptions &amp; Licenses</div><div class="docs-topic-desc">Plan-level capabilities and limits.</div></a>
+            <a class="docs-topic-card" href="release-notes.html"><div class="docs-topic-title">Release Notes</div><div class="docs-topic-desc">Track latest changes in collaboration workflows.</div></a>
+            <a class="docs-topic-card" href="roadmap.html"><div class="docs-topic-title">Roadmap</div><div class="docs-topic-desc">Upcoming repository and collaboration features.</div></a>
+            <a class="docs-topic-card" href="api-reference.html"><div class="docs-topic-title">API Reference</div><div class="docs-topic-desc">Programmatic interfaces for repository lifecycle.</div></a>
+            <a class="docs-topic-card" href="university.html"><div class="docs-topic-title">Certifications &amp; Training</div><div class="docs-topic-desc">Structured training and developer pathways.</div></a>
+            <a class="docs-topic-card" href="community.html#academy"><div class="docs-topic-title">Solutions Factory</div><div class="docs-topic-desc">Accelerators and templates for common patterns.</div></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="nav.js"></script>
+  <script src="docs-portal.js"></script>
+</body>
+</html>

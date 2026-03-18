@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rule-X Features — Every capability you need to build, test, deploy and audit intelligent business rules at enterprise scale." />
+  <title>Features — Rule-X</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='100%25' y2='100%25'><stop offset='0' stop-color='%230EA5E9'/><stop offset='1' stop-color='%237C3AED'/></linearGradient></defs><text y='.9em' font-size='72' text-anchor='middle' x='50' font-family='sans-serif' font-weight='800' fill='white'>X</text></svg>" />
+</head>
+<body>
+
+  <main style="padding-top:104px;">
+
+    <!-- ── Page Hero ──────────────────────────────────────────────── -->
+    <div class="page-hero">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="container">
+        <span class="tag">Platform Features</span>
+        <h1>Every feature you need to build<br /><span class="grad-text">intelligent rule systems</span></h1>
+        <p>From visual authoring and AI generation to version control, testing, and production deployment — Rule-X covers every stage of the rule lifecycle.</p>
+        <div class="page-hero-actions">
+          <a href="pricing.html" class="btn btn-primary" style="font-size:15px;padding:13px 26px;">Get Started Free →</a>
+          <a href="contact.html" class="btn btn-outline" style="font-size:15px;padding:13px 26px;">Request Demo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Feature Overview Grid ──────────────────────────────────── -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">Overview</span>
+          <h2>The complete rule engine<br /><span class="grad-text">platform</span></h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon blue">🎨</div>
+            <h3>Visual Block Builder</h3>
+            <p>Drag-and-drop rule authoring with 13 block types. Build complex rule logic on an infinite canvas — no code required. Built on ReactFlow with snap-to-grid and minimap.</p>
+            <a href="block-types.html" class="learn-more">Explore block types →</a>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon purple">🤖</div>
+            <h3>AI Rule Generation</h3>
+            <p>Describe your business logic in plain English. The AI Builder interprets intent and generates structured rule block configurations, complete with conditions and outputs.</p>
+            <a href="#ai" class="learn-more">See AI in action →</a>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon green">🚀</div>
+            <h3>Multi-Environment Deployment</h3>
+            <p>Promote rules across Dev → QA → Production with a guided wizard. Step-by-step pipeline execution with live status, smoke tests, and rollback in one click.</p>
+            <a href="deployments.html" class="learn-more">Explore deployments →</a>
+          </div>
+          <div class="feature-card" id="tables">
+            <div class="feature-icon orange">📋</div>
+            <h3>DMN Decision Tables</h3>
+            <p>Spreadsheet-style decision tables with FIRST, PRIORITY, ALL, and COLLECT hit policies. Import/export, merge rows, validate coverage gaps, and annotate cells.</p>
+            <a href="#tables-deep" class="learn-more">Learn more →</a>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon blue">🔄</div>
+            <h3>Version Control &amp; History</h3>
+            <p>Full semantic versioning (major.minor.patch) for every rule. Commit with messages, browse history, side-by-side diff across any two versions, and rollback instantly.</p>
+            <a href="#versioning" class="learn-more">Learn more →</a>
+          </div>
+          <div class="feature-card" id="collab">
+            <div class="feature-icon purple">👥</div>
+            <h3>Real-Time Collaboration</h3>
+            <p>See who's editing in real-time via presence indicators. Conflict detection on commit, resolution modal, and auto-save drafts every 3 seconds prevent lost work.</p>
+            <a href="#collab-deep" class="learn-more">Learn more →</a>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon green">🔀</div>
+            <h3>Pull Request Workflow</h3>
+            <p>Git-style PR flow for promoting rules across environments. Inline diff comments, reviewer assignment, approval gates, stale detection, and "Merge &amp; Deploy".</p>
+            <a href="deployments.html" class="learn-more">Learn more →</a>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon orange">🧪</div>
+            <h3>Integrated Test Suite</h3>
+            <p>Write and run test scenarios directly inside the studio. See pass/fail per block, full execution trace, and coverage metrics — before you commit or deploy.</p>
+            <a href="#testing" class="learn-more">Learn more →</a>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon blue">💡</div>
+            <h3>Explainability &amp; Audit</h3>
+            <p>Every rule decision is traceable. Visual decision flow with the winning path highlighted, plain-English explanations, confidence scores, and a tamper-proof audit log.</p>
+            <a href="#audit" class="learn-more">Learn more →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── AI Builder Deep Dive ────────────────────────────────────── -->
+    <section id="ai" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+      <div class="container">
+        <div class="feature-detail-section">
+          <div class="feature-detail-content">
+            <span class="tag tag-purple" style="margin-bottom:20px;display:inline-flex;">AI Builder</span>
+            <h2>Describe it. <span class="grad-text">Done.</span></h2>
+            <p>Type your rule intent in plain English and the AI Builder generates a fully wired block configuration — conditions, data sources, outputs, and all. No rule expertise required.</p>
+            <ul class="feature-bullet-list">
+              <li>Natural language to structured rule blocks in seconds</li>
+              <li>Supports complex multi-condition and nested logic</li>
+              <li>AI suggests block types based on your domain context</li>
+              <li>Fully editable output — tweak any generated block</li>
+              <li>Learns from your existing rules to match your patterns</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary">See Demo →</a>
+          </div>
+          <div class="feature-mockup">
+            <div class="feature-mockup-title">
+              <div class="mockup-dots">
+                <div class="mockup-dot" style="background:#F43F5E;"></div>
+                <div class="mockup-dot" style="background:#F59E0B;"></div>
+                <div class="mockup-dot" style="background:#34D399;"></div>
+              </div>
+              AI Builder · Rule-X Studio
+            </div>
+            <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;margin-bottom:16px;">
+              <div style="font-size:12px;color:var(--text-muted);margin-bottom:8px;">Your prompt</div>
+              <div style="font-size:14px;color:var(--text-primary);font-style:italic;">"Flag any loan application where the debt-to-income ratio exceeds 45% and the credit score is below 620, unless the applicant has collateral above $200k."</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;font-size:13px;color:var(--blue-400);">
+              <div style="width:16px;height:16px;border-radius:50%;background:rgba(14,165,233,0.2);border:1px solid var(--blue-400);display:flex;align-items:center;justify-content:center;font-size:9px;">⟳</div>
+              Generating 4 blocks…
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div style="background:var(--bg-base);border:1px solid rgba(14,165,233,0.3);border-radius:var(--radius-sm);padding:12px;font-size:12px;color:var(--text-secondary);">📥 <strong style="color:var(--text-primary);">Input Schema</strong> — loan_application, credit_score, dti_ratio, collateral_value</div>
+              <div style="background:var(--bg-base);border:1px solid rgba(236,72,153,0.3);border-radius:var(--radius-sm);padding:12px;font-size:12px;color:var(--text-secondary);">🔀 <strong style="color:var(--text-primary);">Rule Row</strong> — IF dti_ratio &gt; 0.45 AND credit_score &lt; 620</div>
+              <div style="background:var(--bg-base);border:1px solid rgba(124,58,237,0.3);border-radius:var(--radius-sm);padding:12px;font-size:12px;color:var(--text-secondary);">🔀 <strong style="color:var(--text-primary);">Rule Row</strong> — UNLESS collateral_value &gt; 200000</div>
+              <div style="background:var(--bg-base);border:1px solid rgba(244,63,94,0.3);border-radius:var(--radius-sm);padding:12px;font-size:12px;color:var(--text-secondary);">📤 <strong style="color:var(--text-primary);">Output Schema</strong> — flag: "HIGH_RISK", reason: "DTI/Credit threshold exceeded"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Decision Tables Deep Dive ──────────────────────────────── -->
+    <section id="tables-deep">
+      <div class="container">
+        <div class="feature-detail-section reverse">
+          <div class="feature-detail-content">
+            <span class="tag" style="margin-bottom:20px;display:inline-flex;">Decision Tables</span>
+            <h2>DMN-compliant<br /><span class="grad-text">decision tables</span></h2>
+            <p>Spreadsheet-style tables that business analysts can maintain without engineering help. Supports all four DMN hit policies with full validation.</p>
+            <ul class="feature-bullet-list">
+              <li>FIRST, PRIORITY, ALL, and COLLECT hit policies</li>
+              <li>Import from Excel / CSV — instant conversion</li>
+              <li>Coverage gap analysis — find uncovered input combinations</li>
+              <li>Conditional formatting and cell-level annotations</li>
+              <li>Real-time validation prevents conflicting rules</li>
+              <li>Export to FEEL expressions or JSON schema</li>
+            </ul>
+            <a href="block-types.html" class="btn btn-outline">View Block Types →</a>
+          </div>
+          <div class="feature-mockup">
+            <div class="feature-mockup-title">
+              <div class="mockup-dots">
+                <div class="mockup-dot" style="background:#F43F5E;"></div>
+                <div class="mockup-dot" style="background:#F59E0B;"></div>
+                <div class="mockup-dot" style="background:#34D399;"></div>
+              </div>
+              Decision Table · credit-tier-v1.4
+            </div>
+            <div style="overflow-x:auto;">
+              <table style="width:100%;border-collapse:collapse;font-size:12px;">
+                <thead>
+                  <tr style="background:var(--bg-surface);">
+                    <th style="padding:8px;border:1px solid var(--border);color:var(--text-muted);text-align:left;">Credit Score</th>
+                    <th style="padding:8px;border:1px solid var(--border);color:var(--text-muted);text-align:left;">DTI Ratio</th>
+                    <th style="padding:8px;border:1px solid var(--border);color:var(--blue-400);text-align:left;">→ Tier</th>
+                    <th style="padding:8px;border:1px solid var(--border);color:var(--blue-400);text-align:left;">→ Rate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="background:rgba(52,211,153,0.04);">
+                    <td style="padding:8px;border:1px solid var(--border);color:var(--text-secondary);">&gt;= 750</td>
+                    <td style="padding:8px;border:1px solid var(--border);color:var(--text-secondary);">&lt;= 0.35</td>
+                    <td style="padding:8px;border:1px solid var(--border);color:var(--green-400);">PRIME</td>
+                    <td style="padding:8px;border:1px solid var(--border);color:var(--green-400);">3.5%</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px;border:1px solid var(--border);color:var(--text-secondary);">650 – 749</td>
+                    <td style="padding:8px;border:1px solid var(--border);color:var(--text-secondary);">&lt;= 0.42</td>
+                    <td style="padding:8px;border:1px solid var(--border);color:var(--blue-400);">STANDARD</td>
+                    <td style="padding:8px;border:1px solid var(--border);color:var(--blue-400);">5.2%</td>
+                  </tr>
+                  <tr style="background:rgba(244,63,94,0.04);">
+                    <td style="padding:8px;border:1px solid var(--border);color:var(--text-secondary);">&lt; 620</td>
+                    <td style="padding:8px;border:1px solid var(--border);color:var(--text-secondary);">Any</td>
+                    <td style="padding:8px;border:1px solid var(--border);color:#F43F5E;">DECLINE</td>
+                    <td style="padding:8px;border:1px solid var(--border);color:var(--text-muted);">—</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+              <span class="tag tag-green" style="font-size:10px;">Hit Policy: FIRST</span>
+              <span class="tag" style="font-size:10px;">3 rows · 2 inputs · 2 outputs</span>
+              <span style="font-size:11px;color:var(--green-400);display:flex;align-items:center;gap:4px;">✓ Full coverage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Testing Deep Dive ──────────────────────────────────────── -->
+    <section id="testing" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag tag-green">Testing</span>
+          <h2>Test before you<br /><span class="grad-text">ever deploy</span></h2>
+          <p>The integrated test suite lives inside the Rule-X Studio. Write scenarios, run them, and see exactly what each block produced — all without leaving the editor.</p>
+        </div>
+        <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+          <div class="feature-card">
+            <div class="feature-icon green">📝</div>
+            <h3>Scenario Editor</h3>
+            <p>Write named test scenarios with JSON input payloads directly in the studio. Organize into test suites per rule version.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon blue">🔍</div>
+            <h3>Block-Level Trace</h3>
+            <p>See which blocks fired, what data flowed through, and which conditions matched — with a visual path overlay on the canvas.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon purple">📊</div>
+            <h3>Coverage Report</h3>
+            <p>Coverage metrics show which decision table rows and rule branches are exercised by your test scenarios.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon orange">🔁</div>
+            <h3>CI Integration</h3>
+            <p>Run your rule test suite via the Rule-X REST API in your CI/CD pipeline. Fail builds on test regression automatically.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Audit & Explainability ─────────────────────────────────── -->
+    <section id="audit">
+      <div class="container">
+        <div class="feature-detail-section">
+          <div class="feature-detail-content">
+            <span class="tag" style="margin-bottom:20px;display:inline-flex;">Audit &amp; Explainability</span>
+            <h2>Every decision,<br /><span class="grad-text">fully traceable</span></h2>
+            <p>Rule-X captures a complete, immutable record of every rule execution. Built for regulated industries where auditability isn't optional.</p>
+            <ul class="feature-bullet-list">
+              <li>Tamper-proof audit log for every rule evaluation</li>
+              <li>Plain-English decision explanation for any output</li>
+              <li>Visual path highlighting — see exactly which path won</li>
+              <li>Confidence scores for inference engine outputs</li>
+              <li>Export audit trails to SIEM, S3, or your data warehouse</li>
+              <li>Role-based access to audit history</li>
+            </ul>
+            <a href="use-cases.html" class="btn btn-outline">See Use Cases →</a>
+          </div>
+          <div class="feature-mockup">
+            <div class="feature-mockup-title">
+              <div class="mockup-dots">
+                <div class="mockup-dot" style="background:#F43F5E;"></div>
+                <div class="mockup-dot" style="background:#F59E0B;"></div>
+                <div class="mockup-dot" style="background:#34D399;"></div>
+              </div>
+              Audit Log · Execution #A8F23C
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:10px;background:var(--bg-surface);border-radius:var(--radius-sm);border:1px solid var(--border);">
+                <span style="color:var(--text-muted);">Rule</span><span style="color:var(--text-primary);font-weight:600;">credit-scoring-v2.1.0</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:10px;background:var(--bg-surface);border-radius:var(--radius-sm);border:1px solid var(--border);">
+                <span style="color:var(--text-muted);">Decision</span><span style="color:var(--green-400);font-weight:700;">APPROVED — Tier: PRIME</span>
+              </div>
+              <div style="font-size:12px;padding:12px;background:rgba(14,165,233,0.06);border:1px solid rgba(14,165,233,0.2);border-radius:var(--radius-sm);">
+                <div style="color:var(--blue-400);font-weight:600;margin-bottom:6px;">Plain-English Explanation</div>
+                <div style="color:var(--text-secondary);line-height:1.6;">Applicant's credit score (780) met the PRIME threshold (≥750) and DTI ratio (0.31) was within the acceptable range (≤0.35). Rule Row #1 fired first (Hit Policy: FIRST). Confidence: 98%.</div>
+              </div>
+              <div style="display:flex;gap:8px;font-size:11px;color:var(--text-muted);">
+                <span>⏱ 3.2ms</span>
+                <span>·</span>
+                <span>4 blocks evaluated</span>
+                <span>·</span>
+                <span>2026-03-09 14:22:07 IST</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ────────────────────────────────────────────────────── -->
+    <div class="cta-band">
+      <div class="cta-inner">
+        <h2>Every feature, <span class="grad-text">free to try</span></h2>
+        <p>Start with our free tier and upgrade as you grow. No credit card required.</p>
+        <div class="cta-actions">
+          <a href="pricing.html" class="btn btn-primary" style="font-size:16px;padding:14px 28px;">View Pricing →</a>
+          <a href="contact.html" class="btn btn-outline" style="font-size:16px;padding:14px 28px;">Talk to Sales</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="nav.js"></script>
+</body>
+</html>

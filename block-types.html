@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rule-X Block Types — 13 block types covering every rule pattern: temporal logic, CEP streaming, inference engines, decision tables and more." />
+  <title>Block Types — Rule-X</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='100%25' y2='100%25'><stop offset='0' stop-color='%230EA5E9'/><stop offset='1' stop-color='%237C3AED'/></linearGradient></defs><text y='.9em' font-size='72' text-anchor='middle' x='50' font-family='sans-serif' font-weight='800' fill='white'>X</text></svg>" />
+</head>
+<body>
+
+  <main style="padding-top:104px;">
+
+    <div class="page-hero">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="container">
+        <span class="tag tag-purple">Rule Block Types</span>
+        <h1>13 block types.<br /><span class="grad-text">Every rule pattern covered.</span></h1>
+        <p>From simple IF/THEN conditions to temporal logic, CEP event streaming, and AI inference — Rule-X has a purpose-built block for every business logic pattern you'll encounter.</p>
+        <div class="page-hero-actions">
+          <a href="pricing.html" class="btn btn-primary" style="font-size:15px;padding:13px 26px;">Start Building Free →</a>
+          <a href="docs.html" class="btn btn-outline" style="font-size:15px;padding:13px 26px;">View Documentation</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── All Blocks Quick Reference ─────────────────────────────── -->
+    <section class="blocks-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">Quick Reference</span>
+          <h2>All 13 block types<br /><span class="grad-text">at a glance</span></h2>
+        </div>
+        <div class="blocks-grid">
+          <div class="block-pill"><div class="block-dot" style="background:#22D3EE;box-shadow:0 0 6px #22D3EE;"></div><span>Input Schema</span></div>
+          <div class="block-pill"><div class="block-dot" style="background:#34D399;box-shadow:0 0 6px #34D399;"></div><span>Local JSON</span></div>
+          <div class="block-pill"><div class="block-dot" style="background:#0EA5E9;box-shadow:0 0 6px #0EA5E9;"></div><span>External API</span></div>
+          <div class="block-pill"><div class="block-dot" style="background:#F59E0B;box-shadow:0 0 6px #F59E0B;"></div><span>SQL Query</span></div>
+          <div class="block-pill"><div class="block-dot" style="background:#EC4899;box-shadow:0 0 6px #EC4899;"></div><span>Rule Row (IF/THEN)</span></div>
+          <div class="block-pill"><div class="block-dot" style="background:#7C3AED;box-shadow:0 0 6px #7C3AED;"></div><span>Temporal Rule</span></div>
+          <div class="block-pill"><div class="block-dot" style="background:#F97316;box-shadow:0 0 6px #F97316;"></div><span>CEP Rule</span></div>
+          <div class="block-pill"><div class="block-dot" style="background:#06B6D4;box-shadow:0 0 6px #06B6D4;"></div><span>Collection Op</span></div>
+          <div class="block-pill"><div class="block-dot" style="background:#84CC16;box-shadow:0 0 6px #84CC16;"></div><span>Execute Sub-Rule</span></div>
+          <div class="block-pill"><div class="block-dot" style="background:#14B8A6;box-shadow:0 0 6px #14B8A6;"></div><span>Decision Table</span></div>
+          <div class="block-pill"><div class="block-dot" style="background:#A78BFA;box-shadow:0 0 6px #A78BFA;"></div><span>Inference Engine</span></div>
+          <div class="block-pill"><div class="block-dot" style="background:#64748B;box-shadow:0 0 6px #64748B;"></div><span>Log Block</span></div>
+          <div class="block-pill"><div class="block-dot" style="background:#F43F5E;box-shadow:0 0 6px #F43F5E;"></div><span>Output Schema</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Data Input Blocks ───────────────────────────────────────── -->
+    <section id="data-input">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">Data Input Blocks</span>
+          <h2>Bring data in<br /><span class="grad-text">from anywhere</span></h2>
+          <p>Input blocks define where your rule gets its data. Connect to APIs, databases, static JSON, or read from the rule's own input payload.</p>
+        </div>
+        <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));">
+          <div class="feature-card">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#22D3EE;box-shadow:0 0 8px #22D3EE;"></div>
+              <span class="tag" style="font-size:10px;">INPUT</span>
+            </div>
+            <h3>Input Schema</h3>
+            <p>Declares the typed payload that enters the rule at runtime. Supports JSON Schema with required fields, types, defaults, and nested objects. The foundation of every rule.</p>
+            <div style="margin-top:16px;background:var(--bg-base);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;font-family:var(--font-mono);font-size:12px;color:var(--cyan-400);">
+              { "loan_amount": number,<br />
+              &nbsp;&nbsp;"credit_score": integer,<br />
+              &nbsp;&nbsp;"applicant_id": string }
+            </div>
+          </div>
+          <div class="feature-card">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#34D399;box-shadow:0 0 8px #34D399;"></div>
+              <span class="tag tag-green" style="font-size:10px;">INPUT</span>
+            </div>
+            <h3>Local JSON</h3>
+            <p>Embed static reference data directly into the rule — lookup tables, thresholds, configuration maps. Version-controlled with the rule. No external dependency.</p>
+            <div style="margin-top:16px;background:var(--bg-base);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;font-family:var(--font-mono);font-size:12px;color:var(--cyan-400);">
+              { "risk_thresholds": {<br />
+              &nbsp;&nbsp;"high": 0.75,<br />
+              &nbsp;&nbsp;"medium": 0.45 } }
+            </div>
+          </div>
+          <div class="feature-card">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#0EA5E9;box-shadow:0 0 8px #0EA5E9;"></div>
+              <span class="tag" style="font-size:10px;">INPUT</span>
+            </div>
+            <h3>External API</h3>
+            <p>Call any REST endpoint and map the response into the rule's data context. Supports auth headers, timeout, retry logic, and response transformation via JSONPath.</p>
+            <div style="margin-top:16px;font-size:13px;color:var(--text-muted);">GET https://bureau.api/credit/{applicant_id} → credit_report</div>
+          </div>
+          <div class="feature-card">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#F59E0B;box-shadow:0 0 8px #F59E0B;"></div>
+              <span class="tag tag-purple" style="font-size:10px;color:#F59E0B;background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.2);">INPUT</span>
+            </div>
+            <h3>SQL Query</h3>
+            <p>Execute parameterized SQL against your connected database and bind results into the rule context. Supports PostgreSQL, MySQL, MSSQL. Connection pooling built in.</p>
+            <div style="margin-top:16px;background:var(--bg-base);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;font-family:var(--font-mono);font-size:12px;color:var(--cyan-400);">
+              SELECT credit_limit, account_age<br />
+              FROM customers WHERE id = :applicant_id
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Logic Blocks ───────────────────────────────────────────── -->
+    <section style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" id="logic">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag tag-purple">Logic Blocks</span>
+          <h2>Express any business logic<br /><span class="grad-text">with precision</span></h2>
+          <p>Logic blocks are the core of your rule — they evaluate conditions, apply decisions, and route data based on your business requirements.</p>
+        </div>
+        <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));">
+          <div class="feature-card">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#EC4899;box-shadow:0 0 8px #EC4899;"></div>
+              <span class="tag tag-purple" style="font-size:10px;">LOGIC</span>
+            </div>
+            <h3>Rule Row (IF/THEN)</h3>
+            <p>The fundamental building block. Define conditions (IF) and their consequences (THEN/ELSE). Supports AND/OR/NOT operators, nested groups, and expression functions.</p>
+            <ul class="feature-bullet-list" style="margin-top:12px;">
+              <li>100+ built-in comparison operators</li>
+              <li>Date arithmetic and string functions</li>
+              <li>Nested condition groups with priority</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#14B8A6;box-shadow:0 0 8px #14B8A6;"></div>
+              <span class="tag tag-green" style="font-size:10px;">LOGIC</span>
+            </div>
+            <h3>Decision Table</h3>
+            <p>DMN-compliant spreadsheet tables for multi-condition lookups. FIRST, PRIORITY, ALL, and COLLECT hit policies. Coverage analysis ensures no input combination is missed.</p>
+            <ul class="feature-bullet-list" style="margin-top:12px;">
+              <li>Import from Excel/CSV</li>
+              <li>Range expressions ([10..50])</li>
+              <li>Multi-output columns</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#06B6D4;box-shadow:0 0 8px #06B6D4;"></div>
+              <span class="tag" style="font-size:10px;">LOGIC</span>
+            </div>
+            <h3>Collection Op</h3>
+            <p>Apply operations across arrays and collections — filter, map, reduce, sum, average, min, max, count, all, any. Chain operations for complex aggregations.</p>
+            <div style="margin-top:12px;background:var(--bg-base);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;font-family:var(--font-mono);font-size:11px;color:var(--cyan-400);">
+              orders.filter(o =&gt; o.status == "LATE")<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.sum(o =&gt; o.value)
+            </div>
+          </div>
+          <div class="feature-card">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#84CC16;box-shadow:0 0 8px #84CC16;"></div>
+              <span class="tag tag-green" style="font-size:10px;color:#84CC16;background:rgba(132,204,22,0.1);border-color:rgba(132,204,22,0.2);">LOGIC</span>
+            </div>
+            <h3>Execute Sub-Rule</h3>
+            <p>Invoke any other published rule and use its output in the current rule's context. Build modular, composable rule hierarchies. Circular dependency detection built in.</p>
+            <ul class="feature-bullet-list" style="margin-top:12px;">
+              <li>Pass input, capture output</li>
+              <li>Version-pin sub-rule calls</li>
+              <li>Async execution option</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Advanced Blocks ─────────────────────────────────────────── -->
+    <section id="advanced">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">Advanced Blocks</span>
+          <h2>Temporal logic, CEP streams,<br /><span class="grad-text">and AI inference</span></h2>
+          <p>These are the blocks that set Rule-X apart — capabilities that usually require specialized engines, now available as first-class blocks in your rule graph.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+
+          <!-- Temporal -->
+          <div class="feature-card" style="border-color:rgba(124,58,237,0.3);">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#7C3AED;box-shadow:0 0 10px #7C3AED;"></div>
+              <span class="tag tag-purple" style="font-size:10px;">ADVANCED</span>
+            </div>
+            <h3>⏱ Temporal Rule</h3>
+            <p>Model time-sensitive business rules using all 13 of Allen's interval relations — before, after, meets, overlaps, during, starts, finishes and their inverses.</p>
+            <div style="margin-top:16px;background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.2);border-radius:var(--radius-sm);padding:16px;">
+              <div style="font-size:11px;font-weight:700;color:var(--purple-400);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Allen's Relations</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                <span style="font-size:11px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.2);padding:3px 8px;border-radius:99px;color:var(--purple-400);">before</span>
+                <span style="font-size:11px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.2);padding:3px 8px;border-radius:99px;color:var(--purple-400);">after</span>
+                <span style="font-size:11px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.2);padding:3px 8px;border-radius:99px;color:var(--purple-400);">meets</span>
+                <span style="font-size:11px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.2);padding:3px 8px;border-radius:99px;color:var(--purple-400);">overlaps</span>
+                <span style="font-size:11px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.2);padding:3px 8px;border-radius:99px;color:var(--purple-400);">during</span>
+                <span style="font-size:11px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.2);padding:3px 8px;border-radius:99px;color:var(--purple-400);">starts</span>
+                <span style="font-size:11px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.2);padding:3px 8px;border-radius:99px;color:var(--purple-400);">finishes</span>
+                <span style="font-size:11px;color:var(--text-muted);">+ 6 inverses</span>
+              </div>
+            </div>
+            <p style="margin-top:14px;font-size:13px;color:var(--text-muted);">Use case: Flag transactions that occurred during a suspended account window, or detect when a claim overlaps multiple policy periods.</p>
+          </div>
+
+          <!-- CEP -->
+          <div class="feature-card" style="border-color:rgba(249,115,22,0.3);">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#F97316;box-shadow:0 0 10px #F97316;"></div>
+              <span class="tag" style="font-size:10px;color:#F97316;background:rgba(249,115,22,0.1);border-color:rgba(249,115,22,0.2);">ADVANCED</span>
+            </div>
+            <h3>📊 CEP Rule</h3>
+            <p>Complex Event Processing with sliding, tumbling, and session window semantics. Detect patterns across high-volume event streams in real time.</p>
+            <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
+              <div style="background:rgba(249,115,22,0.06);border:1px solid rgba(249,115,22,0.2);border-radius:var(--radius-sm);padding:12px;">
+                <div style="font-size:11px;font-weight:700;color:#F97316;margin-bottom:6px;">SLIDING WINDOW</div>
+                <div style="font-size:12px;color:var(--text-secondary);">5 failed logins within 2-minute window → trigger lockout</div>
+              </div>
+              <div style="background:rgba(249,115,22,0.06);border:1px solid rgba(249,115,22,0.2);border-radius:var(--radius-sm);padding:12px;">
+                <div style="font-size:11px;font-weight:700;color:#F97316;margin-bottom:6px;">TUMBLING WINDOW</div>
+                <div style="font-size:12px;color:var(--text-secondary);">Aggregate transaction volume per 1-hour bucket for daily reporting</div>
+              </div>
+              <div style="background:rgba(249,115,22,0.06);border:1px solid rgba(249,115,22,0.2);border-radius:var(--radius-sm);padding:12px;">
+                <div style="font-size:11px;font-weight:700;color:#F97316;margin-bottom:6px;">SESSION WINDOW</div>
+                <div style="font-size:12px;color:var(--text-secondary);">Group user events within an active session (30-min inactivity timeout)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Inference Engine -->
+          <div class="feature-card" style="border-color:rgba(167,139,250,0.3);">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#A78BFA;box-shadow:0 0 10px #A78BFA;"></div>
+              <span class="tag tag-purple" style="font-size:10px;">ADVANCED</span>
+            </div>
+            <h3>🧠 Inference Engine</h3>
+            <p>Forward and backward chaining with conflict resolution strategies. Full expert-system capabilities — define facts, rules, and let the engine derive conclusions.</p>
+            <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
+              <div style="background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.2);border-radius:var(--radius-sm);padding:12px;">
+                <div style="font-size:11px;font-weight:700;color:var(--purple-400);margin-bottom:6px;">CONFLICT RESOLUTION</div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                  <span style="font-size:11px;color:var(--text-muted);">Priority · Recency · Specificity · Random</span>
+                </div>
+              </div>
+              <div style="background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.2);border-radius:var(--radius-sm);padding:12px;">
+                <div style="font-size:11px;font-weight:700;color:var(--purple-400);margin-bottom:6px;">CHAINING MODES</div>
+                <div style="font-size:12px;color:var(--text-secondary);">Forward (data-driven) · Backward (goal-driven)</div>
+              </div>
+            </div>
+            <p style="margin-top:14px;font-size:13px;color:var(--text-muted);">Use case: Clinical decision support where dozens of inter-related medical facts need to be combined to reach a diagnosis or treatment recommendation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Output & Utility Blocks ─────────────────────────────────── -->
+    <section style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">Output &amp; Utility</span>
+          <h2>Complete the loop with<br /><span class="grad-text">outputs and observability</span></h2>
+        </div>
+        <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+          <div class="feature-card">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#F43F5E;box-shadow:0 0 8px #F43F5E;"></div>
+              <span class="tag" style="font-size:10px;color:#F43F5E;background:rgba(244,63,94,0.1);border-color:rgba(244,63,94,0.2);">OUTPUT</span>
+            </div>
+            <h3>Output Schema</h3>
+            <p>Defines the typed shape of what the rule returns. Ensures callers always receive a well-formed, predictable response. Maps internal context variables to named output fields with type coercion.</p>
+          </div>
+          <div class="feature-card">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#64748B;box-shadow:0 0 8px #64748B;"></div>
+              <span class="tag" style="font-size:10px;">UTILITY</span>
+            </div>
+            <h3>Log Block</h3>
+            <p>Emit structured log entries at any point in the rule execution. Capture intermediate values, add labels, and send to your observability stack. Essential for debugging production rules.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ────────────────────────────────────────────────────── -->
+    <div class="cta-band">
+      <div class="cta-inner">
+        <h2>Ready to build with <span class="grad-text">all 13 blocks?</span></h2>
+        <p>Start with the free tier and get access to every block type from day one.</p>
+        <div class="cta-actions">
+          <a href="pricing.html" class="btn btn-primary" style="font-size:16px;padding:14px 28px;">Start Building Free →</a>
+          <a href="docs.html" class="btn btn-outline" style="font-size:16px;padding:14px 28px;">Read the Docs</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rule-X Open Source — Our commitment to open source. Explore our open source components, SDKs, and community contributions." />
+  <title>Open Source — Rule-X</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='100%25' y2='100%25'><stop offset='0' stop-color='%230EA5E9'/><stop offset='1' stop-color='%237C3AED'/></linearGradient></defs><text y='.9em' font-size='72' text-anchor='middle' x='50' font-family='sans-serif' font-weight='800' fill='white'>X</text></svg>" />
+</head>
+<body>
+
+  <main style="padding-top:104px;">
+
+    <div class="page-hero">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="container">
+        <span class="tag">Open Source</span>
+        <h1>Our commitment to<br /><span class="grad-text">open source</span></h1>
+        <p>Rule-X is built on open standards and gives back to the community. Our core runtime, SDKs, and evaluation engine are open source — because we believe transparency makes better software.</p>
+        <div class="page-hero-actions">
+          <a href="https://github.com" class="btn btn-primary" style="font-size:15px;padding:13px 26px;">View on GitHub →</a>
+          <a href="community.html" class="btn btn-outline" style="font-size:15px;padding:13px 26px;">Join the Community</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Stats ──────────────────────────────────────────────────── -->
+    <div class="stats-strip">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">Open Source Repos</div></div>
+          <div class="stat-item"><div class="stat-number">2.4k</div><div class="stat-label">GitHub Stars</div></div>
+          <div class="stat-item"><div class="stat-number">120+</div><div class="stat-label">Contributors</div></div>
+          <div class="stat-item"><div class="stat-number">MIT</div><div class="stat-label">License</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Open Source Projects ───────────────────────────────────── -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">Projects</span>
+          <h2>Our open source<br /><span class="grad-text">projects</span></h2>
+          <p>These repositories form the foundation of the Rule-X platform and are free for anyone to use, modify, and contribute to.</p>
+        </div>
+        <div class="oss-grid">
+          <div class="oss-card">
+            <div class="oss-card-header">
+              <div>
+                <div class="oss-card-name">rulex-engine</div>
+              </div>
+              <span class="oss-card-license">MIT</span>
+            </div>
+            <div class="oss-card-desc">The core rule evaluation engine. Executes Rule-X rule graphs against input payloads. Supports all 13 block types including CEP, Temporal, and Inference Engine. Zero external dependencies.</div>
+            <div style="background:var(--bg-base);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;font-family:var(--font-mono);font-size:12px;color:var(--cyan-400);margin-bottom:16px;">npm install @rulex/engine</div>
+            <div class="oss-card-stats">
+              <span class="oss-stat">⭐ <strong>1.4k</strong></span>
+              <span class="oss-stat">🍴 <strong>218</strong></span>
+              <span class="oss-stat">TypeScript</span>
+            </div>
+          </div>
+
+          <div class="oss-card">
+            <div class="oss-card-header">
+              <div><div class="oss-card-name">rulex-sdk-js</div></div>
+              <span class="oss-card-license">MIT</span>
+            </div>
+            <div class="oss-card-desc">Official JavaScript/TypeScript SDK for the Rule-X REST API. Full TypeScript types, retry logic, pagination helpers, and real-time evaluation WebSocket support.</div>
+            <div style="background:var(--bg-base);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;font-family:var(--font-mono);font-size:12px;color:var(--cyan-400);margin-bottom:16px;">npm install @rulex/sdk</div>
+            <div class="oss-card-stats">
+              <span class="oss-stat">⭐ <strong>612</strong></span>
+              <span class="oss-stat">🍴 <strong>94</strong></span>
+              <span class="oss-stat">TypeScript</span>
+            </div>
+          </div>
+
+          <div class="oss-card">
+            <div class="oss-card-header">
+              <div><div class="oss-card-name">rulex-sdk-python</div></div>
+              <span class="oss-card-license">MIT</span>
+            </div>
+            <div class="oss-card-desc">Official Python SDK with async support (asyncio), type hints, and Pydantic model integration. Works with FastAPI, Django, and Flask. Available on PyPI.</div>
+            <div style="background:var(--bg-base);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;font-family:var(--font-mono);font-size:12px;color:var(--cyan-400);margin-bottom:16px;">pip install rulex-sdk</div>
+            <div class="oss-card-stats">
+              <span class="oss-stat">⭐ <strong>289</strong></span>
+              <span class="oss-stat">🍴 <strong>41</strong></span>
+              <span class="oss-stat">Python</span>
+            </div>
+          </div>
+
+          <div class="oss-card">
+            <div class="oss-card-header">
+              <div><div class="oss-card-name">rulex-temporal</div></div>
+              <span class="oss-card-license">Apache 2.0</span>
+            </div>
+            <div class="oss-card-desc">Standalone TypeScript library implementing all 13 of Allen's interval relations for temporal logic. Can be used independently of Rule-X for any project that needs interval-based time reasoning.</div>
+            <div style="background:var(--bg-base);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;font-family:var(--font-mono);font-size:12px;color:var(--cyan-400);margin-bottom:16px;">npm install @rulex/temporal</div>
+            <div class="oss-card-stats">
+              <span class="oss-stat">⭐ <strong>103</strong></span>
+              <span class="oss-stat">🍴 <strong>17</strong></span>
+              <span class="oss-stat">TypeScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Philosophy ─────────────────────────────────────────────── -->
+    <section style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">Philosophy</span>
+          <h2>Why we believe in<br /><span class="grad-text">open source</span></h2>
+        </div>
+        <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+          <div class="feature-card">
+            <div class="feature-icon blue">🔍</div>
+            <h3>Transparency</h3>
+            <p>Business rules should be transparent and auditable. Open sourcing our evaluation engine means you can verify exactly how your rules are executed — no black boxes.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon green">🤝</div>
+            <h3>Community</h3>
+            <p>The best software is built collaboratively. We actively invite contributions, fix bugs reported by the community, and give credit where it's due.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon purple">🚫</div>
+            <h3>No Vendor Lock-in</h3>
+            <p>Your rule data is yours. The open source engine means you can always run your rules locally, migrate to another system, or self-host — without asking our permission.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon orange">📖</div>
+            <h3>Open Standards</h3>
+            <p>We implement DMN (Decision Model and Notation) as an open standard, and we contribute to the OMG working group for temporal and CEP rule standards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contributing ───────────────────────────────────────────── -->
+    <section>
+      <div class="container">
+        <div class="feature-detail-section">
+          <div class="feature-detail-content">
+            <span class="tag" style="margin-bottom:20px;display:inline-flex;">Contributing</span>
+            <h2>How to<br /><span class="grad-text">get involved</span></h2>
+            <p>We welcome contributions of all kinds — bug fixes, new features, documentation improvements, and translations. Here's how to get started:</p>
+            <ul class="feature-bullet-list">
+              <li>Read our CONTRIBUTING.md guide on GitHub</li>
+              <li>Find an issue tagged "good first issue" to start</li>
+              <li>Join our Discord #contributors channel</li>
+              <li>Open a discussion for larger changes before implementing</li>
+              <li>Submit a PR — we review within 48 hours</li>
+            </ul>
+            <a href="https://github.com" class="btn btn-primary">View Contributing Guide →</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;">
+              <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">Good First Issues</div>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <a href="#" style="text-decoration:none;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-secondary);padding:10px;border-radius:var(--radius-sm);transition:var(--transition);" class="dropdown-item">
+                  <span style="font-size:11px;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);padding:2px 8px;border-radius:99px;color:var(--green-400);white-space:nowrap;">good first issue</span>
+                  Add ISO 8601 duration support to Temporal block
+                </a>
+                <a href="#" style="text-decoration:none;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-secondary);padding:10px;border-radius:var(--radius-sm);transition:var(--transition);" class="dropdown-item">
+                  <span style="font-size:11px;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);padding:2px 8px;border-radius:99px;color:var(--green-400);white-space:nowrap;">good first issue</span>
+                  Add Go SDK wrapper for rulex-engine
+                </a>
+                <a href="#" style="text-decoration:none;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-secondary);padding:10px;border-radius:var(--radius-sm);transition:var(--transition);" class="dropdown-item">
+                  <span style="font-size:11px;background:rgba(14,165,233,0.1);border:1px solid rgba(14,165,233,0.2);padding:2px 8px;border-radius:99px;color:var(--blue-400);white-space:nowrap;">docs</span>
+                  Improve CEP block documentation with more examples
+                </a>
+                <a href="#" style="text-decoration:none;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-secondary);padding:10px;border-radius:var(--radius-sm);transition:var(--transition);" class="dropdown-item">
+                  <span style="font-size:11px;background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);padding:2px 8px;border-radius:99px;color:#F97316;white-space:nowrap;">bug</span>
+                  Fix Collection Op sum with null values
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-band">
+      <div class="cta-inner">
+        <h2>Build with us.<br /><span class="grad-text">Open source, always.</span></h2>
+        <p>Star our repos, contribute a PR, or just use the engine. We're grateful for every bit of it.</p>
+        <div class="cta-actions">
+          <a href="https://github.com" class="btn btn-primary" style="font-size:16px;padding:14px 28px;">⌥ Star on GitHub →</a>
+          <a href="community.html" class="btn btn-outline" style="font-size:16px;padding:14px 28px;">Join Community</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="nav.js"></script>
+</body>
+</html>

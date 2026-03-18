@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rule-X Deployments — CI/CD for business rules. Promote rules across Dev, QA, and Production with guardrails, approval gates, rollback, and full audit trail." />
+  <title>Deployments — Rule-X</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='100%25' y2='100%25'><stop offset='0' stop-color='%230EA5E9'/><stop offset='1' stop-color='%237C3AED'/></linearGradient></defs><text y='.9em' font-size='72' text-anchor='middle' x='50' font-family='sans-serif' font-weight='800' fill='white'>X</text></svg>" />
+</head>
+<body>
+
+  <main style="padding-top:104px;">
+
+    <div class="page-hero">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="container">
+        <span class="tag tag-green">Deployments</span>
+        <h1>CI/CD for your<br /><span class="grad-text">business rules</span></h1>
+        <p>Promote rules across Dev, QA, and Production with guardrails, approval gates, live step tracking, scheduled deployments, and one-click rollback. Every deployment is tracked, audited, and reversible.</p>
+        <div class="page-hero-actions">
+          <a href="pricing.html" class="btn btn-primary" style="font-size:15px;padding:13px 26px;">Get Started Free →</a>
+          <a href="contact.html" class="btn btn-outline" style="font-size:15px;padding:13px 26px;">See a Live Demo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Stats ──────────────────────────────────────────────────── -->
+    <div class="stats-strip">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item"><div class="stat-number">6</div><div class="stat-label">Deployment Steps</div></div>
+          <div class="stat-item"><div class="stat-number">1-click</div><div class="stat-label">Instant Rollback</div></div>
+          <div class="stat-item"><div class="stat-number">Real-time</div><div class="stat-label">Live Step Tracking</div></div>
+          <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Audit Coverage</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Deployment Pipeline Visual ─────────────────────────────── -->
+    <section class="pipeline-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">Pipeline</span>
+          <h2>Visual deployment<br /><span class="grad-text">pipeline</span></h2>
+          <p>Every rule deployment runs through a structured pipeline. Watch each step execute in real time, with colour-coded status so you always know exactly what's happening.</p>
+        </div>
+
+        <div class="pipeline-visual">
+          <div class="pipeline-header">
+            <div style="width:36px;height:36px;background:linear-gradient(135deg,#0EA5E9,#7C3AED);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;">🚀</div>
+            <div>
+              <div class="pipeline-title">Deploy: credit-scoring-v2.1.0 → Production</div>
+              <div class="pipeline-subtitle">Triggered by PR #47 merge · 2 approvers · 2026-03-09 14:22 IST</div>
+            </div>
+            <div style="margin-left:auto;display:flex;gap:8px;">
+              <span class="tag tag-green" style="font-size:11px;">● Live</span>
+            </div>
+          </div>
+
+          <div class="pipeline-environments">
+            <div class="env-block env-dev">
+              <div class="env-label">Source</div>
+              <div class="env-name">Development</div>
+              <div class="env-badge">v2.1.0</div>
+            </div>
+            <div class="env-arrow">→</div>
+            <div class="env-block env-qa">
+              <div class="env-label">Staging</div>
+              <div class="env-name">QA</div>
+              <div class="env-badge">Passed ✓</div>
+            </div>
+            <div class="env-arrow">→</div>
+            <div class="env-block env-prod">
+              <div class="env-label">Target</div>
+              <div class="env-name">Production</div>
+              <div class="env-badge">Deploying…</div>
+            </div>
+          </div>
+
+          <div class="pipeline-steps">
+            <div class="p-step done"><div class="p-step-icon">✅</div>Validate Rule</div>
+            <div class="p-step done"><div class="p-step-icon">✅</div>Run Tests</div>
+            <div class="p-step done"><div class="p-step-icon">✅</div>Approval Check</div>
+            <div class="p-step doing"><div class="p-step-icon">⟳</div>Deploy Artifact</div>
+            <div class="p-step"><div class="p-step-icon">○</div>Smoke Test</div>
+            <div class="p-step"><div class="p-step-icon">○</div>Notify Team</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Feature Details ─────────────────────────────────────────── -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">Capabilities</span>
+          <h2>Everything a team needs<br /><span class="grad-text">to deploy with confidence</span></h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon green">🔒</div>
+            <h3>Approval Gates</h3>
+            <p>Configure required approvers per environment. Deployment is blocked until the required number of approvals is reached. Stale approvals are revoked automatically on rule changes.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon blue">📋</div>
+            <h3>Pull Request Workflow</h3>
+            <p>Every promotion from one environment to the next creates a PR. Reviewers see a side-by-side block diff, can leave inline comments, and approve or request changes.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon purple">⏰</div>
+            <h3>Scheduled Deployments</h3>
+            <p>Schedule rule deployments for off-peak hours. Set a date and time, and Rule-X will automatically trigger the deployment when ready — with rollback on failure.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon orange">⟳</div>
+            <h3>One-Click Rollback</h3>
+            <p>Any deployed version can be rolled back instantly. Select a previous version from the deployment history, confirm, and the previous artifact is live within seconds.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon green">🔍</div>
+            <h3>Smoke Tests</h3>
+            <p>Run a curated set of golden-path test scenarios against the newly deployed rule before marking deployment as successful. Auto-rollback on smoke test failure.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon blue">📊</div>
+            <h3>Deployment History</h3>
+            <p>Complete log of every deployment event — who triggered it, what version, which environments, approval timestamps, and step-level timing data. Exportable as CSV.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon purple">🔔</div>
+            <h3>Notifications</h3>
+            <p>Slack, email, and webhook notifications at every pipeline stage — deployment start, approval request, step failure, and deployment success or failure.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon orange">🌐</div>
+            <h3>Multi-Tenant Environments</h3>
+            <p>Manage rules across multiple named environments (Dev, QA, Staging, UAT, Production). Environment-specific variables, secrets, and feature flags.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── How It Works ───────────────────────────────────────────── -->
+    <section style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">Process</span>
+          <h2>From commit to<br /><span class="grad-text">production in minutes</span></h2>
+        </div>
+        <div class="steps-wrapper">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h3>Author &amp; Test</h3>
+            <p>Author your rule in the Studio and run all test scenarios. The integrated test suite must pass before a PR can be opened.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h3>Open PR</h3>
+            <p>Open a pull request targeting the next environment. Reviewers receive notifications and see the full block diff in context.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h3>Approve &amp; Merge</h3>
+            <p>Required approvers sign off. On merge, the deployment pipeline launches automatically — or on your scheduled window.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <h3>Monitor Live</h3>
+            <p>Watch every step execute in real time. Smoke tests confirm the new version is healthy before the deployment is marked complete.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Integrations ───────────────────────────────────────────── -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">Integrations</span>
+          <h2>Fits into your<br /><span class="grad-text">existing workflow</span></h2>
+          <p>Rule-X deployment integrates with the tools your team already uses.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;max-width:900px;margin:0 auto;">
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;text-align:center;">
+            <div style="font-size:32px;margin-bottom:12px;">💬</div>
+            <div style="font-weight:600;margin-bottom:6px;">Slack</div>
+            <div style="font-size:13px;color:var(--text-muted);">Approval requests & deployment notifications</div>
+          </div>
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;text-align:center;">
+            <div style="font-size:32px;margin-bottom:12px;">🐙</div>
+            <div style="font-weight:600;margin-bottom:6px;">GitHub / GitLab</div>
+            <div style="font-size:13px;color:var(--text-muted);">Trigger deployments from merged PRs</div>
+          </div>
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;text-align:center;">
+            <div style="font-size:32px;margin-bottom:12px;">🔗</div>
+            <div style="font-weight:600;margin-bottom:6px;">Webhooks</div>
+            <div style="font-size:13px;color:var(--text-muted);">Custom integration with any system</div>
+          </div>
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;text-align:center;">
+            <div style="font-size:32px;margin-bottom:12px;">🔑</div>
+            <div style="font-weight:600;margin-bottom:6px;">Secrets Manager</div>
+            <div style="font-size:13px;color:var(--text-muted);">AWS, GCP, Azure, HashiCorp Vault</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-band">
+      <div class="cta-inner">
+        <h2>Ship rules with<br /><span class="grad-text">engineering-grade confidence</span></h2>
+        <p>Every deployment guardrailed, audited, and reversible. Get started in minutes.</p>
+        <div class="cta-actions">
+          <a href="pricing.html" class="btn btn-primary" style="font-size:16px;padding:14px 28px;">Get Started Free →</a>
+          <a href="contact.html" class="btn btn-outline" style="font-size:16px;padding:14px 28px;">Talk to Sales</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rule-X API Reference — authentication, rule evaluation, rule versions, deployments, and audit APIs." />
+  <title>API Reference — Rule-X Developer Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main style="padding-top:104px;">
+    <div class="page-hero" style="padding-bottom:56px;">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="container">
+        <span class="tag">API Reference</span>
+        <h1>Rule-X <span class="grad-text">API Reference</span></h1>
+        <p>REST endpoints for identity, rule management, evaluations, deployments, and audit traces.</p>
+        <div class="docs-meta-bar">
+          <div class="docs-meta-left">
+            <span>Last updated: Mar 17, 2026</span>
+            <span>•</span>
+            <span>Page: API Reference</span>
+          </div>
+          <a class="docs-meta-link" href="https://developer.harness.io/docs/">Reference style guide ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="devhub-topnav-wrap">
+      <div class="devhub-topnav">
+        <a href="docs.html">Home</a>
+        <a href="docs.html">Documentation</a>
+        <a href="platform.html">Platform</a>
+        <a href="code-repository.html">Code Repository</a>
+        <a href="api-reference.html" class="active">API Reference</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="release-notes.html">Release Notes</a>
+        <a href="university.html">University</a>
+        <div class="docs-topbar-tools">
+          <span id="docsVersionBadge" class="docs-version-pill">V1</span>
+          <select class="docs-version-switch" aria-label="Docs version">
+            <option value="v1">v1</option>
+            <option value="v2">v2</option>
+          </select>
+          <div class="global-search-wrap">
+            <input id="globalDocsSearch" class="global-search-input" type="text" placeholder="Search docs..." />
+            <div id="globalSearchResults" class="global-search-results"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="docs-main-panel">
+          <h2 id="auth-contract">Authentication Contract</h2>
+          <p>Studio UI authenticates against `rulex-identity-api`, then calls `rulex-studio-api` with bearer tokens and correlation IDs. Both services validate JWT with shared middleware from `rulex-common-lib`.</p>
+          <div class="code-block">Authorization: Bearer &lt;access_token&gt;
+x-correlation-id: &lt;session-correlation-id&gt;</div>
+
+          <div class="docs-callout" style="margin-top:16px;">
+            <strong>OpenAPI:</strong> `rulex-studio-api` Swagger v1 (OAS 3.0) at<br />
+            <a href="https://qhh3p934pv.us-west-2.awsapprunner.com/swagger/v1/swagger.json" style="color:var(--blue-400);word-break:break-all;">https://qhh3p934pv.us-west-2.awsapprunner.com/swagger/v1/swagger.json</a>
+          </div>
+
+          <h3 id="identity-api">Identity API Endpoints</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th><th>Used By</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/authentication/login</td><td>Issue access + refresh tokens.</td><td>Studio UI login flow</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/authentication/refresh</td><td>Rotate refresh token and issue new access token.</td><td>Scheduled + 401 retry flow</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/authentication/logout</td><td>Revoke refresh token (requires bearer token).</td><td>Studio UI logout flow</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/Test/user?userId={id}</td><td>Basic user lookup endpoint.</td><td>Post-login user bootstrap</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 id="studio-api">Studio API Endpoint Groups (Complete)</h3>
+          <p>This section includes the full grouped surface from your Studio API spec, including endpoints that may not be used in all UI paths.</p>
+          <div class="endpoint-toolbar">
+            <input id="endpointSearch" class="endpoint-input" type="text" placeholder="Search endpoints, purpose, or usage..." />
+            <select id="endpointMethodFilter" class="endpoint-select">
+              <option value="">All methods</option>
+              <option value="get">GET</option>
+              <option value="post">POST</option>
+              <option value="put">PUT</option>
+              <option value="delete">DELETE</option>
+            </select>
+            <select id="endpointModuleFilter" class="endpoint-select">
+              <option value="">All modules</option>
+            </select>
+            <div id="endpointResultsCount" class="endpoint-results">0 endpoint(s)</div>
+          </div>
+
+          <h3>BlockTypes</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th><th>Used By</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/BlockTypes/all</td><td>Get all block types.</td><td>Rule builder UI metadata loading</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/BlockTypes/{id}</td><td>Get block type by id.</td><td>Block type detail view</td></tr>
+                <tr><td><span class="method-pill method-delete">DELETE</span></td><td>/api/BlockTypes/{id}</td><td>Delete a block type.</td><td>Admin/cleanup operations</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Deployments</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th><th>Used By</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/deployments/rule/{ruleId}</td><td>Get deployments for a rule.</td><td>Deployments and rule history screens</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/deployments/environment/{environmentId}</td><td>Get deployments for an environment.</td><td>Environment deployment dashboards</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/deployments/rule/{ruleId}/environment/{environmentId}</td><td>Get active deployment for rule+environment.</td><td>Deployment status checks</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/deployments</td><td>Deploy a version to an environment.</td><td>Deployment wizard / merge flow</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/deployments</td><td>List deployments with optional filters.</td><td>Deployments list view</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/deployments/rule/{ruleId}/environment/{environmentId}/rollback</td><td>Rollback to previous deployment.</td><td>Rollback actions</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/deployments/{deploymentId}/deactivate</td><td>Deactivate a deployment.</td><td>Failure/stop operations</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/deployments/{deploymentId}/details</td><td>Get deployment detail.</td><td>Deployment detail view</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/deployments/rule/{ruleId}/environment/{environmentId}/history</td><td>Get deployment history for rule+environment.</td><td>History timeline</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/deployments/stats</td><td>Get deployment statistics.</td><td>Overview dashboards</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/deployments/{deploymentId}/compare</td><td>Compare two deployments.</td><td>Diff/compare UI</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Domain</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th><th>Used By</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/domain</td><td>Create a domain.</td><td>Organization management UI</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/domain/{id}</td><td>Get domain by id.</td><td>Domain detail/edit</td></tr>
+                <tr><td><span class="method-pill method-put">PUT</span></td><td>/domain/{id}</td><td>Update domain.</td><td>Domain edit flow</td></tr>
+                <tr><td><span class="method-pill method-delete">DELETE</span></td><td>/domain/{id}</td><td>Soft delete domain.</td><td>Domain delete flow</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/domain/all</td><td>List domains with pagination/sort/search.</td><td>Domain list screens</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/domain/organization/{organizationId}</td><td>Get domains by organization.</td><td>Dependent dropdowns / filters</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Environment</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th><th>Used By</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/environments</td><td>Create environment.</td><td>Project setup flows</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/environments/{id}</td><td>Get environment by id.</td><td>Environment detail</td></tr>
+                <tr><td><span class="method-pill method-put">PUT</span></td><td>/environments/{id}</td><td>Update environment.</td><td>Environment edit</td></tr>
+                <tr><td><span class="method-pill method-delete">DELETE</span></td><td>/environments/{id}</td><td>Soft delete environment.</td><td>Environment cleanup</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/environments/project/{projectId}</td><td>Get environments by project.</td><td>Deploy/PR target selection</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/environments/{id}/reset-api-key</td><td>Regenerate one API key.</td><td>Environment security operations</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Execution</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th><th>Used By</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/execution/execute</td><td>Execute rule with provided input.</td><td>Run/evaluate actions</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/execution/test</td><td>Quick test execution.</td><td>Testing shortcut flow</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/execution/history/{ruleId}</td><td>Get execution history by rule.</td><td>Trace/audit history views</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Organization</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th><th>Used By</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/organization</td><td>Create organization.</td><td>Tenant onboarding flows</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/organization/{id}</td><td>Get organization by id.</td><td>Org detail/edit</td></tr>
+                <tr><td><span class="method-pill method-put">PUT</span></td><td>/organization/{id}</td><td>Update organization.</td><td>Org edit flow</td></tr>
+                <tr><td><span class="method-pill method-delete">DELETE</span></td><td>/organization/{id}</td><td>Soft delete organization.</td><td>Org delete flow</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/organization/all</td><td>List organizations with pagination/sort/search.</td><td>Organization list UI</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/organization/hierarchy</td><td>Get paginated organization hierarchy.</td><td>Hierarchy tree views</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Project</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th><th>Used By</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/project</td><td>Create project.</td><td>Project onboarding flow</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/project/{id}</td><td>Get project by id.</td><td>Project detail/edit</td></tr>
+                <tr><td><span class="method-pill method-put">PUT</span></td><td>/project/{id}</td><td>Update project.</td><td>Project update flow</td></tr>
+                <tr><td><span class="method-pill method-delete">DELETE</span></td><td>/project/{id}</td><td>Delete project.</td><td>Project delete flow</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/project/all</td><td>List projects with pagination/sort/search.</td><td>Project selectors/lists</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>PullRequest</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th><th>Used By</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/pull-requests/all</td><td>List pull requests with filters.</td><td>PR list pages</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/pull-requests/counts</td><td>Get PR counts by status.</td><td>PR dashboard widgets</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/pull-requests/{pullRequestId}</td><td>Get PR full detail.</td><td>PR detail view</td></tr>
+                <tr><td><span class="method-pill method-put">PUT</span></td><td>/pull-requests/{pullRequestId}</td><td>Update PR title/description.</td><td>PR edit flow</td></tr>
+                <tr><td><span class="method-pill method-delete">DELETE</span></td><td>/pull-requests/{pullRequestId}</td><td>Delete PR and related records.</td><td>PR cleanup/admin actions</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/pull-requests</td><td>Create pull request.</td><td>Promotion workflow</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/pull-requests/{pullRequestId}/approve</td><td>Approve PR as reviewer.</td><td>Review workflow</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/pull-requests/{pullRequestId}/needs-work</td><td>Mark PR as needs-work.</td><td>Review workflow</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/pull-requests/{pullRequestId}/reject</td><td>Reject pull request.</td><td>Review workflow</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/pull-requests/{pullRequestId}/close</td><td>Close without merge.</td><td>PR lifecycle controls</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/pull-requests/{pullRequestId}/reopen</td><td>Reopen closed/rejected PR.</td><td>PR lifecycle controls</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/pull-requests/{pullRequestId}/merge</td><td>Merge approved PR and deploy rules.</td><td>Release workflow</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/pull-requests/{pullRequestId}/resubmit</td><td>Resubmit PR for review.</td><td>Review iteration flow</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/pull-requests/{pullRequestId}/bypass</td><td>Emergency bypass approval.</td><td>Incident/emergency operations</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/pull-requests/by-environment/{environmentId}</td><td>Get PRs targeting environment.</td><td>Environment release views</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/pull-requests/{pullRequestId}/comments</td><td>Add comment to PR.</td><td>Inline collaboration</td></tr>
+                <tr><td><span class="method-pill method-delete">DELETE</span></td><td>/pull-requests/{pullRequestId}/comments/{commentId}</td><td>Delete comment from PR.</td><td>Comment moderation</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Rule</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th><th>Used By</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/rule/all</td><td>List rules with pagination/sort/search.</td><td>Rules list page</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/rule</td><td>Create rule.</td><td>Rule creation flow</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/rule/{ruleId}</td><td>Get rule by id.</td><td>Rule detail/edit</td></tr>
+                <tr><td><span class="method-pill method-delete">DELETE</span></td><td>/rule/{ruleId}</td><td>Soft delete rule.</td><td>Rule delete flow</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/rule/key/{ruleKey}</td><td>Get rule by key.</td><td>Execution/lookup flow</td></tr>
+                <tr><td><span class="method-pill method-put">PUT</span></td><td>/rule/{id}</td><td>Update existing rule.</td><td>Rule edit flow</td></tr>
+                <tr><td><span class="method-pill method-put">PUT</span></td><td>/rule/Commit/{id}</td><td>Commit changes and create new version.</td><td>Versioning workflow</td></tr>
+                <tr><td><span class="method-pill method-put">PUT</span></td><td>/rule/Restore/{id}</td><td>Restore archived rule.</td><td>Archive recovery workflow</td></tr>
+                <tr><td><span class="method-pill method-delete">DELETE</span></td><td>/rule/{ruleId}/archive</td><td>Archive rule.</td><td>Lifecycle management</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/rule/validate</td><td>Validate rule config and metadata.</td><td>Pre-commit validation</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>RuleVersion</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th><th>Used By</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/ruleversion/{ruleId}</td><td>Get all versions for a rule.</td><td>Version history views</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/ruleversion/{ruleId}/latest</td><td>Get latest version for a rule.</td><td>Current version resolution</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/ruleversion/{ruleId}/version/{versionNumber}</td><td>Get specific version by number.</td><td>Version inspect flow</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/ruleversion/{id}/download</td><td>Download version content as JSON.</td><td>Export/download flow</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/ruleversion/{ruleId}/compare</td><td>Compare two versions.</td><td>Diff compare UI</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/ruleversion/{ruleId}/revert</td><td>Revert rule to earlier version state.</td><td>Recovery/version rollback</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Test Endpoints</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th><th>Used By</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/Test/data</td><td>Test token extraction and logging.</td><td>Diagnostic/testing only</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/Test/exception</td><td>Test exception middleware path.</td><td>Diagnostic/testing only</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/Test/user</td><td>Basic user test endpoint.</td><td>Post-login bootstrap/testing</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 id="error-model">Response &amp; Error Model</h3>
+          <p>APIs use middleware-driven error handling, and domain services throw rule-specific exceptions. UI callers should parse non-OK payloads (text/JSON) and surface actionable messages.</p>
+          <div class="code-block">{
+  "message": "Descriptive error message",
+  "statusCode": 400
+}</div>
+
+          <h3>Operational Notes</h3>
+          <ul class="feature-bullet-list">
+            <li>Always send bearer token for authenticated routes, including logout.</li>
+            <li>Use ruleversion endpoints for version downloads and comparisons.</li>
+            <li>Keep route usage case-sensitive and aligned with server paths.</li>
+            <li>Treat Test endpoints as diagnostic/debug routes, not primary business APIs.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="nav.js"></script>
+  <script src="portal.js"></script>
+  <script src="docs-portal.js"></script>
+</body>
+</html>

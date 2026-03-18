@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Developer Hub Overview",
+    "page": "Documentation",
+    "section": "Overview",
+    "path": "docs.html#developer-hub-overview",
+    "keywords": ["architecture", "repos", "request flow", "integration"]
+  },
+  {
+    "title": "End-to-End Request Flow",
+    "page": "Documentation",
+    "section": "Flow",
+    "path": "docs.html#request-flow",
+    "keywords": ["login", "refresh", "jwt", "correlation"]
+  },
+  {
+    "title": "Platform Documentation",
+    "page": "Platform",
+    "section": "New to Platform",
+    "path": "platform.html",
+    "keywords": ["overview", "get started", "governance", "templates"]
+  },
+  {
+    "title": "Authentication Contract",
+    "page": "API Reference",
+    "section": "Auth",
+    "path": "api-reference.html#auth-contract",
+    "keywords": ["bearer", "token", "identity api", "security"]
+  },
+  {
+    "title": "Identity API Endpoints",
+    "page": "API Reference",
+    "section": "Identity",
+    "path": "api-reference.html#identity-api",
+    "keywords": ["login", "refresh", "logout"]
+  },
+  {
+    "title": "Studio API Endpoints",
+    "page": "API Reference",
+    "section": "Studio",
+    "path": "api-reference.html#studio-api",
+    "keywords": ["deployments", "pull requests", "ruleversion", "organization"]
+  },
+  {
+    "title": "Code Repository Docs",
+    "page": "Code Repository",
+    "section": "Overview",
+    "path": "code-repository.html",
+    "keywords": ["repositories", "collaboration", "pull requests"]
+  },
+  {
+    "title": "Roadmap",
+    "page": "Roadmap",
+    "section": "Planning",
+    "path": "roadmap.html",
+    "keywords": ["q2", "q3", "future", "planned"]
+  },
+  {
+    "title": "Release Notes",
+    "page": "Release Notes",
+    "section": "Changes",
+    "path": "release-notes.html",
+    "keywords": ["updates", "changelog", "release"]
+  },
+  {
+    "title": "University",
+    "page": "University",
+    "section": "Learning",
+    "path": "university.html",
+    "keywords": ["training", "certification", "courses"]
+  }
+]

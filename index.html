@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rule-X — The AI-powered rule engine platform. Author, version, deploy, and collaborate on business rules at enterprise scale." />
+  <meta property="og:title" content="Rule-X — AI-Powered Rule Engine Platform" />
+  <meta property="og:description" content="Author, version, deploy, and collaborate on business rules at enterprise scale." />
+  <meta property="og:type" content="website" />
+  <title>Rule-X — AI-Powered Rule Engine Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='100%25' y2='100%25'><stop offset='0' stop-color='%230EA5E9'/><stop offset='1' stop-color='%237C3AED'/></linearGradient></defs><text y='.9em' font-size='72' text-anchor='middle' x='50' font-family='sans-serif' font-weight='800' fill='white'>X</text></svg>" />
+</head>
+<body>
+
+  <!-- nav + footer injected by nav.js -->
+
+  <!-- ── Hero ────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow-2"></div>
+    <div class="container">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        AI for Everything After Code
+      </div>
+      <h1>
+        The Rule Engine for<br />
+        <span class="grad-text">Everything After Logic</span>
+      </h1>
+      <p class="hero-sub">
+        Rule-X delivers intelligent AI automation so your team ships business logic faster, safer, and smarter.
+        Visual builder, AI assistance, real-time collaboration — all in one platform.
+      </p>
+      <div class="hero-actions">
+        <a href="pricing.html" class="btn btn-primary" style="font-size:16px; padding:14px 28px;">
+          Get Started Free →
+        </a>
+        <a href="contact.html" class="btn btn-outline" style="font-size:16px; padding:14px 28px;">
+          Request Demo
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-number">13+</div>
+          <div class="hero-stat-label">Block Types</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">3</div>
+          <div class="hero-stat-label">Authoring Modes</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">∞</div>
+          <div class="hero-stat-label">Version History</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">Real‑time</div>
+          <div class="hero-stat-label">Collaboration</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pipeline Walkthrough (Video) ──────────────────────────────── -->
+  <section class="pipeline-welcome">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag tag-green">Welcome Tour</span>
+        <h2>See the deployment pipeline<br /><span class="grad-text">in action</span></h2>
+        <p>A quick product walkthrough of Rule-X Studio: authoring, testing, pull request approvals, and multi-environment deployment flow.</p>
+      </div>
+      <div class="pipeline-video-shell" data-video-url="assets/rulex-pipeline-walkthrough.mp4" data-embed-url="">
+        <div class="pipeline-video-topbar">
+          <div class="pipeline-window-dots"><span></span><span></span><span></span></div>
+          <div class="pipeline-window-title">Rule-X Studio | Deployment Tour</div>
+          <div class="pipeline-window-live">LIVE DEMO</div>
+        </div>
+        <div class="pipeline-video-stage">
+          <video id="pipelineDemoVideo" class="pipeline-video" autoplay muted loop playsinline controls poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230EA5E9' stop-opacity='.24'/%3E%3Cstop offset='1' stop-color='%237C3AED' stop-opacity='.24'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='%2306080F'/%3E%3Crect x='24' y='24' width='1552' height='852' rx='22' fill='url(%23g)' stroke='rgba(255,255,255,.20)'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23E2E8F0' font-size='40' font-family='Inter,sans-serif'%3ERule-X Pipeline Walkthrough%3C/text%3E%3C/svg%3E">
+            <source id="pipelineDemoSource" src="assets/rulex-pipeline-walkthrough.mp4" type="video/mp4" />
+            Your browser does not support embedded video.
+          </video>
+          <iframe id="pipelineDemoEmbed" class="pipeline-video-embed" title="Rule-X walkthrough video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div id="pipelineVideoFallback" class="pipeline-video-fallback" aria-hidden="true">
+            <div class="fallback-grid"></div>
+            <div class="fallback-flow-line"></div>
+            <div class="fallback-panels">
+              <div class="fallback-panel">
+                <div class="fallback-dot"></div>
+                <div class="fallback-bar"></div>
+                <div class="fallback-bar short"></div>
+              </div>
+              <div class="fallback-panel">
+                <div class="fallback-dot purple"></div>
+                <div class="fallback-bar"></div>
+                <div class="fallback-bar short"></div>
+              </div>
+              <div class="fallback-panel">
+                <div class="fallback-dot green"></div>
+                <div class="fallback-bar"></div>
+                <div class="fallback-bar short"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pipeline-video-meta">
+          <div class="pipeline-video-chip">Temporal Rules</div>
+          <div class="pipeline-video-chip">CEP Windows</div>
+          <div class="pipeline-video-chip">AI Builder</div>
+          <div class="pipeline-video-chip">PR Approvals</div>
+        </div>
+        <div class="pipeline-video-note" id="pipelineVideoNote">
+          Add your real MP4 at <code>assets/rulex-pipeline-walkthrough.mp4</code> or set <code>data-embed-url</code> on this section to your shared video link.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Platform Architecture (Repo-Accurate) ─────────────────────── -->
+  <section id="platform-architecture">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Harness-Style Portal Architecture</span>
+        <h2>Built from your real repos,<br /><span class="grad-text">not placeholder marketing copy</span></h2>
+        <p>This portal combines a Harness-inspired product homepage with a docs-portal information architecture mapped to your actual codebases, services, and APIs.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon blue">🖥️</div>
+          <h3>Frontend Experience</h3>
+          <p><strong>Repo:</strong> rulex-studio-ui-main. React + Vite UI that handles login, organization/project/rule flows, pull requests, and deployment operations through typed service modules.</p>
+          <a href="docs.html#repo-map" class="learn-more">View architecture map →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon purple">🔐</div>
+          <h3>Identity & Session Layer</h3>
+          <p><strong>Repo:</strong> rulex-identity-api. .NET 8 identity service with login, refresh, logout, JWT issuance, correlation-id propagation, and refresh-token rotation.</p>
+          <a href="api-reference.html#identity-api" class="learn-more">See auth endpoints →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon green">⚙️</div>
+          <h3>Rule Authoring & Deployment APIs</h3>
+          <p><strong>Repo:</strong> rulex-studio-api. .NET 8 service for organization/domain/project/rule/version/deployment/pull-request modules with approval and rollback workflows.</p>
+          <a href="api-reference.html#studio-api" class="learn-more">Explore API surface →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon orange">📦</div>
+          <h3>Shared Platform Contracts</h3>
+          <p><strong>Repo:</strong> rulex-common-lib. Shared JWT auth middleware, exception management, and request logging used by both identity and studio APIs.</p>
+          <a href="docs.html#shared-lib" class="learn-more">Review shared contracts →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Developer Hub Modules ─────────────────────────────────────── -->
+  <section id="developer-hub-modules" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Developer Hub</span>
+        <h2>Docs portal modeled after modern<br /><span class="grad-text">enterprise developer hubs</span></h2>
+        <p>Browse platform foundations, code collaboration guides, and a full searchable endpoint inventory for your Rule-X services.</p>
+      </div>
+      <div class="docs-topic-grid">
+        <a class="docs-topic-card" href="docs.html"><div class="docs-topic-title">Developer Hub Home</div><div class="docs-topic-desc">Architecture overview, request flow, and integration priorities.</div></a>
+        <a class="docs-topic-card" href="platform.html"><div class="docs-topic-title">Platform Documentation</div><div class="docs-topic-desc">Auth, org/project model, governance, templates, approvals, and automation.</div></a>
+        <a class="docs-topic-card" href="code-repository.html"><div class="docs-topic-title">Code Repository Docs</div><div class="docs-topic-desc">Repository lifecycle, collaboration, pull requests, and integrations.</div></a>
+        <a class="docs-topic-card" href="api-reference.html"><div class="docs-topic-title">API Reference Explorer</div><div class="docs-topic-desc">Complete Studio + Identity endpoint coverage with search and quick copy.</div></a>
+      </div>
+      <div style="text-align:center;margin-top:34px;">
+        <a href="docs.html" class="btn btn-outline" style="font-size:15px;padding:12px 28px;">Open Developer Hub →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Logo Strip ───────────────────────────────────────────────── -->
+  <div class="logos-strip">
+    <div class="container">
+      <p class="logos-label">Trusted by teams building intelligent automation</p>
+      <div class="logos-row">
+        <div class="logo-pill"><div class="logo-icon" style="background:#1a1f2e;">🏦</div>Banking &amp; Finance</div>
+        <div class="logo-pill"><div class="logo-icon" style="background:#1a1f2e;">🏥</div>Healthcare</div>
+        <div class="logo-pill"><div class="logo-icon" style="background:#1a1f2e;">🛒</div>E-Commerce</div>
+        <div class="logo-pill"><div class="logo-icon" style="background:#1a1f2e;">⚡</div>Insurtech</div>
+        <div class="logo-pill"><div class="logo-icon" style="background:#1a1f2e;">🏭</div>Manufacturing</div>
+        <div class="logo-pill"><div class="logo-icon" style="background:#1a1f2e;">🚚</div>Logistics</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Features ─────────────────────────────────────────────────── -->
+  <section id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Features</span>
+        <h2>Everything you need to build<br /><span class="grad-text">intelligent rule systems</span></h2>
+        <p>From simple condition checks to complex event processing — Rule-X covers every pattern in enterprise business logic.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon blue">🎨</div>
+          <h3>Visual Block Builder</h3>
+          <p>Drag-and-drop rule authoring with 13 block types. Build complex rule logic visually — no code required.</p>
+          <a href="block-types.html" class="learn-more">Explore block types →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon purple">🤖</div>
+          <h3>AI Rule Generation</h3>
+          <p>Describe your business logic in plain English. The AI Builder interprets your intent and generates structured rule configurations instantly.</p>
+          <a href="features.html#ai" class="learn-more">See AI in action →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon green">🚀</div>
+          <h3>Multi-Environment Deployment</h3>
+          <p>Promote rules across Dev → QA → Production with a guided deployment wizard and live status updates.</p>
+          <a href="deployments.html" class="learn-more">Explore deployments →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon orange">📋</div>
+          <h3>DMN Decision Tables</h3>
+          <p>Spreadsheet-style decision tables with FIRST, PRIORITY, ALL, and COLLECT hit policies. Import/export and validate coverage.</p>
+          <a href="features.html#tables" class="learn-more">Learn more →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon blue">🔄</div>
+          <h3>Version Control &amp; History</h3>
+          <p>Full semantic versioning for every rule. Commit with messages, browse history, diff versions, and rollback instantly.</p>
+          <a href="features.html" class="learn-more">Learn more →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon purple">👥</div>
+          <h3>Real-Time Collaboration</h3>
+          <p>See who's editing in real-time. Conflict detection on commit, resolution modal, and draft auto-save every 3 seconds.</p>
+          <a href="features.html#collab" class="learn-more">Learn more →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon green">🔀</div>
+          <h3>Pull Request Workflow</h3>
+          <p>Git-style PR flow for promoting rules. Inline diff comments, reviewer assignment, and "Merge &amp; Deploy" in one action.</p>
+          <a href="features.html" class="learn-more">Learn more →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon orange">🧪</div>
+          <h3>Integrated Test Suite</h3>
+          <p>Write and run test scenarios directly inside the studio. See pass/fail per block and coverage metrics before you deploy.</p>
+          <a href="features.html" class="learn-more">Learn more →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon blue">💡</div>
+          <h3>Explainability &amp; Audit</h3>
+          <p>Every rule decision is traceable. Visual decision flow, plain-English explanations, and a complete audit trail.</p>
+          <a href="features.html" class="learn-more">Learn more →</a>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:48px;">
+        <a href="features.html" class="btn btn-outline" style="font-size:15px;padding:12px 28px;">View All Features →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Block Types ───────────────────────────────────────────────── -->
+  <section class="blocks-section" id="block-types">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag tag-purple">Rule Block Types</span>
+        <h2>13 block types.<br /><span class="grad-text">Every rule pattern covered.</span></h2>
+        <p>From simple condition checks to full temporal logic, CEP streaming, and AI inference.</p>
+      </div>
+      <div class="blocks-grid">
+        <div class="block-pill"><div class="block-dot" style="background:#22D3EE;box-shadow:0 0 6px #22D3EE;"></div><span>Input Schema</span></div>
+        <div class="block-pill"><div class="block-dot" style="background:#34D399;box-shadow:0 0 6px #34D399;"></div><span>Local JSON</span></div>
+        <div class="block-pill"><div class="block-dot" style="background:#0EA5E9;box-shadow:0 0 6px #0EA5E9;"></div><span>External API</span></div>
+        <div class="block-pill"><div class="block-dot" style="background:#F59E0B;box-shadow:0 0 6px #F59E0B;"></div><span>SQL Query</span></div>
+        <div class="block-pill"><div class="block-dot" style="background:#EC4899;box-shadow:0 0 6px #EC4899;"></div><span>Rule Row (IF/THEN)</span></div>
+        <div class="block-pill"><div class="block-dot" style="background:#7C3AED;box-shadow:0 0 6px #7C3AED;"></div><span>Temporal Rule</span></div>
+        <div class="block-pill"><div class="block-dot" style="background:#F97316;box-shadow:0 0 6px #F97316;"></div><span>CEP Rule</span></div>
+        <div class="block-pill"><div class="block-dot" style="background:#06B6D4;box-shadow:0 0 6px #06B6D4;"></div><span>Collection Op</span></div>
+        <div class="block-pill"><div class="block-dot" style="background:#84CC16;box-shadow:0 0 6px #84CC16;"></div><span>Execute Sub-Rule</span></div>
+        <div class="block-pill"><div class="block-dot" style="background:#14B8A6;box-shadow:0 0 6px #14B8A6;"></div><span>Decision Table</span></div>
+        <div class="block-pill"><div class="block-dot" style="background:#A78BFA;box-shadow:0 0 6px #A78BFA;"></div><span>Inference Engine</span></div>
+        <div class="block-pill"><div class="block-dot" style="background:#64748B;box-shadow:0 0 6px #64748B;"></div><span>Log Block</span></div>
+        <div class="block-pill"><div class="block-dot" style="background:#F43F5E;box-shadow:0 0 6px #F43F5E;"></div><span>Output Schema</span></div>
+      </div>
+      <div style="text-align:center;margin-top:48px;">
+        <a href="block-types.html" class="btn btn-outline" style="font-size:15px;padding:12px 28px;">Explore All Block Types →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How It Works ──────────────────────────────────────────────── -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">How It Works</span>
+        <h2>From idea to production<br /><span class="grad-text">in four steps</span></h2>
+        <p>Rule-X brings structure to every stage of the rule lifecycle — from authoring to auditing.</p>
+      </div>
+      <div class="steps-wrapper">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Model Your Rule</h3>
+          <p>Use the Visual Builder, AI Builder, or Canvas Editor to define your rule logic using blocks.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Test &amp; Validate</h3>
+          <p>Run test scenarios inside the studio. See pass/fail per block and coverage before you commit.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Review &amp; Approve</h3>
+          <p>Open a pull request to promote the rule. Assign reviewers, leave inline comments, and track approvals.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Deploy &amp; Monitor</h3>
+          <p>Deploy to any environment with the guided wizard. Monitor live step execution and roll back with one click.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Deployment Pipeline ───────────────────────────────────────── -->
+  <section class="pipeline-section" id="deployments">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag tag-green">Deployments</span>
+        <h2>CI/CD for your<br /><span class="grad-text">business rules</span></h2>
+        <p>Promote rules across environments with guardrails. Every deployment is tracked, audited, and reversible.</p>
+      </div>
+      <div class="pipeline-visual">
+        <div class="pipeline-header">
+          <div style="width:36px;height:36px;background:linear-gradient(135deg,#0EA5E9,#7C3AED);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;">🚀</div>
+          <div>
+            <div class="pipeline-title">Deploy: credit-scoring-v2.1.0 → Production</div>
+            <div class="pipeline-subtitle">Triggered by PR #47 merge · reviewed by 2 approvers</div>
+          </div>
+          <div style="margin-left:auto;"><span class="tag tag-green" style="font-size:11px;">● Live</span></div>
+        </div>
+        <div class="pipeline-environments">
+          <div class="env-block env-dev"><div class="env-label">Source</div><div class="env-name">Development</div><div class="env-badge">v2.1.0</div></div>
+          <div class="env-arrow">→</div>
+          <div class="env-block env-qa"><div class="env-label">Staging</div><div class="env-name">QA</div><div class="env-badge">Passed ✓</div></div>
+          <div class="env-arrow">→</div>
+          <div class="env-block env-prod"><div class="env-label">Target</div><div class="env-name">Production</div><div class="env-badge">Deploying…</div></div>
+        </div>
+        <div class="pipeline-steps">
+          <div class="p-step done"><div class="p-step-icon">✅</div>Validate Rule</div>
+          <div class="p-step done"><div class="p-step-icon">✅</div>Run Tests</div>
+          <div class="p-step done"><div class="p-step-icon">✅</div>Approval Check</div>
+          <div class="p-step doing"><div class="p-step-icon">⟳</div>Deploy Artifact</div>
+          <div class="p-step"><div class="p-step-icon">○</div>Smoke Test</div>
+          <div class="p-step"><div class="p-step-icon">○</div>Notify</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="deployments.html" class="btn btn-outline" style="font-size:15px;padding:12px 28px;">Learn About Deployments →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Use Cases ─────────────────────────────────────────────────── -->
+  <section id="use-cases" style="background:var(--bg-card);border-top:1px solid var(--border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag tag-purple">Use Cases</span>
+        <h2>Built for every industry<br /><span class="grad-text">that runs on decisions</span></h2>
+        <p>Rule-X is domain-agnostic. If your business runs on logic, Rule-X handles it.</p>
+      </div>
+      <div class="use-cases-grid">
+        <div class="use-case-card">
+          <div class="uc-icon">🏦</div>
+          <h3>Credit &amp; Underwriting</h3>
+          <p>Model credit scoring, loan eligibility, and risk assessment rules with DMN hit policies for full auditability.</p>
+          <div class="uc-tags"><span class="uc-tag">Decision Table</span><span class="uc-tag">Inference Engine</span></div>
+        </div>
+        <div class="use-case-card">
+          <div class="uc-icon">🛡️</div>
+          <h3>Fraud Detection</h3>
+          <p>Stream event data through CEP windows to detect suspicious patterns in real time.</p>
+          <div class="uc-tags"><span class="uc-tag">CEP Rule</span><span class="uc-tag">Temporal Rule</span></div>
+        </div>
+        <div class="use-case-card">
+          <div class="uc-icon">💊</div>
+          <h3>Clinical Decision Support</h3>
+          <p>Encode clinical guidelines as inference engine rules with full audit trail for regulatory compliance.</p>
+          <div class="uc-tags"><span class="uc-tag">Inference Engine</span><span class="uc-tag">Audit Log</span></div>
+        </div>
+        <div class="use-case-card">
+          <div class="uc-icon">📦</div>
+          <h3>Pricing &amp; Promotions</h3>
+          <p>Dynamic pricing rules, discount eligibility, and loyalty tier calculations. Every change version-controlled.</p>
+          <div class="uc-tags"><span class="uc-tag">Rule Row</span><span class="uc-tag">Collection Op</span></div>
+        </div>
+        <div class="use-case-card">
+          <div class="uc-icon">🚚</div>
+          <h3>Supply Chain Logic</h3>
+          <p>Routing rules, inventory reorder triggers, and SLA violation detection via External API blocks.</p>
+          <div class="uc-tags"><span class="uc-tag">External API</span><span class="uc-tag">CEP Rule</span></div>
+        </div>
+        <div class="use-case-card">
+          <div class="uc-icon">⚡</div>
+          <h3>Insurance Underwriting</h3>
+          <p>Risk scoring, policy eligibility, and claims triage with explainability output for regulators.</p>
+          <div class="uc-tags"><span class="uc-tag">Decision Table</span><span class="uc-tag">Explainability</span></div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:48px;">
+        <a href="use-cases.html" class="btn btn-outline" style="font-size:15px;padding:12px 28px;">See All Use Cases →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Testimonials ──────────────────────────────────────────────── -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">What Teams Say</span>
+        <h2>Teams love<br /><span class="grad-text">Rule-X</span></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="quote">Rule-X replaced three separate rule engines we were maintaining. The Visual Builder alone cut our rule authoring time in half — non-technical staff can now update rules without engineering involvement.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SR</div>
+            <div><div class="author-name">Sarah R.</div><div class="author-title">Head of Decision Science, FinTech startup</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="quote">The deployment pipeline with real-time step tracking and one-click rollback is exactly what we needed. We now deploy rule changes with the same confidence as code deployments.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MK</div>
+            <div><div class="author-name">Marcus K.</div><div class="author-title">Platform Engineering Lead, Insurance Group</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="quote">The CEP and temporal rule blocks are game-changers for fraud detection. We model complex time-window patterns in minutes instead of weeks of custom code.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">PL</div>
+            <div><div class="author-name">Priya L.</div><div class="author-title">Data Engineering Manager, Payments Platform</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Band ───────────────────────────────────────────────────── -->
+  <div class="cta-band">
+    <div class="cta-inner">
+      <h2>Ready to modernize your<br /><span class="grad-text">rule engine?</span></h2>
+      <p>Join teams already shipping intelligent automation with Rule-X. Get started in minutes.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary" style="font-size:16px;padding:14px 28px;">Request a Demo →</a>
+        <a href="pricing.html" class="btn btn-outline" style="font-size:16px;padding:14px 28px;">View Pricing</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="nav.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

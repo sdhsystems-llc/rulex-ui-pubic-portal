@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rule-X Documentation — Quickstart guides, API reference, block type docs, and developer resources." />
+  <title>Documentation — Rule-X</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='100%25' y2='100%25'><stop offset='0' stop-color='%230EA5E9'/><stop offset='1' stop-color='%237C3AED'/></linearGradient></defs><text y='.9em' font-size='72' text-anchor='middle' x='50' font-family='sans-serif' font-weight='800' fill='white'>X</text></svg>" />
+</head>
+<body>
+  <main style="padding-top:104px;">
+    <div class="page-hero" style="padding-bottom:56px;">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="container">
+        <span class="tag">Documentation</span>
+        <h1>Rule-X <span class="grad-text">Developer Hub</span></h1>
+        <p>Step-by-step product documentation, API references, roadmap, release notes, and learning resources for every Rule-X module.</p>
+        <div class="docs-meta-bar">
+          <div class="docs-meta-left">
+            <span>Last updated: Mar 17, 2026</span>
+            <span>•</span>
+            <span>Page: Documentation Home</span>
+          </div>
+          <a class="docs-meta-link" href="https://developer.harness.io/docs/">Reference style guide ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="devhub-topnav-wrap">
+      <div class="devhub-topnav">
+        <a href="docs.html" class="active">Home</a>
+        <a href="docs.html">Documentation</a>
+        <a href="platform.html">Platform</a>
+        <a href="code-repository.html">Code Repository</a>
+        <a href="api-reference.html">API Reference</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="release-notes.html">Release Notes</a>
+        <a href="university.html">University</a>
+        <div class="docs-topbar-tools">
+          <span id="docsVersionBadge" class="docs-version-pill">V1</span>
+          <select class="docs-version-switch" aria-label="Docs version">
+            <option value="v1">v1</option>
+            <option value="v2">v2</option>
+          </select>
+          <div class="global-search-wrap">
+            <input id="globalDocsSearch" class="global-search-input" type="text" placeholder="Search docs..." />
+            <div id="globalSearchResults" class="global-search-results"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="docs-harness-layout">
+          <aside class="docs-harness-sidebar">
+            <div class="docs-harness-card">
+              <div class="docs-harness-group">
+                <div class="docs-harness-group-title">Overview</div>
+                <a class="docs-harness-link current" href="docs.html#developer-hub-overview">Developer Hub Overview</a>
+                <a class="docs-harness-link" href="docs.html#repo-map">Repo Map</a>
+                <a class="docs-harness-link" href="docs.html#request-flow">Request Flow</a>
+              </div>
+              <div class="docs-harness-group">
+                <div class="docs-harness-group-title">Platform Areas</div>
+                <a class="docs-harness-link" href="docs.html#frontend-layer">Frontend Layer</a>
+                <a class="docs-harness-link" href="docs.html#identity-layer">Identity Layer</a>
+                <a class="docs-harness-link" href="docs.html#studio-layer">Studio API Layer</a>
+                <a class="docs-harness-link" href="docs.html#shared-lib">Shared Common Library</a>
+              </div>
+              <div class="docs-harness-group">
+                <div class="docs-harness-group-title">Deep Dives</div>
+                <a class="docs-harness-link" href="platform.html">Platform Docs</a>
+                <a class="docs-harness-link" href="code-repository.html">Code Repository Docs</a>
+                <a class="docs-harness-link" href="api-reference.html">API Reference</a>
+                <a class="docs-harness-link" href="roadmap.html">Roadmap</a>
+                <a class="docs-harness-link" href="release-notes.html">Release Notes</a>
+                <a class="docs-harness-link" href="open-source.html">Open Source</a>
+              </div>
+            </div>
+          </aside>
+
+          <div class="docs-main-panel">
+            <h2 id="developer-hub-overview">Developer Hub Overview</h2>
+            <p>This page now uses a Harness-style documentation layout with content mapped to your real services, repos, and endpoint behavior. It is designed as the central architecture hub for onboarding and technical handoff.</p>
+
+            <div class="docs-callout" style="margin-top:18px;">
+              <strong>Real repo grounding:</strong> `rulex-studio-ui-main`, `rulex-identity-api`, `rulex-studio-api`, and `rulex-common-lib`.
+            </div>
+
+            <h3 id="repo-map">Repo Map</h3>
+            <div class="repo-chip-row">
+              <span class="repo-chip">🖥️ rulex-studio-ui-main</span>
+              <span class="repo-chip">🔐 rulex-identity-api</span>
+              <span class="repo-chip">⚙️ rulex-studio-api</span>
+              <span class="repo-chip">📦 rulex-common-lib</span>
+            </div>
+            <div class="docs-module-grid">
+              <a class="docs-module-card" id="frontend-layer" href="features.html"><div class="docs-module-title">Studio UI (React + Vite)</div><div class="docs-module-desc">Owns auth state, feature navigation, and API client orchestration for rule authoring, pull requests, and deployments.</div></a>
+              <a class="docs-module-card" id="identity-layer" href="api-reference.html#identity-api"><div class="docs-module-title">Identity API (.NET 8)</div><div class="docs-module-desc">Handles login, refresh, logout, user token claims, correlation-id propagation, and refresh-token persistence.</div></a>
+              <a class="docs-module-card" id="studio-layer" href="api-reference.html#studio-api"><div class="docs-module-title">Studio API (.NET 8)</div><div class="docs-module-desc">Provides organization, domain, project, rule, ruleversion, execution, deployment, environment, and pull-request APIs.</div></a>
+              <a class="docs-module-card" id="shared-lib" href="api-reference.html#auth-contract"><div class="docs-module-title">Common Library Contracts</div><div class="docs-module-desc">Centralized JWT middleware, authentication handler, logging middleware, and RuleX exception model.</div></a>
+            </div>
+
+            <h3 id="request-flow">End-to-End Request Flow</h3>
+            <div class="request-flow">
+              <div class="request-step">
+                <div class="request-step-num">1</div>
+                <div class="request-step-body">
+                  <div class="request-step-title">Login Request from UI</div>
+                  <p>UI sends <code>POST /authentication/login</code> to identity-api.</p>
+                </div>
+              </div>
+              <div class="request-flow-arrow">↓</div>
+              <div class="request-step">
+                <div class="request-step-num">2</div>
+                <div class="request-step-body">
+                  <div class="request-step-title">Token Response</div>
+                  <p>identity-api returns <code>accessToken</code>, <code>refreshToken</code>, and <code>correlationId</code>.</p>
+                </div>
+              </div>
+              <div class="request-flow-arrow">↓</div>
+              <div class="request-step">
+                <div class="request-step-num">3</div>
+                <div class="request-step-body">
+                  <div class="request-step-title">Authenticated Studio Requests</div>
+                  <p>UI stores tokens and sends bearer auth + correlation header to studio-api calls.</p>
+                  <div class="request-step-mini-code">Authorization: Bearer &lt;access_token&gt;
+x-correlation-id: &lt;session-correlation-id&gt;</div>
+                </div>
+              </div>
+              <div class="request-flow-arrow">↓</div>
+              <div class="request-step">
+                <div class="request-step-num">4</div>
+                <div class="request-step-body">
+                  <div class="request-step-title">JWT Validation in API Layer</div>
+                  <p>studio-api validates JWT using shared middleware from <code>rulex-common-lib</code>.</p>
+                </div>
+              </div>
+              <div class="request-flow-arrow">↓</div>
+              <div class="request-step">
+                <div class="request-step-num">5</div>
+                <div class="request-step-body">
+                  <div class="request-step-title">401 Recovery + Retry</div>
+                  <p>On <code>401</code>, UI calls <code>/authentication/refresh</code>, updates tokens, and retries once.</p>
+                </div>
+              </div>
+            </div>
+
+            <h3>Primary Platform Capabilities</h3>
+            <ul class="feature-bullet-list">
+              <li>Rule lifecycle: create, version, commit, compare, revert, and archive.</li>
+              <li>Deployment lifecycle: deploy, history, rollback, deactivate, and compare versions.</li>
+              <li>Review lifecycle: pull request approvals, merge, comments, and environment-aware release flow.</li>
+              <li>Security model: JWT-based auth, correlation ID tracing, and shared middleware contracts.</li>
+            </ul>
+
+            <h3>Documentation Modules</h3>
+            <div class="docs-topic-grid">
+              <a class="docs-topic-card" href="platform.html"><div class="docs-topic-title">Platform</div><div class="docs-topic-desc">Core platform setup, governance, and operations.</div></a>
+              <a class="docs-topic-card" href="code-repository.html"><div class="docs-topic-title">Code Repository</div><div class="docs-topic-desc">Repository workflow and PR lifecycle.</div></a>
+              <a class="docs-topic-card" href="features.html"><div class="docs-topic-title">Continuous Integration</div><div class="docs-topic-desc">Validation and quality gates before promotion.</div></a>
+              <a class="docs-topic-card" href="deployments.html"><div class="docs-topic-title">Continuous Delivery &amp; GitOps</div><div class="docs-topic-desc">Release orchestration and environment promotion.</div></a>
+              <a class="docs-topic-card" href="features.html#testing"><div class="docs-topic-title">AI Test Automation</div><div class="docs-topic-desc">Automated testing and confidence workflows.</div></a>
+              <a class="docs-topic-card" href="deployments.html"><div class="docs-topic-title">Infrastructure as Code Management</div><div class="docs-topic-desc">Environment and deployment control patterns.</div></a>
+              <a class="docs-topic-card" href="features.html#tables"><div class="docs-topic-title">Feature Management &amp; Experimentation</div><div class="docs-topic-desc">Controlled rollout and decision targeting.</div></a>
+              <a class="docs-topic-card" href="use-cases.html"><div class="docs-topic-title">Cloud Cost Management</div><div class="docs-topic-desc">Decision automation for cost optimization.</div></a>
+              <a class="docs-topic-card" href="api-reference.html"><div class="docs-topic-title">API &amp; Application Discovery</div><div class="docs-topic-desc">Endpoint and integration surface visibility.</div></a>
+              <a class="docs-topic-card" href="features.html#audit"><div class="docs-topic-title">Application &amp; API Security Testing</div><div class="docs-topic-desc">Security checks within release lifecycle.</div></a>
+              <a class="docs-topic-card" href="features.html#audit"><div class="docs-topic-title">Supply Chain Security</div><div class="docs-topic-desc">Traceable and governed software delivery.</div></a>
+              <a class="docs-topic-card" href="community.html#academy"><div class="docs-topic-title">Harness Solutions Factory</div><div class="docs-topic-desc">Reference blueprints and accelerators.</div></a>
+              <a class="docs-topic-card" href="pricing.html"><div class="docs-topic-title">FAQs</div><div class="docs-topic-desc">Common setup and usage questions.</div></a>
+              <a class="docs-topic-card" href="contact.html"><div class="docs-topic-title">Troubleshooting</div><div class="docs-topic-desc">Common issues, causes, and fix guidance.</div></a>
+              <a class="docs-topic-card" href="release-notes.html"><div class="docs-topic-title">Release Notes</div><div class="docs-topic-desc">Latest shipped changes by module.</div></a>
+              <a class="docs-topic-card" href="api-reference.html"><div class="docs-topic-title">API Reference</div><div class="docs-topic-desc">Full endpoint catalog and contracts.</div></a>
+            </div>
+
+            <h3 id="troubleshooting">Integration Notes (High Priority)</h3>
+            <ul class="feature-bullet-list">
+              <li>Logout should always send bearer token when calling `POST /authentication/logout`.</li>
+              <li>Rule download should align to ruleversion download endpoint behavior.</li>
+              <li>Keep UI route usage and studio-api ruleversion route semantics strictly aligned.</li>
+              <li>If UI uses both studio-api and Supabase directly, enforce one data source per workflow to avoid drift.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-band">
+      <div class="cta-inner">
+        <h2>Need deeper implementation details?</h2>
+        <p>Jump into API contracts, product roadmap, release notes, and structured training resources.</p>
+        <div class="cta-actions">
+          <a href="api-reference.html" class="btn btn-primary" style="font-size:16px;padding:14px 28px;">Open API Reference →</a>
+          <a href="university.html" class="btn btn-outline" style="font-size:16px;padding:14px 28px;">Explore University</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="nav.js"></script>
+  <script src="docs-portal.js"></script>
+</body>
+</html>
