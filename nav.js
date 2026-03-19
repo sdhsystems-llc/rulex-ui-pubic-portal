@@ -1,4 +1,4 @@
-/* ── Rule-X Shared Navigation Component ──────────────────────────── */
+/* ── Xflore Shared Navigation Component ──────────────────────────── */
 (function () {
   const FAVICON = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='100%25' y2='100%25'><stop offset='0' stop-color='%230EA5E9'/><stop offset='1' stop-color='%237C3AED'/></linearGradient></defs><text y='.9em' font-size='72' text-anchor='middle' x='50' font-family='sans-serif' font-weight='800' fill='white'>X</text></svg>`;
 
@@ -6,7 +6,7 @@
 
   const NAV_HTML = `
   <div class="announcement-bar" id="announcementBar">
-    🚀 Rule-X v2.0 is here — Temporal Rules, CEP Windows &amp; AI Builder.
+    🚀 Xflore v2.0 is here — Temporal Rules, CEP Windows &amp; AI Builder.
     <a href="pricing.html">Request early access →</a>
     <button class="announcement-close" id="announcementClose" aria-label="Dismiss">✕</button>
   </div>
@@ -15,7 +15,7 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
         <div class="nav-logo-icon">X</div>
-        Rule&#8209;X
+        Xflore
       </a>
 
       <ul class="nav-links" id="navLinks">
@@ -120,7 +120,7 @@
               </div>
               <div>
                 <div class="dropdown-section-label">Support &amp; Events</div>
-                <a href="community.html#support" class="dropdown-item-simple"><span>🛟</span> Rule-X Support</a>
+                <a href="community.html#support" class="dropdown-item-simple"><span>🛟</span> Xflore Support</a>
                 <a href="community.html#services" class="dropdown-item-simple"><span>🤝</span> Professional Services</a>
                 <a href="community.html#webinars" class="dropdown-item-simple"><span>🎥</span> Webinars</a>
                 <a href="community.html#research" class="dropdown-item-simple"><span>📊</span> Research Reports</a>
@@ -181,7 +181,7 @@
       <a href="customers.html#cases">Case Studies</a>
       <a href="community.html#compare">Comparison Guide</a>
       <a href="community.html#academy">Rule Engine Academy</a>
-      <a href="community.html#support">Rule-X Support</a>
+      <a href="community.html#support">Xflore Support</a>
       <a href="community.html#services">Professional Services</a>
       <a href="community.html#webinars">Webinars</a>
       <a href="community.html#research">Research Reports</a>
@@ -201,7 +201,7 @@
         <div class="footer-brand">
           <a href="index.html" class="nav-logo" style="display:inline-flex;">
             <div class="nav-logo-icon">X</div>
-            Rule&#8209;X
+            Xflore
           </a>
           <p>The AI-powered rule engine platform for teams that need intelligent, auditable, and collaborative decision automation at scale.</p>
           <div class="footer-social">
@@ -242,7 +242,7 @@
             <li><a href="community.html#ebooks">Ebooks</a></li>
             <li><a href="customers.html#cases">Case Studies</a></li>
             <li><a href="community.html#compare">Comparison Guide</a></li>
-            <li><a href="community.html#support">Rule-X Support</a></li>
+            <li><a href="community.html#support">Xflore Support</a></li>
             <li><a href="community.html#webinars">Webinars</a></li>
             <li><a href="community.html#academy">Academy</a></li>
             <li><a href="community.html#research">Research Reports</a></li>
@@ -261,7 +261,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <div class="footer-bottom-left">© 2026 Rule-X. All rights reserved.</div>
+        <div class="footer-bottom-left">© 2026 Xflore. All rights reserved.</div>
         <div class="footer-bottom-right">
           <a href="#">Privacy</a>
           <a href="#">Terms</a>
@@ -305,7 +305,7 @@
   <div id="quickNavModal" class="quick-nav-modal" aria-hidden="true">
     <div class="quick-nav-panel" role="dialog" aria-modal="true" aria-label="Quick navigation">
       <div class="quick-nav-head">
-        <div class="quick-nav-title">Navigate Rule-X</div>
+        <div class="quick-nav-title">Navigate Xflore</div>
         <button id="quickNavClose" class="quick-nav-close" aria-label="Close">✕</button>
       </div>
       <input id="quickNavInput" class="quick-nav-input" type="text" placeholder="Search pages (Ctrl/Cmd+K)" />
