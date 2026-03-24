@@ -42,6 +42,41 @@
     "keywords": ["deployments", "pull requests", "ruleversion", "organization"]
   },
   {
+    "title": "Operon API Overview",
+    "page": "Operon API",
+    "section": "Overview",
+    "path": "operon-api-reference.html#operon-overview",
+    "keywords": ["operon", "openapi", "oas 3.1", "authorize"]
+  },
+  {
+    "title": "Operon Health Endpoints",
+    "page": "Operon API",
+    "section": "Health",
+    "path": "operon-api-reference.html#health",
+    "keywords": ["healthz", "readyz", "checks"]
+  },
+  {
+    "title": "Operon Chat and Investigations",
+    "page": "Operon API",
+    "section": "API",
+    "path": "operon-api-reference.html#api",
+    "keywords": ["chat", "investigations", "stream", "database"]
+  },
+  {
+    "title": "Operon Auth Endpoints",
+    "page": "Operon API",
+    "section": "Auth",
+    "path": "operon-api-reference.html#auth",
+    "keywords": ["register", "login", "token", "session", "api keys"]
+  },
+  {
+    "title": "Operon Hierarchy Endpoints",
+    "page": "Operon API",
+    "section": "Hierarchy",
+    "path": "operon-api-reference.html#hierarchy",
+    "keywords": ["users", "orgs", "domains", "projects"]
+  },
+  {
     "title": "Code Repository Docs",
     "page": "Code Repository",
     "section": "Overview",

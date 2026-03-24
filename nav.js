@@ -22,50 +22,32 @@
 
         <!-- Products -->
         <li class="has-dropdown">
-          <a href="features.html" class="nav-link-btn">Products ${CHEVRON}</a>
+          <a href="index.html#xflore-products" class="nav-link-btn">Products ${CHEVRON}</a>
           <div class="dropdown-panel">
-            <div class="dropdown-section-label">Platform</div>
+            <div class="dropdown-section-label">Products</div>
             <div class="dropdown-grid">
-              <a href="features.html" class="dropdown-item">
+              <a href="index.html#product-operon" class="dropdown-item">
                 <div class="dropdown-item-icon" style="background:rgba(14,165,233,0.1);border-color:rgba(14,165,233,0.2);">🎨</div>
                 <div>
-                  <div class="dropdown-item-title">Visual Block Builder</div>
-                  <div class="dropdown-item-desc">Drag-and-drop rule authoring</div>
+                  <div class="dropdown-item-title">Operon</div>
+                  <div class="dropdown-item-desc">AI investigation, incident ops, and runtime orchestration</div>
+                  <div class="dropdown-item-badges">
+                    <span class="dropdown-badge">NEW</span>
+                    <span class="dropdown-badge soft">Platform</span>
+                  </div>
+                  <div class="dropdown-item-meta">AI SRE · Incident Triage · Streaming Chat · Evidence Context</div>
                 </div>
               </a>
-              <a href="features.html#ai" class="dropdown-item">
+              <a href="index.html#product-rulex" class="dropdown-item">
                 <div class="dropdown-item-icon" style="background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.2);">🤖</div>
                 <div>
-                  <div class="dropdown-item-title">AI Rule Generation</div>
-                  <div class="dropdown-item-desc">Natural language to rules</div>
-                </div>
-              </a>
-              <a href="block-types.html" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(52,211,153,0.1);border-color:rgba(52,211,153,0.2);">🧩</div>
-                <div>
-                  <div class="dropdown-item-title">Block Types</div>
-                  <div class="dropdown-item-desc">13 block types for every pattern</div>
-                </div>
-              </a>
-              <a href="deployments.html" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(251,146,60,0.1);border-color:rgba(251,146,60,0.2);">🚀</div>
-                <div>
-                  <div class="dropdown-item-title">Deployment Pipeline</div>
-                  <div class="dropdown-item-desc">CI/CD for business rules</div>
-                </div>
-              </a>
-              <a href="features.html#tables" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(20,184,166,0.1);border-color:rgba(20,184,166,0.2);">📋</div>
-                <div>
-                  <div class="dropdown-item-title">Decision Tables</div>
-                  <div class="dropdown-item-desc">DMN-compliant spreadsheet rules</div>
-                </div>
-              </a>
-              <a href="features.html#collab" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.2);">👥</div>
-                <div>
-                  <div class="dropdown-item-title">Collaboration</div>
-                  <div class="dropdown-item-desc">Real-time team rule authoring</div>
+                  <div class="dropdown-item-title">Rulex</div>
+                  <div class="dropdown-item-desc">Rule authoring, governance, and deployment automation</div>
+                  <div class="dropdown-item-badges">
+                    <span class="dropdown-badge">CORE</span>
+                    <span class="dropdown-badge soft">Enterprise</span>
+                  </div>
+                  <div class="dropdown-item-meta">Visual Builder · PR Workflow · Multi-Env Deployments · Audit Trail</div>
                 </div>
               </a>
             </div>
@@ -86,7 +68,8 @@
                 <a href="docs.html" class="dropdown-item-simple"><span>📄</span> Documentation</a>
                 <a href="platform.html" class="dropdown-item-simple"><span>🧭</span> Platform Docs</a>
                 <a href="code-repository.html" class="dropdown-item-simple"><span>🗂️</span> Code Repository</a>
-                <a href="api-reference.html" class="dropdown-item-simple"><span>🔌</span> API Reference Docs</a>
+                <a href="api-reference.html" class="dropdown-item-simple"><span>🔌</span> Rulex API Reference</a>
+                <a href="operon-api-reference.html" class="dropdown-item-simple"><span>🛰️</span> Operon API Reference</a>
                 <a href="docs.html#developer-hub-overview" class="dropdown-item-simple"><span>💻</span> Developer Hub</a>
                 <a href="roadmap.html" class="dropdown-item-simple"><span>🗺️</span> Roadmap</a>
                 <a href="release-notes.html" class="dropdown-item-simple"><span>📝</span> Release Notes</a>
@@ -156,10 +139,8 @@
   <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-inner">
       <div class="mobile-section-label">Product</div>
-      <a href="features.html">Features</a>
-      <a href="block-types.html">Block Types</a>
-      <a href="deployments.html">Deployments</a>
-      <a href="use-cases.html">Use Cases</a>
+      <a href="index.html#product-operon">Operon</a>
+      <a href="index.html#product-rulex">Rulex</a>
       <div class="mobile-section-label">Company</div>
       <a href="customers.html">Customers</a>
       <a href="open-source.html">Open Source</a>
@@ -168,7 +149,8 @@
       <a href="docs.html">Documentation</a>
       <a href="platform.html">Platform Docs</a>
       <a href="code-repository.html">Code Repository</a>
-      <a href="api-reference.html">API Reference</a>
+      <a href="api-reference.html">Rulex API Reference</a>
+      <a href="operon-api-reference.html">Operon API Reference</a>
       <a href="roadmap.html">Roadmap</a>
       <a href="release-notes.html">Release Notes</a>
       <a href="university.html">University</a>
@@ -226,7 +208,8 @@
             <li><a href="docs.html">Documentation</a></li>
             <li><a href="platform.html">Platform Docs</a></li>
             <li><a href="code-repository.html">Code Repository</a></li>
-            <li><a href="api-reference.html">API Reference</a></li>
+            <li><a href="api-reference.html">Rulex API Reference</a></li>
+            <li><a href="operon-api-reference.html">Operon API Reference</a></li>
             <li><a href="roadmap.html">Roadmap</a></li>
             <li><a href="release-notes.html">Release Notes</a></li>
             <li><a href="university.html">University</a></li>
@@ -275,6 +258,8 @@
 
   const QUICK_NAV_ITEMS = [
     { title: 'Home', href: 'index.html' },
+    { title: 'Operon', href: 'index.html#product-operon' },
+    { title: 'Rulex', href: 'index.html#product-rulex' },
     { title: 'Features', href: 'features.html' },
     { title: 'Block Types', href: 'block-types.html' },
     { title: 'Deployments', href: 'deployments.html' },
@@ -282,7 +267,8 @@
     { title: 'Documentation', href: 'docs.html' },
     { title: 'Platform Docs', href: 'platform.html' },
     { title: 'Code Repository Docs', href: 'code-repository.html' },
-    { title: 'API Reference', href: 'api-reference.html' },
+    { title: 'Rulex API Reference', href: 'api-reference.html' },
+    { title: 'Operon API Reference', href: 'operon-api-reference.html' },
     { title: 'Roadmap', href: 'roadmap.html' },
     { title: 'Release Notes', href: 'release-notes.html' },
     { title: 'University', href: 'university.html' },

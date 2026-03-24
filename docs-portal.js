@@ -81,46 +81,86 @@
     });
   }
 
-  function initOnPageToc() {
-    var panel = document.querySelector(".docs-main-panel");
-    if (!panel) return;
-    var headings = Array.from(panel.querySelectorAll("h2, h3"));
-    if (!headings.length) return;
+  function initProductTabs() {
+    var tabs = Array.from(document.querySelectorAll(".docs-product-tab"));
+    var panels = Array.from(document.querySelectorAll(".docs-product-panel"));
+    if (!tabs.length || !panels.length) return;
 
-    var tocItems = headings.map(function (h) {
-      if (!h.id) h.id = slugify(h.textContent);
-      return { id: h.id, text: h.textContent.trim(), level: h.tagName.toLowerCase() };
+    function activate(tabKey) {
+      tabs.forEach(function (tab) {
+        var isActive = tab.getAttribute("data-doc-tab") === tabKey;
+        tab.classList.toggle("is-active", isActive);
+        tab.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+      panels.forEach(function (panel) {
+        var isActive = panel.getAttribute("data-doc-panel") === tabKey;
+        panel.classList.toggle("is-active", isActive);
+        panel.setAttribute("aria-hidden", isActive ? "false" : "true");
+      });
+      document.dispatchEvent(new Event("docs:panel-change"));
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        activate(tab.getAttribute("data-doc-tab"));
+      });
     });
 
-    var toc = document.createElement("aside");
-    toc.className = "onpage-toc";
-    toc.innerHTML =
-      "<div class='onpage-toc-title'>On this page</div>" +
-      "<div class='onpage-toc-links'>" +
-      tocItems.map(function (item) {
-        return "<a class='onpage-toc-link " + (item.level === "h3" ? "is-h3" : "is-h2") +
-          "' href='#" + item.id + "' data-target='" + item.id + "'>" + item.text + "</a>";
-      }).join("") +
-      "</div>";
-    document.body.appendChild(toc);
+    var defaultTab = tabs.find(function (t) { return t.classList.contains("is-active"); }) || tabs[0];
+    activate(defaultTab.getAttribute("data-doc-tab"));
+  }
 
-    var links = Array.from(toc.querySelectorAll(".onpage-toc-link"));
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          links.forEach(function (l) {
-            l.classList.toggle("active", l.getAttribute("data-target") === entry.target.id);
-          });
-        }
+  function initOnPageToc() {
+    function renderToc() {
+      var existing = document.querySelector(".onpage-toc");
+      if (existing) existing.remove();
+
+      var activePanel = document.querySelector(".docs-product-panel.is-active");
+      var panel = activePanel || document.querySelector(".docs-main-panel");
+      if (!panel) return;
+
+      var headings = Array.from(panel.querySelectorAll("h2, h3"));
+      if (!headings.length) return;
+
+      var tocItems = headings.map(function (h) {
+        if (!h.id) h.id = slugify(h.textContent);
+        return { id: h.id, text: h.textContent.trim(), level: h.tagName.toLowerCase() };
       });
-    }, { rootMargin: "-20% 0px -70% 0px", threshold: 0 });
 
-    headings.forEach(function (h) { observer.observe(h); });
+      var toc = document.createElement("aside");
+      toc.className = "onpage-toc";
+      toc.innerHTML =
+        "<div class='onpage-toc-title'>On this page</div>" +
+        "<div class='onpage-toc-links'>" +
+        tocItems.map(function (item) {
+          return "<a class='onpage-toc-link " + (item.level === "h3" ? "is-h3" : "is-h2") +
+            "' href='#" + item.id + "' data-target='" + item.id + "'>" + item.text + "</a>";
+        }).join("") +
+        "</div>";
+      document.body.appendChild(toc);
+
+      var links = Array.from(toc.querySelectorAll(".onpage-toc-link"));
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            links.forEach(function (l) {
+              l.classList.toggle("active", l.getAttribute("data-target") === entry.target.id);
+            });
+          }
+        });
+      }, { rootMargin: "-20% 0px -70% 0px", threshold: 0 });
+
+      headings.forEach(function (h) { observer.observe(h); });
+    }
+
+    renderToc();
+    document.addEventListener("docs:panel-change", renderToc);
   }
 
   function init() {
     initVersionSwitchers();
     initDocSearch();
+    initProductTabs();
     initOnPageToc();
   }
 
