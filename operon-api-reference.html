@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Operon API Reference — health, chat, investigations, database, auth, and hierarchy endpoints." />
+  <title>Operon API Reference — Xflore Developer Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main style="padding-top:104px;">
+    <div class="page-hero" style="padding-bottom:56px;">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="container">
+        <span class="tag">Operon API</span>
+        <h1>Operon <span class="grad-text">API Reference</span></h1>
+        <p>Version 0.1.0 · OAS 3.1 · endpoint map for health checks, chat, investigations, auth, and hierarchy resources.</p>
+        <div class="docs-meta-bar">
+          <div class="docs-meta-left">
+            <span>Spec: /openapi.json</span>
+            <span>•</span>
+            <span>Service: Operon API</span>
+          </div>
+          <a class="docs-meta-link" href="api-reference.html">Open Rulex API Reference →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="devhub-topnav-wrap">
+      <div class="devhub-topnav">
+        <a href="docs.html">Home</a>
+        <a href="docs.html">Documentation</a>
+        <a href="platform.html">Platform</a>
+        <a href="code-repository.html">Code Repository</a>
+        <a href="api-reference.html">Rulex API</a>
+        <a href="operon-api-reference.html" class="active">Operon API</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="release-notes.html">Release Notes</a>
+        <a href="university.html">University</a>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="docs-main-panel">
+          <h2 id="operon-overview">Authorize</h2>
+          <p>Use bearer token authorization where required by Operon auth/session routes. Keep this page separate from Rulex API contracts.</p>
+
+          <h3 id="health">health</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/healthz</td><td>Healthz</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/readyz</td><td>Readyz</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 id="api">api</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/chat</td><td>Chat</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/investigations</td><td>Investigations</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/investigations/{investigation_id}</td><td>Get Investigation</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/chat/stream</td><td>Chat Stream</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/investigations/stream</td><td>Investigations Stream</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/database/validate</td><td>Validate Database Provider</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/database/test-connection</td><td>Test Database Connection</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/database/providers</td><td>List Database Providers</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 id="auth">auth</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/auth/register</td><td>Register</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/auth/login</td><td>Login</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/auth/token</td><td>Issue Oauth2 Token</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/auth/exchange</td><td>Exchange Token</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/auth/logout</td><td>Logout</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/auth/session</td><td>Get Session</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/auth/me</td><td>Get Me</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/me/profile</td><td>Get Profile</td></tr>
+                <tr><td><span class="method-pill method-put">PATCH</span></td><td>/api/v1/me/profile</td><td>Update Profile</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/me/organization</td><td>Get Organization</td></tr>
+                <tr><td><span class="method-pill method-put">PATCH</span></td><td>/api/v1/me/organization</td><td>Update Organization</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/me/projects</td><td>List Projects</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/org/members</td><td>List Members</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/org/members/invitations</td><td>Invite Member</td></tr>
+                <tr><td><span class="method-pill method-put">PATCH</span></td><td>/api/v1/org/members/{membership_id}/role</td><td>Update Member Role</td></tr>
+                <tr><td><span class="method-pill method-delete">DELETE</span></td><td>/api/v1/org/members/{membership_id}</td><td>Delete Member</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/me/api-keys</td><td>List Api Keys</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/me/api-keys</td><td>Create Api Key</td></tr>
+                <tr><td><span class="method-pill method-delete">DELETE</span></td><td>/api/v1/me/api-keys/{key_id}</td><td>Delete Api Key</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 id="hierarchy">hierarchy</h3>
+          <div class="docs-endpoint-table-wrap">
+            <table class="docs-endpoint-table">
+              <thead>
+                <tr><th>Method</th><th>Path</th><th>Purpose</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/users/me</td><td>Get User Me</td></tr>
+                <tr><td><span class="method-pill method-put">PATCH</span></td><td>/api/v1/users/me</td><td>Patch User Me</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/users/me/api-keys</td><td>List User Api Keys</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/users/me/api-keys</td><td>Create User Api Key</td></tr>
+                <tr><td><span class="method-pill method-delete">DELETE</span></td><td>/api/v1/users/me/api-keys/{key_id}</td><td>Delete User Api Key</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/orgs</td><td>List Organizations</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/orgs</td><td>Create Organization</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/orgs/{organization_id}</td><td>Get Organization</td></tr>
+                <tr><td><span class="method-pill method-put">PATCH</span></td><td>/api/v1/orgs/{organization_id}</td><td>Patch Organization</td></tr>
+                <tr><td><span class="method-pill method-delete">DELETE</span></td><td>/api/v1/orgs/{organization_id}</td><td>Delete Organization</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/orgs/{organization_id}/domains</td><td>List Org Domains</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/orgs/{organization_id}/domains</td><td>Create Org Domain</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/domains</td><td>List Domains</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/domains/{domain_id}</td><td>Get Domain</td></tr>
+                <tr><td><span class="method-pill method-put">PATCH</span></td><td>/api/v1/domains/{domain_id}</td><td>Patch Domain</td></tr>
+                <tr><td><span class="method-pill method-delete">DELETE</span></td><td>/api/v1/domains/{domain_id}</td><td>Delete Domain</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/projects</td><td>List Projects</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/orgs/{organization_id}/domains/{domain_id}/projects</td><td>List Domain Projects</td></tr>
+                <tr><td><span class="method-pill method-post">POST</span></td><td>/api/v1/orgs/{organization_id}/domains/{domain_id}/projects</td><td>Create Project</td></tr>
+                <tr><td><span class="method-pill method-get">GET</span></td><td>/api/v1/projects/{project_id}</td><td>Get Project</td></tr>
+                <tr><td><span class="method-pill method-put">PATCH</span></td><td>/api/v1/projects/{project_id}</td><td>Patch Project</td></tr>
+                <tr><td><span class="method-pill method-delete">DELETE</span></td><td>/api/v1/projects/{project_id}</td><td>Delete Project</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="nav.js"></script>
+  <script src="docs-portal.js"></script>
+</body>
+</html>
