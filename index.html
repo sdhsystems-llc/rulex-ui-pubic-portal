@@ -10,23 +10,19 @@
   <title>Xflore — Intelligent Business Automation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='100%25' y2='100%25'><stop offset='0' stop-color='%239a8ee6'/><stop offset='1' stop-color='%23d19efb'/></linearGradient></defs><text y='.9em' font-size='72' text-anchor='middle' x='50' font-family='sans-serif' font-weight='800' fill='white'>X</text></svg>" />
   <style>
-    /* ── Xflore Homepage Styles ── */
+    /* ── Hero ── */
     .xflore-hero {
-      position: relative;
-      padding: 140px 0 100px;
-      text-align: center;
-      overflow: hidden;
+      position: relative; padding: 140px 0 100px; text-align: center; overflow: hidden;
     }
     .xflore-hero .hero-grid-bg {
       position: absolute; inset: 0;
       background-image: linear-gradient(rgba(154,142,230,0.04) 1px, transparent 1px),
                         linear-gradient(90deg, rgba(154,142,230,0.04) 1px, transparent 1px);
-      background-size: 48px 48px;
-      pointer-events: none;
+      background-size: 48px 48px; pointer-events: none;
     }
     .xflore-hero .hero-glow {
       position: absolute; top: -120px; left: 50%; transform: translateX(-50%);
@@ -38,35 +34,27 @@
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(154,142,230,0.08); border: 1px solid rgba(154,142,230,0.2);
       color: var(--blue-400); font-size: 13px; font-weight: 600;
-      padding: 6px 16px; border-radius: 99px; margin-bottom: 28px;
-      letter-spacing: 0.02em;
+      padding: 6px 16px; border-radius: 99px; margin-bottom: 28px; letter-spacing: 0.02em;
     }
     .xflore-hero-badge-dot {
       width: 7px; height: 7px; border-radius: 50%;
-      background: var(--blue-400);
-      box-shadow: 0 0 6px var(--blue-400);
+      background: var(--blue-400); box-shadow: 0 0 6px var(--blue-400);
       animation: pulse-dot 2s ease-in-out infinite;
     }
     .xflore-hero h1 {
-      font-size: clamp(40px, 6vw, 72px);
-      font-weight: 900; line-height: 1.08;
-      letter-spacing: -0.04em;
-      margin-bottom: 24px;
+      font-size: clamp(40px, 6vw, 72px); font-weight: 900; line-height: 1.08;
+      letter-spacing: -0.04em; margin-bottom: 24px;
     }
     .xflore-hero-sub {
-      font-size: clamp(16px, 2vw, 20px);
-      color: var(--text-secondary);
-      max-width: 600px; margin: 0 auto 40px;
-      line-height: 1.65;
+      font-size: clamp(16px, 2vw, 20px); color: var(--text-secondary);
+      max-width: 600px; margin: 0 auto 40px; line-height: 1.65;
     }
     .xflore-hero-actions {
-      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
-      margin-bottom: 72px;
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 72px;
     }
     .xflore-stats {
       display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
-      padding-top: 48px;
-      border-top: 1px solid var(--border);
+      padding-top: 48px; border-top: 1px solid var(--border);
     }
     .xflore-stat-item { text-align: center; }
     .xflore-stat-num {
@@ -84,199 +72,297 @@
       border-bottom: 1px solid var(--border);
     }
     .products-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-      margin-top: 56px;
+      display: flex; flex-direction: column; gap: 40px; margin-top: 56px;
     }
-    @media (max-width: 768px) { .products-grid { grid-template-columns: 1fr; } }
 
+    /* Each card: preview left, text right */
     .product-card {
-      background: var(--bg-base);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
+      background: var(--bg-base); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); overflow: hidden;
       transition: var(--transition);
-      display: flex; flex-direction: column;
+      display: grid; grid-template-columns: 1fr 420px;
     }
+    @media (max-width: 960px) { .product-card { grid-template-columns: 1fr; } }
     .product-card:hover {
-      border-color: var(--border-bright);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-glow), var(--shadow-card);
+      border-color: var(--border-bright); box-shadow: var(--shadow-glow), var(--shadow-card);
     }
 
-    .product-card-video-wrap {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: #0d0d1a;
-      overflow: hidden;
+    /* Preview pane */
+    .product-preview {
+      position: relative; background: #0a0a14; overflow: hidden;
+      min-height: 380px;
     }
-    .product-card-video-wrap video {
-      width: 100%; height: 100%; object-fit: cover;
-      display: block;
-    }
-    .product-card-video-placeholder {
-      width: 100%; height: 100%;
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 12px;
-      position: absolute; inset: 0;
-    }
-    .product-card-video-topbar {
-      position: absolute; top: 0; left: 0; right: 0;
+    .product-preview-topbar {
       display: flex; align-items: center; gap: 10px;
-      padding: 10px 16px;
-      background: rgba(10,10,15,0.85);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      z-index: 2;
+      padding: 10px 16px; background: rgba(10,10,20,0.9);
+      border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; z-index: 10;
     }
-    .product-video-dots { display: flex; gap: 5px; }
-    .product-video-dots span {
-      width: 9px; height: 9px; border-radius: 50%;
-    }
-    .product-video-dots span:nth-child(1) { background: #ff5f57; }
-    .product-video-dots span:nth-child(2) { background: #febc2e; }
-    .product-video-dots span:nth-child(3) { background: #28c840; }
-    .product-video-title {
-      font-size: 11px; color: var(--text-secondary); font-weight: 500;
-      flex: 1;
-    }
-    .product-video-badge {
+    .preview-dots { display: flex; gap: 5px; }
+    .preview-dots span { width: 9px; height: 9px; border-radius: 50%; }
+    .preview-dots span:nth-child(1) { background: #ff5f57; }
+    .preview-dots span:nth-child(2) { background: #febc2e; }
+    .preview-dots span:nth-child(3) { background: #28c840; }
+    .preview-bar-title { font-size: 11px; color: rgba(255,255,255,0.4); font-weight: 500; flex: 1; }
+    .preview-bar-badge {
       font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
-      color: var(--blue-400); background: rgba(154,142,230,0.12);
-      border: 1px solid rgba(154,142,230,0.2);
       padding: 2px 8px; border-radius: 99px;
     }
+    .badge-rulex { color: #b3a9ee; background: rgba(154,142,230,0.12); border: 1px solid rgba(154,142,230,0.2); }
+    .badge-operon { color: #2dd4bf; background: rgba(13,148,136,0.12); border: 1px solid rgba(13,148,136,0.25); }
 
-    /* animated placeholder SVG art */
-    .product-anim-rulex {
-      background: linear-gradient(135deg, rgba(154,142,230,0.06) 0%, rgba(209,158,251,0.06) 100%);
+    /* Slide container */
+    .rx-slides {
+      position: absolute; inset: 38px 0 0 0;
+      overflow: hidden;
     }
-    .product-anim-operon {
-      background: linear-gradient(135deg, rgba(20,184,166,0.06) 0%, rgba(6,182,212,0.06) 100%);
-    }
-
-    .anim-canvas {
-      width: 100%; height: 100%;
+    .rx-slide {
       position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      padding: 40px 24px 16px;
+      opacity: 0; transition: none;
+      padding: 16px;
+      display: flex; flex-direction: column;
+    }
+    /* 4-slide cycle: each slide is visible for 3s out of 14s total */
+    .rx-slide:nth-child(1) { animation: slide-fade 14s 0s infinite; }
+    .rx-slide:nth-child(2) { animation: slide-fade 14s 3.5s infinite; }
+    .rx-slide:nth-child(3) { animation: slide-fade 14s 7s infinite; }
+    .rx-slide:nth-child(4) { animation: slide-fade 14s 10.5s infinite; }
+    @keyframes slide-fade {
+      0%    { opacity: 0; }
+      3%    { opacity: 1; }
+      22%   { opacity: 1; }
+      25%   { opacity: 0; }
+      100%  { opacity: 0; }
     }
 
-    /* Rule-X animation: flowing blocks */
-    .rx-anim { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 420px; }
-    .rx-row { display: flex; gap: 8px; align-items: center; }
-    .rx-block {
-      height: 32px; border-radius: 6px; display: flex; align-items: center;
-      padding: 0 12px; font-size: 11px; font-weight: 600; white-space: nowrap;
-      border: 1px solid transparent;
+    /* Slide label strip at bottom */
+    .rx-slide-labels {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
+      display: flex; gap: 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
     }
-    .rx-block.input  { background: rgba(209,158,251,0.12); border-color: rgba(209,158,251,0.25); color: #d19efb; flex: 0 0 110px; animation: rx-pulse 2.4s ease-in-out infinite; }
-    .rx-block.rule   { background: rgba(154,142,230,0.12); border-color: rgba(154,142,230,0.25); color: #b3a9ee; flex: 1; animation: rx-pulse 2.4s ease-in-out 0.3s infinite; }
-    .rx-block.cep    { background: rgba(249,115,22,0.10); border-color: rgba(249,115,22,0.2); color: #fb923c; flex: 0 0 90px; animation: rx-pulse 2.4s ease-in-out 0.6s infinite; }
-    .rx-block.output { background: rgba(52,211,153,0.10); border-color: rgba(52,211,153,0.2); color: #34D399; flex: 1; animation: rx-pulse 2.4s ease-in-out 0.9s infinite; }
-    .rx-block.ai     { background: rgba(236,72,153,0.10); border-color: rgba(236,72,153,0.2); color: #f472b6; flex: 0 0 80px; animation: rx-pulse 2.4s ease-in-out 1.2s infinite; }
-    .rx-arrow { color: var(--text-muted); font-size: 14px; flex-shrink: 0; }
-    .rx-env {
-      display: flex; gap: 6px; margin-top: 4px;
+    .rx-slide-label {
+      flex: 1; text-align: center; font-size: 10px; font-weight: 600;
+      letter-spacing: 0.04em; padding: 7px 4px;
+      color: rgba(255,255,255,0.25); border-right: 1px solid rgba(255,255,255,0.05);
+      transition: color 0.3s;
     }
-    .rx-env-pill {
-      font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 99px;
-      animation: rx-pulse 3s ease-in-out infinite;
-    }
-    .rx-env-pill.dev  { background: rgba(154,142,230,0.12); color: #b3a9ee; border: 1px solid rgba(154,142,230,0.2); }
-    .rx-env-pill.qa   { background: rgba(20,184,166,0.10); color: #2dd4bf; border: 1px solid rgba(20,184,166,0.2); animation-delay: 0.6s; }
-    .rx-env-pill.prod { background: rgba(52,211,153,0.10); color: #34d399; border: 1px solid rgba(52,211,153,0.2); animation-delay: 1.2s; }
-    .rx-env-sep { color: var(--text-muted); font-size: 11px; align-self: center; }
-    @keyframes rx-pulse {
-      0%, 100% { opacity: 0.7; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.01); }
+    .rx-slide-label:last-child { border-right: none; }
+    .rx-slide-label:nth-child(1) { animation: label-active 14s 0s infinite; }
+    .rx-slide-label:nth-child(2) { animation: label-active 14s 3.5s infinite; }
+    .rx-slide-label:nth-child(3) { animation: label-active 14s 7s infinite; }
+    .rx-slide-label:nth-child(4) { animation: label-active 14s 10.5s infinite; }
+    @keyframes label-active {
+      0%   { color: rgba(255,255,255,0.25); background: transparent; }
+      3%   { color: #b3a9ee; background: rgba(154,142,230,0.08); }
+      22%  { color: #b3a9ee; background: rgba(154,142,230,0.08); }
+      25%  { color: rgba(255,255,255,0.25); background: transparent; }
+      100% { color: rgba(255,255,255,0.25); background: transparent; }
     }
 
-    /* Operon animation: workflow graph */
+    /* ── SCREEN 1: Visual Builder ── */
+    .vb-toolbar {
+      display: flex; gap: 6px; align-items: center; margin-bottom: 10px;
+      padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .vb-tab {
+      font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 5px;
+      color: rgba(255,255,255,0.4); cursor: default;
+    }
+    .vb-tab.active { background: rgba(255,255,255,0.08); color: #fff; }
+    .vb-topbar-title { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.6); margin-right: auto; }
+    .vb-btn { font-size: 9px; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
+    .vb-btn-run   { background: #16a34a; color: #fff; }
+    .vb-btn-debug { background: #d97706; color: #fff; }
+    .vb-btn-add   { background: #7c3aed; color: #fff; }
+    .vb-block-row {
+      display: flex; align-items: center; gap: 0;
+      margin-bottom: 4px; border-radius: 6px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.02);
+    }
+    .vb-block-accent { width: 3px; align-self: stretch; flex-shrink: 0; }
+    .vb-block-icon {
+      width: 26px; height: 26px; border-radius: 5px; margin: 6px;
+      display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0;
+    }
+    .vb-block-content { flex: 1; padding: 6px 6px 6px 0; min-width: 0; }
+    .vb-block-name { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.85); }
+    .vb-block-sub  { font-size: 9px; color: rgba(255,255,255,0.35); margin-top: 1px; }
+    .vb-block-type { font-size: 9px; font-weight: 700; letter-spacing: 0.06em; padding: 3px 8px; margin-right: 8px; border-radius: 3px; white-space: nowrap; }
+    .vb-nested {
+      margin-left: 16px; padding: 4px 0 4px 10px;
+      border-left: 2px solid rgba(52,211,153,0.3);
+    }
+    .vb-foreach-pill {
+      font-size: 9px; font-weight: 600; padding: 3px 8px; border-radius: 3px;
+      background: rgba(52,211,153,0.12); color: #34d399; border: 1px solid rgba(52,211,153,0.2);
+      font-family: 'JetBrains Mono', monospace; margin-bottom: 4px; display: inline-block;
+    }
+    .vb-count { font-size: 9px; color: rgba(255,255,255,0.3); padding: 6px 8px; }
+
+    /* ── SCREEN 2: Add Block Panel ── */
+    .ab-header { font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 2px; }
+    .ab-sub    { font-size: 10px; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
+    .ab-search {
+      width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; padding: 6px 10px; font-size: 10px; color: rgba(255,255,255,0.5);
+      margin-bottom: 10px;
+    }
+    .ab-section-label {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3); padding: 6px 0 4px;
+    }
+    .ab-item {
+      display: flex; align-items: center; gap: 8px; padding: 7px 8px;
+      border-radius: 6px; margin-bottom: 2px; border: 1px solid rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.02);
+    }
+    .ab-item-icon {
+      width: 26px; height: 26px; border-radius: 6px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 12px;
+    }
+    .ab-item-name { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.8); }
+    .ab-item-desc { font-size: 9px; color: rgba(255,255,255,0.35); margin-top: 1px; line-height: 1.4; }
+
+    /* ── SCREEN 3: Deployments ── */
+    .dep-header { font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 2px; }
+    .dep-sub    { font-size: 10px; color: rgba(255,255,255,0.4); margin-bottom: 12px; }
+    .dep-stats  { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+    .dep-stat-card {
+      flex: 1; min-width: 60px; background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 8px;
+    }
+    .dep-stat-num  { font-size: 18px; font-weight: 800; color: #fff; line-height: 1; }
+    .dep-stat-label{ font-size: 9px; color: rgba(255,255,255,0.35); margin-top: 2px; }
+    .dep-stat-card.success .dep-stat-num { color: #34d399; }
+    .dep-stat-card.fail    .dep-stat-num { color: #f87171; }
+    .dep-history-header {
+      font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.5);
+      margin-bottom: 6px; display: flex; justify-content: space-between;
+    }
+    .dep-row {
+      display: flex; align-items: center; gap: 8px;
+      padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .dep-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .dep-dot.active { background: #34d399; box-shadow: 0 0 4px #34d399; }
+    .dep-name { font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.8); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .dep-pill {
+      font-size: 9px; font-weight: 600; padding: 2px 7px; border-radius: 3px;
+      background: rgba(154,142,230,0.1); color: #b3a9ee; border: 1px solid rgba(154,142,230,0.2);
+      white-space: nowrap;
+    }
+    .dep-status-pill {
+      font-size: 9px; font-weight: 600; padding: 2px 7px; border-radius: 3px;
+      background: rgba(52,211,153,0.1); color: #34d399; border: 1px solid rgba(52,211,153,0.2);
+      white-space: nowrap;
+    }
+
+    /* ── SCREEN 4: AI Builder ── */
+    .ai-layout { display: flex; gap: 8px; flex: 1; min-height: 0; }
+    .ai-chat-pane {
+      flex: 1; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px; display: flex; flex-direction: column; overflow: hidden;
+    }
+    .ai-chat-header {
+      padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.7);
+    }
+    .ai-chat-sub { font-size: 9px; color: rgba(255,255,255,0.35); margin-top: 1px; }
+    .ai-chat-body {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 6px; padding: 12px;
+    }
+    .ai-chat-icon {
+      width: 36px; height: 36px; background: rgba(52,211,153,0.12);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px;
+    }
+    .ai-chat-prompt { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.6); }
+    .ai-chat-desc   { font-size: 9px; color: rgba(255,255,255,0.3); text-align: center; line-height: 1.4; }
+    .ai-chat-input-bar {
+      padding: 8px; border-top: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.02); border-radius: 0 0 8px 8px;
+    }
+    .ai-chat-input {
+      width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 5px; padding: 5px 8px; font-size: 9px; color: rgba(255,255,255,0.4);
+    }
+    .ai-json-pane {
+      flex: 1; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;
+    }
+    .ai-json-header {
+      padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.7);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .ai-json-body {
+      flex: 1; padding: 10px; overflow: hidden;
+      font-family: 'JetBrains Mono', monospace; font-size: 8.5px; line-height: 1.55;
+      color: rgba(255,255,255,0.5);
+    }
+    .json-key    { color: #7dd3fc; }
+    .json-str    { color: #86efac; }
+    .json-bool   { color: #f9a8d4; }
+    .json-num    { color: #fca5a5; }
+    .json-brace  { color: rgba(255,255,255,0.4); }
+
+    /* Operon animation (unchanged) */
     .op-anim {
-      width: 100%; max-width: 420px;
-      display: flex; flex-direction: column; align-items: center; gap: 0;
-      position: relative;
+      width: 100%; max-width: 320px;
+      display: flex; flex-direction: column; align-items: center; gap: 0; margin: auto;
     }
     .op-row { display: flex; justify-content: center; gap: 16px; width: 100%; }
     .op-node {
       width: 80px; height: 36px; border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
       font-size: 10px; font-weight: 700; letter-spacing: 0.04em;
-      border: 1px solid transparent;
-      animation: op-glow 2.8s ease-in-out infinite;
+      border: 1px solid transparent; animation: op-glow 2.8s ease-in-out infinite;
     }
     .op-node.trigger { background: rgba(6,182,212,0.12); border-color: rgba(6,182,212,0.25); color: #22d3ee; }
     .op-node.step    { background: rgba(20,184,166,0.12); border-color: rgba(20,184,166,0.25); color: #2dd4bf; animation-delay: 0.4s; }
     .op-node.branch  { background: rgba(154,142,230,0.12); border-color: rgba(154,142,230,0.25); color: #b3a9ee; animation-delay: 0.8s; }
     .op-node.action  { background: rgba(249,115,22,0.10); border-color: rgba(249,115,22,0.2); color: #fb923c; animation-delay: 1.2s; }
     .op-node.end     { background: rgba(52,211,153,0.10); border-color: rgba(52,211,153,0.2); color: #34d399; animation-delay: 1.6s; }
-    .op-connector {
-      display: flex; justify-content: center; align-items: center;
-      height: 20px; gap: 40px;
-    }
-    .op-connector-line {
-      width: 1px; height: 100%;
-      background: linear-gradient(to bottom, rgba(154,142,230,0.3), rgba(154,142,230,0.1));
-    }
+    .op-connector    { display: flex; justify-content: center; align-items: center; height: 20px; gap: 40px; }
+    .op-connector-line { width: 1px; height: 100%; background: linear-gradient(to bottom, rgba(154,142,230,0.3), rgba(154,142,230,0.1)); }
     @keyframes op-glow {
       0%, 100% { opacity: 0.65; box-shadow: none; }
       50% { opacity: 1; box-shadow: 0 0 12px rgba(20,184,166,0.2); }
     }
 
+    /* Card body */
     .product-card-body {
-      padding: 28px 28px 32px;
-      display: flex; flex-direction: column; gap: 16px; flex: 1;
+      padding: 36px 36px 36px;
+      display: flex; flex-direction: column; gap: 18px;
+      justify-content: center;
     }
-    .product-card-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    }
-    .product-card-label.rulex { color: var(--blue-400); }
+    @media (max-width: 960px) { .product-card-body { padding: 28px; } }
+    .product-card-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .product-card-label.rulex  { color: var(--blue-400); }
     .product-card-label.operon { color: #2dd4bf; }
-    .product-card-name {
-      font-size: 26px; font-weight: 800; letter-spacing: -0.03em;
-      line-height: 1.1;
-    }
-    .product-card-desc {
-      font-size: 15px; color: var(--text-secondary); line-height: 1.65;
-    }
-    .product-card-tags {
-      display: flex; flex-wrap: wrap; gap: 8px;
-    }
-    .product-card-tag {
+    .product-card-name  { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; }
+    .product-card-desc  { font-size: 15px; color: var(--text-secondary); line-height: 1.65; }
+    .product-card-tags  { display: flex; flex-wrap: wrap; gap: 8px; }
+    .product-card-tag   {
       font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 6px;
-      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
-      color: var(--text-secondary);
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--text-secondary);
     }
-    .product-card-actions {
-      display: flex; gap: 12px; flex-wrap: wrap; margin-top: auto; padding-top: 8px;
-    }
+    .product-card-actions { display: flex; gap: 12px; flex-wrap: wrap; padding-top: 4px; }
     .btn-teal {
-      background: linear-gradient(135deg, #0d9488, #06b6d4);
-      color: #fff; box-shadow: 0 0 20px rgba(13,148,136,0.28);
+      background: linear-gradient(135deg, #0d9488, #06b6d4); color: #fff;
+      box-shadow: 0 0 20px rgba(13,148,136,0.28);
     }
-    .btn-teal:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 0 32px rgba(13,148,136,0.44);
-    }
+    .btn-teal:hover { transform: translateY(-1px); box-shadow: 0 0 32px rgba(13,148,136,0.44); }
 
-    /* ── Company Values ── */
+    /* Company Values */
     .values-section { padding: 100px 0; }
-    .values-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px;
-    }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
     @media (max-width: 768px) { .values-grid { grid-template-columns: 1fr; } }
     .value-card {
       background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 28px;
-      transition: var(--transition);
+      border-radius: var(--radius-lg); padding: 28px; transition: var(--transition);
     }
-    .value-card:hover {
-      border-color: var(--border-bright);
-      background: var(--bg-card-hover);
-    }
+    .value-card:hover { border-color: var(--border-bright); background: var(--bg-card-hover); }
     .value-icon {
       width: 44px; height: 44px; border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
@@ -343,41 +429,264 @@
 
       <div class="products-grid">
 
-        <!-- Rule-X Card -->
+        <!-- ── Rule-X Card ───────────────────────────────────────── -->
         <div class="product-card">
-          <div class="product-card-video-wrap product-anim-rulex">
-            <div class="product-card-video-topbar">
-              <div class="product-video-dots"><span></span><span></span><span></span></div>
-              <div class="product-video-title">Rule-X Studio | Live Preview</div>
-              <div class="product-video-badge">RULE ENGINE</div>
+
+          <!-- Preview: 4-screen animated slideshow -->
+          <div class="product-preview">
+            <div class="product-preview-topbar">
+              <div class="preview-dots"><span></span><span></span><span></span></div>
+              <div class="preview-bar-title">Rule-X Studio</div>
+              <div class="preview-bar-badge badge-rulex">RULE ENGINE</div>
             </div>
-            <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.001;" aria-hidden="true">
-              <source src="assets/rulex-pipeline-walkthrough.mp4" type="video/mp4" />
-            </video>
-            <div class="anim-canvas" id="rulexAnimCanvas">
-              <div class="rx-anim">
-                <div class="rx-row">
-                  <div class="rx-block input">Input Schema</div>
-                  <div class="rx-arrow">→</div>
-                  <div class="rx-block rule">IF / THEN Rule Row</div>
-                  <div class="rx-arrow">→</div>
-                  <div class="rx-block cep">CEP Rule</div>
+
+            <div class="rx-slides">
+
+              <!-- SLIDE 1: Visual Builder -->
+              <div class="rx-slide">
+                <div class="vb-toolbar">
+                  <span class="vb-topbar-title">Actionblocktest</span>
+                  <span class="vb-tab active">Visual Builder</span>
+                  <span class="vb-tab">AI Builder</span>
+                  <span class="vb-tab">JSON</span>
+                  <span class="vb-tab">Testing</span>
+                  <span class="vb-tab">Deployments</span>
+                  <span style="margin-left:auto;display:flex;gap:4px;">
+                    <span class="vb-btn vb-btn-run">▷ Run</span>
+                    <span class="vb-btn vb-btn-debug">⚙ Debug</span>
+                    <span class="vb-btn vb-btn-add">+ Add Block</span>
+                  </span>
                 </div>
-                <div class="rx-row">
-                  <div class="rx-block ai">AI Build</div>
-                  <div class="rx-arrow">→</div>
-                  <div class="rx-block output">Output Schema</div>
+                <!-- Block 1: Input -->
+                <div class="vb-block-row">
+                  <div class="vb-block-accent" style="background:#f59e0b;"></div>
+                  <div class="vb-block-icon" style="background:rgba(245,158,11,0.15);">🔵</div>
+                  <div class="vb-block-content">
+                    <div class="vb-block-name">NewInput</div>
+                    <div class="vb-block-sub">Sample JSON • 8 fields defined</div>
+                  </div>
+                  <div class="vb-block-type" style="color:#f59e0b;background:rgba(245,158,11,0.1);">INPUT</div>
                 </div>
-                <div class="rx-env" style="margin-top:12px;">
-                  <div class="rx-env-pill dev">Dev</div>
-                  <div class="rx-env-sep">→</div>
-                  <div class="rx-env-pill qa">QA</div>
-                  <div class="rx-env-sep">→</div>
-                  <div class="rx-env-pill prod">Production</div>
+                <!-- Block 2: ForEach -->
+                <div class="vb-block-row" style="border-color:rgba(52,211,153,0.2);">
+                  <div class="vb-block-accent" style="background:#34d399;"></div>
+                  <div class="vb-block-icon" style="background:rgba(52,211,153,0.12);">🔄</div>
+                  <div class="vb-block-content">
+                    <div class="vb-block-name">NewForeachblock</div>
+                    <div class="vb-block-sub">for item in contacts • 1 nested block</div>
+                  </div>
+                  <div class="vb-block-type" style="color:#34d399;background:rgba(52,211,153,0.1);">FOREACH</div>
+                </div>
+                <!-- Nested -->
+                <div class="vb-nested">
+                  <div class="vb-foreach-pill">FOR EACH contacts[item] from 0 to contacts.length step 1</div>
+                  <div class="vb-block-row" style="background:rgba(123,99,255,0.06);border-color:rgba(123,99,255,0.15);">
+                    <div class="vb-block-accent" style="background:#7c63ff;"></div>
+                    <div class="vb-block-icon" style="background:rgba(123,99,255,0.15);">📋</div>
+                    <div class="vb-block-content">
+                      <div class="vb-block-name">Decisiontable</div>
+                      <div class="vb-block-sub">DECISION TABLE</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Block 3: Output -->
+                <div class="vb-block-row" style="margin-top:4px;">
+                  <div class="vb-block-accent" style="background:#f97316;"></div>
+                  <div class="vb-block-icon" style="background:rgba(249,115,22,0.15);">🔴</div>
+                  <div class="vb-block-content">
+                    <div class="vb-block-name">NewOutput</div>
+                    <div class="vb-block-sub">8 output fields</div>
+                  </div>
+                  <div class="vb-block-type" style="color:#f97316;background:rgba(249,115,22,0.1);">OUTPUT</div>
+                </div>
+                <div class="vb-count">3 blocks in execution flow</div>
+              </div>
+
+              <!-- SLIDE 2: Add Block Panel -->
+              <div class="rx-slide">
+                <div style="display:flex;gap:10px;height:100%;">
+                  <!-- blurred background hint -->
+                  <div style="flex:1;opacity:0.25;">
+                    <div class="vb-toolbar">
+                      <span class="vb-topbar-title">Actionblocktest</span>
+                      <span class="vb-tab active">Visual Builder</span>
+                    </div>
+                    <div class="vb-block-row"><div class="vb-block-accent" style="background:#f59e0b;"></div><div class="vb-block-content"><div class="vb-block-name">NewInput</div></div></div>
+                    <div class="vb-block-row" style="margin-top:4px;"><div class="vb-block-accent" style="background:#34d399;"></div><div class="vb-block-content"><div class="vb-block-name">NewForeachblock</div></div></div>
+                  </div>
+                  <!-- Add Block drawer -->
+                  <div style="width:200px;background:rgba(15,15,22,0.98);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:0;overflow:hidden;">
+                    <div class="ab-header">Add Block</div>
+                    <div class="ab-sub">Choose a block type to add to your flow</div>
+                    <input class="ab-search" type="text" placeholder="Search blocks..." readonly />
+                    <div style="overflow:hidden;flex:1;">
+                      <div class="ab-section-label">Data Sources</div>
+                      <div class="ab-item">
+                        <div class="ab-item-icon" style="background:rgba(14,165,233,0.15);">🌐</div>
+                        <div><div class="ab-item-name">External API</div><div class="ab-item-desc">Fetch data from REST APIs</div></div>
+                      </div>
+                      <div class="ab-item">
+                        <div class="ab-item-icon" style="background:rgba(34,197,94,0.15);">🗄️</div>
+                        <div><div class="ab-item-name">SQL Query</div><div class="ab-item-desc">Execute SQL queries</div></div>
+                      </div>
+                      <div class="ab-item">
+                        <div class="ab-item-icon" style="background:rgba(99,102,241,0.15);">🔀</div>
+                        <div><div class="ab-item-name">Transform</div><div class="ab-item-desc">Reformat or compute fields</div></div>
+                      </div>
+                      <div class="ab-section-label">Logic</div>
+                      <div class="ab-item">
+                        <div class="ab-item-icon" style="background:rgba(139,92,246,0.15);">⚡</div>
+                        <div><div class="ab-item-name">Execute Rule</div><div class="ab-item-desc">Call another rule as sub-process</div></div>
+                      </div>
+                      <div class="ab-item">
+                        <div class="ab-item-icon" style="background:rgba(99,102,241,0.15);">📋</div>
+                        <div><div class="ab-item-name">Decision Table</div><div class="ab-item-desc">Tabular conditions & actions</div></div>
+                      </div>
+                      <div class="ab-item">
+                        <div class="ab-item-icon" style="background:rgba(34,197,94,0.15);">📐</div>
+                        <div><div class="ab-item-name">Rule Row</div><div class="ab-item-desc">IF/THEN conditions</div></div>
+                      </div>
+                      <div class="ab-item">
+                        <div class="ab-item-icon" style="background:rgba(245,158,11,0.15);">⏱️</div>
+                        <div><div class="ab-item-name">Temporal Rule</div><div class="ab-item-desc">Time-based conditions</div></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              <!-- SLIDE 3: Deployments Dashboard -->
+              <div class="rx-slide">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+                  <div style="width:24px;height:24px;background:rgba(52,211,153,0.15);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;">🚀</div>
+                  <div>
+                    <div class="dep-header">Deployments</div>
+                    <div class="dep-sub">Promote rules across environments with confidence</div>
+                  </div>
+                  <div style="margin-left:auto;display:flex;gap:4px;">
+                    <span style="font-size:8px;font-weight:700;padding:3px 7px;border-radius:4px;background:rgba(249,115,22,0.1);color:#fb923c;border:1px solid rgba(249,115,22,0.2);">Batch Rollback</span>
+                    <span style="font-size:8px;font-weight:700;padding:3px 7px;border-radius:4px;background:rgba(154,142,230,0.1);color:#b3a9ee;border:1px solid rgba(154,142,230,0.2);">+ New Deployment</span>
+                  </div>
+                </div>
+                <div class="dep-stats">
+                  <div class="dep-stat-card">
+                    <div class="dep-stat-num">16</div>
+                    <div class="dep-stat-label">Total</div>
+                  </div>
+                  <div class="dep-stat-card success">
+                    <div class="dep-stat-num">16</div>
+                    <div class="dep-stat-label">Successful</div>
+                  </div>
+                  <div class="dep-stat-card fail">
+                    <div class="dep-stat-num">0</div>
+                    <div class="dep-stat-label">Failed</div>
+                  </div>
+                  <div class="dep-stat-card">
+                    <div class="dep-stat-num">0</div>
+                    <div class="dep-stat-label">In Progress</div>
+                  </div>
+                  <div class="dep-stat-card">
+                    <div class="dep-stat-num">0</div>
+                    <div class="dep-stat-label">Scheduled</div>
+                  </div>
+                </div>
+                <div class="dep-history-header">
+                  <span>Deployment History</span>
+                  <span style="background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:99px;font-size:9px;">16 deployments</span>
+                </div>
+                <div class="dep-row">
+                  <div class="dep-dot active"></div>
+                  <div class="dep-name">desciontabletest</div>
+                  <div class="dep-pill">v18</div>
+                  <div class="dep-status-pill">Active</div>
+                </div>
+                <div class="dep-row">
+                  <div class="dep-dot active"></div>
+                  <div class="dep-name">Account Status Check</div>
+                  <div class="dep-pill">v7</div>
+                  <div class="dep-status-pill">Active</div>
+                </div>
+                <div class="dep-row">
+                  <div class="dep-dot active"></div>
+                  <div class="dep-name">Account available check</div>
+                  <div class="dep-pill">v14</div>
+                  <div class="dep-status-pill">Active</div>
+                </div>
+                <div class="dep-row">
+                  <div class="dep-dot active"></div>
+                  <div class="dep-name">externalapitest</div>
+                  <div class="dep-pill">v6</div>
+                  <div class="dep-status-pill">Active</div>
+                </div>
+              </div>
+
+              <!-- SLIDE 4: AI Builder -->
+              <div class="rx-slide">
+                <div class="vb-toolbar">
+                  <span class="vb-topbar-title">Actionblocktest</span>
+                  <span class="vb-tab">Visual Builder</span>
+                  <span class="vb-tab active">AI Builder</span>
+                  <span class="vb-tab">JSON</span>
+                  <span class="vb-tab">Testing</span>
+                  <span class="vb-tab">Deployments</span>
+                  <span style="margin-left:auto;display:flex;gap:4px;">
+                    <span class="vb-btn" style="background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.6);">✓ Validate</span>
+                    <span class="vb-btn vb-btn-add">Commit</span>
+                  </span>
+                </div>
+                <div class="ai-layout">
+                  <div class="ai-chat-pane">
+                    <div class="ai-chat-header">
+                      AI Builder
+                      <div class="ai-chat-sub">Chat with AI to build and modify rules</div>
+                    </div>
+                    <div class="ai-chat-body">
+                      <div class="ai-chat-icon">✦</div>
+                      <div class="ai-chat-prompt">Start a conversation</div>
+                      <div class="ai-chat-desc">Ask me to update rule conditions or actions, explain how your rule works, or analyze requirements.</div>
+                    </div>
+                    <div class="ai-chat-input-bar">
+                      <input class="ai-chat-input" type="text" placeholder="Describe changes to conditions or actions..." readonly />
+                    </div>
+                  </div>
+                  <div class="ai-json-pane">
+                    <div class="ai-json-header">
+                      <span>Current Rule</span>
+                      <span style="font-size:9px;color:rgba(255,255,255,0.3);">Live JSON</span>
+                    </div>
+                    <div class="ai-json-body">
+                      <span class="json-brace">{</span><br/>
+&nbsp;&nbsp;<span class="json-key">"version"</span>: <span class="json-str">"1.0"</span>,<br/>
+&nbsp;&nbsp;<span class="json-key">"blocks"</span>: <span class="json-brace">[</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-brace">{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"name"</span>: <span class="json-str">"NewInput"</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"order"</span>: <span class="json-num">1</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"blockType"</span>: <span class="json-str">"input"</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"isEnabled"</span>: <span class="json-bool">true</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"configuration"</span>: <span class="json-brace">{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"fields"</span>: <span class="json-brace">[</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-brace">{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"name"</span>: <span class="json-str">"count"</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"type"</span>: <span class="json-str">"integer"</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"required"</span>: <span class="json-bool">false</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-brace">}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /.rx-slides -->
+
+            <!-- Slide labels -->
+            <div class="rx-slide-labels">
+              <div class="rx-slide-label">Visual Builder</div>
+              <div class="rx-slide-label">Block Types</div>
+              <div class="rx-slide-label">Deployments</div>
+              <div class="rx-slide-label">AI Builder</div>
             </div>
-          </div>
+
+          </div><!-- /.product-preview -->
+
           <div class="product-card-body">
             <div class="product-card-label rulex">Rule-X</div>
             <div class="product-card-name">The AI-Powered<br />Rule Engine</div>
@@ -396,27 +705,22 @@
               <a href="features.html" class="btn btn-outline" style="font-size:14px;padding:11px 22px;">View Features</a>
             </div>
           </div>
-        </div>
 
-        <!-- Operon Card -->
+        </div><!-- /.product-card (Rule-X) -->
+
+        <!-- ── Operon Card ────────────────────────────────────────── -->
         <div class="product-card">
-          <div class="product-card-video-wrap product-anim-operon">
-            <div class="product-card-video-topbar">
-              <div class="product-video-dots"><span></span><span></span><span></span></div>
-              <div class="product-video-title">Operon Studio | Live Preview</div>
-              <div class="product-video-badge" style="color:#2dd4bf;background:rgba(13,148,136,0.12);border-color:rgba(13,148,136,0.25);">ORCHESTRATION</div>
+
+          <div class="product-preview" style="background:linear-gradient(135deg,rgba(13,148,136,0.04),rgba(6,182,212,0.04));">
+            <div class="product-preview-topbar">
+              <div class="preview-dots"><span></span><span></span><span></span></div>
+              <div class="preview-bar-title">Operon Studio</div>
+              <div class="preview-bar-badge badge-operon">ORCHESTRATION</div>
             </div>
-            <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.001;" aria-hidden="true">
-              <source src="assets/operon-walkthrough.mp4" type="video/mp4" />
-            </video>
-            <div class="anim-canvas">
+            <div style="position:absolute;inset:38px 0 0 0;display:flex;align-items:center;justify-content:center;">
               <div class="op-anim">
-                <div class="op-row">
-                  <div class="op-node trigger">TRIGGER</div>
-                </div>
-                <div class="op-connector">
-                  <div class="op-connector-line"></div>
-                </div>
+                <div class="op-row"><div class="op-node trigger">TRIGGER</div></div>
+                <div class="op-connector"><div class="op-connector-line"></div></div>
                 <div class="op-row">
                   <div class="op-node step">STEP 1</div>
                   <div class="op-node branch">BRANCH</div>
@@ -433,12 +737,11 @@
                   <div class="op-connector-line"></div>
                   <div class="op-connector-line"></div>
                 </div>
-                <div class="op-row">
-                  <div class="op-node end">COMPLETE</div>
-                </div>
+                <div class="op-row"><div class="op-node end">COMPLETE</div></div>
               </div>
             </div>
           </div>
+
           <div class="product-card-body">
             <div class="product-card-label operon">Operon</div>
             <div class="product-card-name">Process<br />Orchestration</div>
@@ -457,9 +760,10 @@
               <a href="contact.html" class="btn btn-outline" style="font-size:14px;padding:11px 22px;">Join Waitlist</a>
             </div>
           </div>
-        </div>
 
-      </div>
+        </div><!-- /.product-card (Operon) -->
+
+      </div><!-- /.products-grid -->
     </div>
   </section>
 
