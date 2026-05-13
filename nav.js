@@ -27,14 +27,14 @@
             <div class="dropdown-section-label">Platform</div>
             <div class="dropdown-grid">
               <a href="features.html" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(154,142,230,0.1);border-color:rgba(154,142,230,0.2);">🎨</div>
+                <div class="dropdown-item-icon" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);">🎨</div>
                 <div>
                   <div class="dropdown-item-title">Visual Block Builder</div>
                   <div class="dropdown-item-desc">Drag-and-drop rule authoring</div>
                 </div>
               </a>
               <a href="features.html#ai" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(123,111,212,0.1);border-color:rgba(123,111,212,0.2);">🤖</div>
+                <div class="dropdown-item-icon" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);">🤖</div>
                 <div>
                   <div class="dropdown-item-title">AI Rule Generation</div>
                   <div class="dropdown-item-desc">Natural language to rules</div>
@@ -62,7 +62,7 @@
                 </div>
               </a>
               <a href="features.html#collab" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(123,111,212,0.1);border-color:rgba(123,111,212,0.2);">👥</div>
+                <div class="dropdown-item-icon" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);">👥</div>
                 <div>
                   <div class="dropdown-item-title">Collaboration</div>
                   <div class="dropdown-item-desc">Real-time team rule authoring</div>
