@@ -60,7 +60,6 @@
         </li>
 
         <li><a href="customers.html">Customers</a></li>
-        <li><a href="open-source.html">Open Source</a></li>
         <li><a href="pricing.html">Pricing</a></li>
 
         <!-- Developer -->
@@ -78,7 +77,6 @@
                 <a href="roadmap.html" class="dropdown-item-simple"><span>🗺️</span> Roadmap</a>
                 <a href="release-notes.html" class="dropdown-item-simple"><span>📝</span> Release Notes</a>
                 <a href="university.html" class="dropdown-item-simple"><span>🎓</span> University</a>
-                <a href="open-source.html" class="dropdown-item-simple"><span>♥</span> Commitment to Open Source</a>
               </div>
               <div>
                 <div class="dropdown-section-label">Community</div>
@@ -153,7 +151,6 @@
       <a href="contact.html">Join Waitlist</a>
       <div class="mobile-section-label">Company</div>
       <a href="customers.html">Customers</a>
-      <a href="open-source.html">Open Source</a>
       <a href="pricing.html">Pricing</a>
       <div class="mobile-section-label">Developer</div>
       <a href="docs.html">Documentation</a>
@@ -232,7 +229,6 @@
             <li><a href="university.html">University</a></li>
             <li><a href="docs.html">Developer Hub</a></li>
             <li><a href="community.html#blog">Engineering Blog</a></li>
-            <li><a href="open-source.html">Open Source</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -288,7 +284,6 @@
     { title: 'University', href: 'university.html' },
     { title: 'Community', href: 'community.html' },
     { title: 'Customers', href: 'customers.html' },
-    { title: 'Open Source', href: 'open-source.html' },
     { title: 'Pricing', href: 'pricing.html' },
     { title: 'Contact', href: 'contact.html' }
   ];
