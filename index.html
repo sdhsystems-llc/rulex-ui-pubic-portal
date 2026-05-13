@@ -89,37 +89,38 @@
 
     /* Preview pane */
     .product-preview {
-      position: relative; background: #0a0a14; overflow: hidden;
-      min-height: 380px;
+      position: relative; background: #f8fafc; overflow: hidden;
+      min-height: 380px; border-right: 1px solid #e8ecf0;
     }
     .product-preview-topbar {
       display: flex; align-items: center; gap: 10px;
-      padding: 10px 16px; background: rgba(10,10,20,0.9);
-      border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; z-index: 10;
+      padding: 10px 16px; background: #fff;
+      border-bottom: 1px solid #e8ecf0; position: relative; z-index: 10;
     }
     .preview-dots { display: flex; gap: 5px; }
     .preview-dots span { width: 9px; height: 9px; border-radius: 50%; }
     .preview-dots span:nth-child(1) { background: #ff5f57; }
     .preview-dots span:nth-child(2) { background: #febc2e; }
     .preview-dots span:nth-child(3) { background: #28c840; }
-    .preview-bar-title { font-size: 11px; color: rgba(255,255,255,0.4); font-weight: 500; flex: 1; }
+    .preview-bar-title { font-size: 11px; color: #94a3b8; font-weight: 500; flex: 1; }
     .preview-bar-badge {
       font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
       padding: 2px 8px; border-radius: 99px;
     }
-    .badge-rulex { color: #b3a9ee; background: rgba(154,142,230,0.12); border: 1px solid rgba(154,142,230,0.2); }
-    .badge-operon { color: #2dd4bf; background: rgba(13,148,136,0.12); border: 1px solid rgba(13,148,136,0.25); }
+    .badge-rulex { color: #6d5ce7; background: rgba(109,92,231,0.08); border: 1px solid rgba(109,92,231,0.2); }
+    .badge-operon { color: #0d9488; background: rgba(13,148,136,0.08); border: 1px solid rgba(13,148,136,0.2); }
 
     /* Slide container */
     .rx-slides {
-      position: absolute; inset: 38px 0 0 0;
+      position: absolute; inset: 38px 0 28px 0;
       overflow: hidden;
     }
     .rx-slide {
       position: absolute; inset: 0;
       opacity: 0; transition: none;
-      padding: 16px;
+      padding: 14px;
       display: flex; flex-direction: column;
+      background: #f8fafc;
     }
     /* 4-slide cycle: each slide is visible for 3s out of 14s total */
     .rx-slide:nth-child(1) { animation: slide-fade 14s 0s infinite; }
@@ -138,12 +139,12 @@
     .rx-slide-labels {
       position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
       display: flex; gap: 0;
-      border-top: 1px solid rgba(255,255,255,0.05);
+      border-top: 1px solid #e8ecf0; background: #fff;
     }
     .rx-slide-label {
       flex: 1; text-align: center; font-size: 10px; font-weight: 600;
-      letter-spacing: 0.04em; padding: 7px 4px;
-      color: rgba(255,255,255,0.25); border-right: 1px solid rgba(255,255,255,0.05);
+      letter-spacing: 0.03em; padding: 7px 4px;
+      color: #94a3b8; border-right: 1px solid #e8ecf0;
       transition: color 0.3s;
     }
     .rx-slide-label:last-child { border-right: none; }
@@ -152,32 +153,32 @@
     .rx-slide-label:nth-child(3) { animation: label-active 14s 7s infinite; }
     .rx-slide-label:nth-child(4) { animation: label-active 14s 10.5s infinite; }
     @keyframes label-active {
-      0%   { color: rgba(255,255,255,0.25); background: transparent; }
-      3%   { color: #b3a9ee; background: rgba(154,142,230,0.08); }
-      22%  { color: #b3a9ee; background: rgba(154,142,230,0.08); }
-      25%  { color: rgba(255,255,255,0.25); background: transparent; }
-      100% { color: rgba(255,255,255,0.25); background: transparent; }
+      0%   { color: #94a3b8; background: #fff; }
+      3%   { color: #6d5ce7; background: rgba(109,92,231,0.06); }
+      22%  { color: #6d5ce7; background: rgba(109,92,231,0.06); }
+      25%  { color: #94a3b8; background: #fff; }
+      100% { color: #94a3b8; background: #fff; }
     }
 
     /* ── SCREEN 1: Visual Builder ── */
     .vb-toolbar {
       display: flex; gap: 6px; align-items: center; margin-bottom: 10px;
-      padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 8px; border-bottom: 1px solid #e8ecf0;
     }
     .vb-tab {
       font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 5px;
-      color: rgba(255,255,255,0.4); cursor: default;
+      color: #94a3b8; cursor: default;
     }
-    .vb-tab.active { background: rgba(255,255,255,0.08); color: #fff; }
-    .vb-topbar-title { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.6); margin-right: auto; }
+    .vb-tab.active { background: #f1f5f9; color: #1e293b; }
+    .vb-topbar-title { font-size: 10px; font-weight: 700; color: #475569; margin-right: auto; }
     .vb-btn { font-size: 9px; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
     .vb-btn-run   { background: #16a34a; color: #fff; }
     .vb-btn-debug { background: #d97706; color: #fff; }
-    .vb-btn-add   { background: #7c3aed; color: #fff; }
+    .vb-btn-add   { background: #6d5ce7; color: #fff; }
     .vb-block-row {
       display: flex; align-items: center; gap: 0;
       margin-bottom: 4px; border-radius: 6px; overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.02);
+      border: 1px solid #e2e8f0; background: #fff;
     }
     .vb-block-accent { width: 3px; align-self: stretch; flex-shrink: 0; }
     .vb-block-icon {
@@ -185,126 +186,126 @@
       display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0;
     }
     .vb-block-content { flex: 1; padding: 6px 6px 6px 0; min-width: 0; }
-    .vb-block-name { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.85); }
-    .vb-block-sub  { font-size: 9px; color: rgba(255,255,255,0.35); margin-top: 1px; }
+    .vb-block-name { font-size: 10px; font-weight: 700; color: #1e293b; }
+    .vb-block-sub  { font-size: 9px; color: #94a3b8; margin-top: 1px; }
     .vb-block-type { font-size: 9px; font-weight: 700; letter-spacing: 0.06em; padding: 3px 8px; margin-right: 8px; border-radius: 3px; white-space: nowrap; }
     .vb-nested {
       margin-left: 16px; padding: 4px 0 4px 10px;
-      border-left: 2px solid rgba(52,211,153,0.3);
+      border-left: 2px solid rgba(16,185,129,0.3);
     }
     .vb-foreach-pill {
       font-size: 9px; font-weight: 600; padding: 3px 8px; border-radius: 3px;
-      background: rgba(52,211,153,0.12); color: #34d399; border: 1px solid rgba(52,211,153,0.2);
+      background: rgba(16,185,129,0.08); color: #059669; border: 1px solid rgba(16,185,129,0.2);
       font-family: 'JetBrains Mono', monospace; margin-bottom: 4px; display: inline-block;
     }
-    .vb-count { font-size: 9px; color: rgba(255,255,255,0.3); padding: 6px 8px; }
+    .vb-count { font-size: 9px; color: #94a3b8; padding: 6px 8px; }
 
     /* ── SCREEN 2: Add Block Panel ── */
-    .ab-header { font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 2px; }
-    .ab-sub    { font-size: 10px; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
+    .ab-header { font-size: 13px; font-weight: 800; color: #1e293b; margin-bottom: 2px; }
+    .ab-sub    { font-size: 10px; color: #64748b; margin-bottom: 10px; }
     .ab-search {
-      width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 6px; padding: 6px 10px; font-size: 10px; color: rgba(255,255,255,0.5);
+      width: 100%; background: #f8fafc; border: 1px solid #e2e8f0;
+      border-radius: 6px; padding: 6px 10px; font-size: 10px; color: #94a3b8;
       margin-bottom: 10px;
     }
     .ab-section-label {
       font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-      color: rgba(255,255,255,0.3); padding: 6px 0 4px;
+      color: #94a3b8; padding: 6px 0 4px;
     }
     .ab-item {
       display: flex; align-items: center; gap: 8px; padding: 7px 8px;
-      border-radius: 6px; margin-bottom: 2px; border: 1px solid rgba(255,255,255,0.04);
-      background: rgba(255,255,255,0.02);
+      border-radius: 6px; margin-bottom: 2px; border: 1px solid #e2e8f0;
+      background: #fff;
     }
     .ab-item-icon {
       width: 26px; height: 26px; border-radius: 6px; flex-shrink: 0;
       display: flex; align-items: center; justify-content: center; font-size: 12px;
     }
-    .ab-item-name { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.8); }
-    .ab-item-desc { font-size: 9px; color: rgba(255,255,255,0.35); margin-top: 1px; line-height: 1.4; }
+    .ab-item-name { font-size: 10px; font-weight: 700; color: #1e293b; }
+    .ab-item-desc { font-size: 9px; color: #64748b; margin-top: 1px; line-height: 1.4; }
 
     /* ── SCREEN 3: Deployments ── */
-    .dep-header { font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 2px; }
-    .dep-sub    { font-size: 10px; color: rgba(255,255,255,0.4); margin-bottom: 12px; }
+    .dep-header { font-size: 14px; font-weight: 800; color: #1e293b; margin-bottom: 2px; }
+    .dep-sub    { font-size: 10px; color: #64748b; margin-bottom: 12px; }
     .dep-stats  { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
     .dep-stat-card {
-      flex: 1; min-width: 60px; background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 8px;
+      flex: 1; min-width: 60px; background: #fff;
+      border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px;
     }
-    .dep-stat-num  { font-size: 18px; font-weight: 800; color: #fff; line-height: 1; }
-    .dep-stat-label{ font-size: 9px; color: rgba(255,255,255,0.35); margin-top: 2px; }
-    .dep-stat-card.success .dep-stat-num { color: #34d399; }
-    .dep-stat-card.fail    .dep-stat-num { color: #f87171; }
+    .dep-stat-num  { font-size: 18px; font-weight: 800; color: #1e293b; line-height: 1; }
+    .dep-stat-label{ font-size: 9px; color: #94a3b8; margin-top: 2px; }
+    .dep-stat-card.success .dep-stat-num { color: #059669; }
+    .dep-stat-card.fail    .dep-stat-num { color: #dc2626; }
     .dep-history-header {
-      font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.5);
+      font-size: 10px; font-weight: 700; color: #475569;
       margin-bottom: 6px; display: flex; justify-content: space-between;
     }
     .dep-row {
       display: flex; align-items: center; gap: 8px;
-      padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 7px 0; border-bottom: 1px solid #f1f5f9;
     }
     .dep-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-    .dep-dot.active { background: #34d399; box-shadow: 0 0 4px #34d399; }
-    .dep-name { font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.8); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .dep-dot.active { background: #059669; box-shadow: 0 0 4px rgba(5,150,105,0.4); }
+    .dep-name { font-size: 10px; font-weight: 600; color: #334155; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .dep-pill {
       font-size: 9px; font-weight: 600; padding: 2px 7px; border-radius: 3px;
-      background: rgba(154,142,230,0.1); color: #b3a9ee; border: 1px solid rgba(154,142,230,0.2);
+      background: rgba(109,92,231,0.07); color: #6d5ce7; border: 1px solid rgba(109,92,231,0.18);
       white-space: nowrap;
     }
     .dep-status-pill {
       font-size: 9px; font-weight: 600; padding: 2px 7px; border-radius: 3px;
-      background: rgba(52,211,153,0.1); color: #34d399; border: 1px solid rgba(52,211,153,0.2);
+      background: rgba(5,150,105,0.08); color: #059669; border: 1px solid rgba(5,150,105,0.2);
       white-space: nowrap;
     }
 
     /* ── SCREEN 4: AI Builder ── */
     .ai-layout { display: flex; gap: 8px; flex: 1; min-height: 0; }
     .ai-chat-pane {
-      flex: 1; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07);
+      flex: 1; background: #fff; border: 1px solid #e2e8f0;
       border-radius: 8px; display: flex; flex-direction: column; overflow: hidden;
     }
     .ai-chat-header {
-      padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.07);
-      font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.7);
+      padding: 8px 10px; border-bottom: 1px solid #e2e8f0;
+      font-size: 10px; font-weight: 700; color: #1e293b;
     }
-    .ai-chat-sub { font-size: 9px; color: rgba(255,255,255,0.35); margin-top: 1px; }
+    .ai-chat-sub { font-size: 9px; color: #64748b; margin-top: 1px; }
     .ai-chat-body {
       flex: 1; display: flex; align-items: center; justify-content: center;
       flex-direction: column; gap: 6px; padding: 12px;
     }
     .ai-chat-icon {
-      width: 36px; height: 36px; background: rgba(52,211,153,0.12);
+      width: 36px; height: 36px; background: rgba(5,150,105,0.08);
       border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px;
     }
-    .ai-chat-prompt { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.6); }
-    .ai-chat-desc   { font-size: 9px; color: rgba(255,255,255,0.3); text-align: center; line-height: 1.4; }
+    .ai-chat-prompt { font-size: 10px; font-weight: 700; color: #334155; }
+    .ai-chat-desc   { font-size: 9px; color: #94a3b8; text-align: center; line-height: 1.4; }
     .ai-chat-input-bar {
-      padding: 8px; border-top: 1px solid rgba(255,255,255,0.07);
-      background: rgba(255,255,255,0.02); border-radius: 0 0 8px 8px;
+      padding: 8px; border-top: 1px solid #e2e8f0;
+      background: #f8fafc; border-radius: 0 0 8px 8px;
     }
     .ai-chat-input {
-      width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 5px; padding: 5px 8px; font-size: 9px; color: rgba(255,255,255,0.4);
+      width: 100%; background: #fff; border: 1px solid #e2e8f0;
+      border-radius: 5px; padding: 5px 8px; font-size: 9px; color: #94a3b8;
     }
     .ai-json-pane {
-      flex: 1; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07);
+      flex: 1; background: #fff; border: 1px solid #e2e8f0;
       border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;
     }
     .ai-json-header {
-      padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.07);
-      font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.7);
+      padding: 8px 10px; border-bottom: 1px solid #e2e8f0;
+      font-size: 10px; font-weight: 700; color: #1e293b;
       display: flex; justify-content: space-between; align-items: center;
     }
     .ai-json-body {
       flex: 1; padding: 10px; overflow: hidden;
       font-family: 'JetBrains Mono', monospace; font-size: 8.5px; line-height: 1.55;
-      color: rgba(255,255,255,0.5);
+      color: #475569; background: #f8fafc;
     }
-    .json-key    { color: #7dd3fc; }
-    .json-str    { color: #86efac; }
-    .json-bool   { color: #f9a8d4; }
-    .json-num    { color: #fca5a5; }
-    .json-brace  { color: rgba(255,255,255,0.4); }
+    .json-key    { color: #0369a1; }
+    .json-str    { color: #15803d; }
+    .json-bool   { color: #b45309; }
+    .json-num    { color: #b91c1c; }
+    .json-brace  { color: #64748b; }
 
     /* Operon animation (unchanged) */
     .op-anim {
@@ -318,13 +319,13 @@
       font-size: 10px; font-weight: 700; letter-spacing: 0.04em;
       border: 1px solid transparent; animation: op-glow 2.8s ease-in-out infinite;
     }
-    .op-node.trigger { background: rgba(6,182,212,0.12); border-color: rgba(6,182,212,0.25); color: #22d3ee; }
-    .op-node.step    { background: rgba(20,184,166,0.12); border-color: rgba(20,184,166,0.25); color: #2dd4bf; animation-delay: 0.4s; }
-    .op-node.branch  { background: rgba(154,142,230,0.12); border-color: rgba(154,142,230,0.25); color: #b3a9ee; animation-delay: 0.8s; }
-    .op-node.action  { background: rgba(249,115,22,0.10); border-color: rgba(249,115,22,0.2); color: #fb923c; animation-delay: 1.2s; }
-    .op-node.end     { background: rgba(52,211,153,0.10); border-color: rgba(52,211,153,0.2); color: #34d399; animation-delay: 1.6s; }
+    .op-node.trigger { background: rgba(6,182,212,0.10); border-color: rgba(6,182,212,0.28); color: #0891b2; }
+    .op-node.step    { background: rgba(13,148,136,0.10); border-color: rgba(13,148,136,0.28); color: #0d9488; animation-delay: 0.4s; }
+    .op-node.branch  { background: rgba(109,92,231,0.10); border-color: rgba(109,92,231,0.28); color: #6d5ce7; animation-delay: 0.8s; }
+    .op-node.action  { background: rgba(234,88,12,0.08); border-color: rgba(234,88,12,0.22); color: #ea580c; animation-delay: 1.2s; }
+    .op-node.end     { background: rgba(5,150,105,0.10); border-color: rgba(5,150,105,0.25); color: #059669; animation-delay: 1.6s; }
     .op-connector    { display: flex; justify-content: center; align-items: center; height: 20px; gap: 40px; }
-    .op-connector-line { width: 1px; height: 100%; background: linear-gradient(to bottom, rgba(154,142,230,0.3), rgba(154,142,230,0.1)); }
+    .op-connector-line { width: 1px; height: 100%; background: linear-gradient(to bottom, rgba(109,92,231,0.3), rgba(109,92,231,0.08)); }
     @keyframes op-glow {
       0%, 100% { opacity: 0.65; box-shadow: none; }
       50% { opacity: 1; box-shadow: 0 0 12px rgba(20,184,166,0.2); }
@@ -506,16 +507,16 @@
               <div class="rx-slide">
                 <div style="display:flex;gap:10px;height:100%;">
                   <!-- blurred background hint -->
-                  <div style="flex:1;opacity:0.25;">
+                  <div style="flex:1;opacity:0.3;">
                     <div class="vb-toolbar">
                       <span class="vb-topbar-title">Actionblocktest</span>
                       <span class="vb-tab active">Visual Builder</span>
                     </div>
                     <div class="vb-block-row"><div class="vb-block-accent" style="background:#f59e0b;"></div><div class="vb-block-content"><div class="vb-block-name">NewInput</div></div></div>
-                    <div class="vb-block-row" style="margin-top:4px;"><div class="vb-block-accent" style="background:#34d399;"></div><div class="vb-block-content"><div class="vb-block-name">NewForeachblock</div></div></div>
+                    <div class="vb-block-row" style="margin-top:4px;"><div class="vb-block-accent" style="background:#10b981;"></div><div class="vb-block-content"><div class="vb-block-name">NewForeachblock</div></div></div>
                   </div>
                   <!-- Add Block drawer -->
-                  <div style="width:200px;background:rgba(15,15,22,0.98);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:0;overflow:hidden;">
+                  <div style="width:200px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:0;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
                     <div class="ab-header">Add Block</div>
                     <div class="ab-sub">Choose a block type to add to your flow</div>
                     <input class="ab-search" type="text" placeholder="Search blocks..." readonly />
@@ -564,8 +565,8 @@
                     <div class="dep-sub">Promote rules across environments with confidence</div>
                   </div>
                   <div style="margin-left:auto;display:flex;gap:4px;">
-                    <span style="font-size:8px;font-weight:700;padding:3px 7px;border-radius:4px;background:rgba(249,115,22,0.1);color:#fb923c;border:1px solid rgba(249,115,22,0.2);">Batch Rollback</span>
-                    <span style="font-size:8px;font-weight:700;padding:3px 7px;border-radius:4px;background:rgba(154,142,230,0.1);color:#b3a9ee;border:1px solid rgba(154,142,230,0.2);">+ New Deployment</span>
+                    <span style="font-size:8px;font-weight:700;padding:3px 7px;border-radius:4px;background:rgba(249,115,22,0.08);color:#ea580c;border:1px solid rgba(249,115,22,0.2);">Batch Rollback</span>
+                    <span style="font-size:8px;font-weight:700;padding:3px 7px;border-radius:4px;background:rgba(109,92,231,0.08);color:#6d5ce7;border:1px solid rgba(109,92,231,0.2);">+ New Deployment</span>
                   </div>
                 </div>
                 <div class="dep-stats">
@@ -592,7 +593,7 @@
                 </div>
                 <div class="dep-history-header">
                   <span>Deployment History</span>
-                  <span style="background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:99px;font-size:9px;">16 deployments</span>
+                  <span style="background:#f1f5f9;padding:2px 8px;border-radius:99px;font-size:9px;color:#64748b;border:1px solid #e2e8f0;">16 deployments</span>
                 </div>
                 <div class="dep-row">
                   <div class="dep-dot active"></div>
@@ -711,7 +712,7 @@
         <!-- ── Operon Card ────────────────────────────────────────── -->
         <div class="product-card">
 
-          <div class="product-preview" style="background:linear-gradient(135deg,rgba(13,148,136,0.04),rgba(6,182,212,0.04));">
+          <div class="product-preview" style="background:linear-gradient(135deg,rgba(13,148,136,0.03),rgba(6,182,212,0.03));">
             <div class="product-preview-topbar">
               <div class="preview-dots"><span></span><span></span><span></span></div>
               <div class="preview-bar-title">Operon Studio</div>
