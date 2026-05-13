@@ -1,6 +1,6 @@
 /* ── Xflore Shared Navigation Component ──────────────────────────── */
 (function () {
-  const FAVICON = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='100%25' y2='100%25'><stop offset='0' stop-color='%230EA5E9'/><stop offset='1' stop-color='%237C3AED'/></linearGradient></defs><text y='.9em' font-size='72' text-anchor='middle' x='50' font-family='sans-serif' font-weight='800' fill='white'>X</text></svg>`;
+  const FAVICON = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='100%25' y2='100%25'><stop offset='0' stop-color='%239a8ee6'/><stop offset='1' stop-color='%23d19efb'/></linearGradient></defs><text y='.9em' font-size='72' text-anchor='middle' x='50' font-family='sans-serif' font-weight='800' fill='white'>X</text></svg>`;
 
   const CHEVRON = `<svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
@@ -27,14 +27,14 @@
             <div class="dropdown-section-label">Platform</div>
             <div class="dropdown-grid">
               <a href="features.html" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(14,165,233,0.1);border-color:rgba(14,165,233,0.2);">🎨</div>
+                <div class="dropdown-item-icon" style="background:rgba(154,142,230,0.1);border-color:rgba(154,142,230,0.2);">🎨</div>
                 <div>
                   <div class="dropdown-item-title">Visual Block Builder</div>
                   <div class="dropdown-item-desc">Drag-and-drop rule authoring</div>
                 </div>
               </a>
               <a href="features.html#ai" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.2);">🤖</div>
+                <div class="dropdown-item-icon" style="background:rgba(123,111,212,0.1);border-color:rgba(123,111,212,0.2);">🤖</div>
                 <div>
                   <div class="dropdown-item-title">AI Rule Generation</div>
                   <div class="dropdown-item-desc">Natural language to rules</div>
@@ -62,7 +62,7 @@
                 </div>
               </a>
               <a href="features.html#collab" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.2);">👥</div>
+                <div class="dropdown-item-icon" style="background:rgba(123,111,212,0.1);border-color:rgba(123,111,212,0.2);">👥</div>
                 <div>
                   <div class="dropdown-item-title">Collaboration</div>
                   <div class="dropdown-item-desc">Real-time team rule authoring</div>
