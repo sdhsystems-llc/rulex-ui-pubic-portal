@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Operon by Xflore — Process orchestration for enterprise teams. Design, execute, and monitor complex multi-step workflows." />
+  <meta property="og:title" content="Operon — Process Orchestration | Xflore" />
+  <meta property="og:description" content="Design, execute, and monitor complex multi-step workflows with Operon." />
+  <meta property="og:type" content="website" />
+  <title>Operon — Process Orchestration | Xflore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='100%25' y2='100%25'><stop offset='0' stop-color='%230d9488'/><stop offset='1' stop-color='%2306b6d4'/></linearGradient></defs><text y='.9em' font-size='72' text-anchor='middle' x='50' font-family='sans-serif' font-weight='800' fill='white'>O</text></svg>" />
+  <style>
+    :root {
+      --operon-primary: #0d9488;
+      --operon-accent:  #06b6d4;
+      --operon-light:   #2dd4bf;
+      --operon-grad:    linear-gradient(135deg, #0d9488 0%, #06b6d4 100%);
+    }
+
+    /* Hero */
+    .op-hero {
+      position: relative; padding: 140px 0 100px; text-align: center; overflow: hidden;
+    }
+    .op-hero .hero-grid-bg {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(13,148,136,0.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(13,148,136,0.04) 1px, transparent 1px);
+      background-size: 48px 48px; pointer-events: none;
+    }
+    .op-hero .hero-glow {
+      position: absolute; top: -120px; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(ellipse at center, rgba(13,148,136,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .op-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(13,148,136,0.08); border: 1px solid rgba(13,148,136,0.25);
+      color: var(--operon-light); font-size: 13px; font-weight: 600;
+      padding: 6px 16px; border-radius: 99px; margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+    .op-badge-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--operon-light); box-shadow: 0 0 6px var(--operon-light);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    .op-hero h1 {
+      font-size: clamp(40px, 6vw, 72px); font-weight: 900;
+      line-height: 1.08; letter-spacing: -0.04em; margin-bottom: 24px;
+    }
+    .op-grad-text {
+      background: var(--operon-grad);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .op-hero-sub {
+      font-size: clamp(16px, 2vw, 20px); color: var(--text-secondary);
+      max-width: 600px; margin: 0 auto 40px; line-height: 1.65;
+    }
+    .op-hero-actions {
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 72px;
+    }
+    .btn-operon-primary {
+      background: var(--operon-grad); color: #fff;
+      box-shadow: 0 0 24px rgba(13,148,136,0.34);
+    }
+    .btn-operon-primary:hover {
+      transform: translateY(-1px); box-shadow: 0 0 36px rgba(13,148,136,0.54);
+    }
+    .btn-operon-outline {
+      background: transparent; color: var(--operon-light);
+      border: 1px solid rgba(13,148,136,0.3);
+    }
+    .btn-operon-outline:hover {
+      border-color: rgba(13,148,136,0.5); color: var(--operon-light);
+    }
+    .op-hero-stats {
+      display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+      padding-top: 48px; border-top: 1px solid var(--border);
+    }
+    .op-stat { text-align: center; }
+    .op-stat-num {
+      font-size: 28px; font-weight: 800; letter-spacing: -0.03em;
+      background: var(--operon-grad);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .op-stat-label { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+    /* Coming Soon Banner */
+    .coming-soon-band {
+      background: rgba(13,148,136,0.06); border-top: 1px solid rgba(13,148,136,0.15);
+      border-bottom: 1px solid rgba(13,148,136,0.15); padding: 18px 0; text-align: center;
+    }
+    .coming-soon-inner {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 14px; font-weight: 600; color: var(--operon-light);
+    }
+    .coming-soon-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--operon-light); box-shadow: 0 0 8px var(--operon-light);
+      animation: pulse-dot 1.5s ease-in-out infinite;
+    }
+
+    /* Workflow Visualization */
+    .op-demo-section { padding: 100px 0; }
+    .op-workflow-shell {
+      background: var(--bg-card); border: 1px solid rgba(13,148,136,0.15);
+      border-radius: var(--radius-xl); overflow: hidden;
+      box-shadow: 0 0 60px rgba(13,148,136,0.06);
+      margin-top: 48px;
+    }
+    .op-workflow-topbar {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 20px; background: rgba(13,148,136,0.04);
+      border-bottom: 1px solid rgba(13,148,136,0.1);
+    }
+    .op-window-dots { display: flex; gap: 5px; }
+    .op-window-dots span { width: 10px; height: 10px; border-radius: 50%; }
+    .op-window-dots span:nth-child(1) { background: #ff5f57; }
+    .op-window-dots span:nth-child(2) { background: #febc2e; }
+    .op-window-dots span:nth-child(3) { background: #28c840; }
+    .op-window-title { font-size: 12px; color: var(--text-secondary); font-weight: 500; flex: 1; }
+    .op-window-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+      color: var(--operon-light); background: rgba(13,148,136,0.12);
+      border: 1px solid rgba(13,148,136,0.25); padding: 3px 10px; border-radius: 99px;
+    }
+
+    .op-workflow-body {
+      padding: 48px;
+      display: flex; justify-content: center;
+    }
+    .op-flow-diagram {
+      display: flex; flex-direction: column; align-items: center; gap: 0;
+      width: 100%; max-width: 640px;
+    }
+    .op-flow-row {
+      display: flex; justify-content: center; gap: 20px; width: 100%;
+    }
+    .op-flow-node {
+      min-width: 120px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.04em;
+      border: 1px solid transparent; padding: 0 16px;
+      animation: op-node-pulse 3s ease-in-out infinite;
+    }
+    .op-flow-node.trigger-node { background: rgba(6,182,212,0.10); border-color: rgba(6,182,212,0.25); color: #22d3ee; }
+    .op-flow-node.step-node    { background: rgba(13,148,136,0.10); border-color: rgba(13,148,136,0.25); color: #2dd4bf; }
+    .op-flow-node.branch-node  { background: rgba(154,142,230,0.10); border-color: rgba(154,142,230,0.25); color: #b3a9ee; }
+    .op-flow-node.action-node  { background: rgba(249,115,22,0.08); border-color: rgba(249,115,22,0.2); color: #fb923c; }
+    .op-flow-node.end-node     { background: rgba(52,211,153,0.08); border-color: rgba(52,211,153,0.2); color: #34d399; }
+    .op-flow-node.wait-node    { background: rgba(245,158,11,0.08); border-color: rgba(245,158,11,0.2); color: #fbbf24; }
+    @keyframes op-node-pulse {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; box-shadow: 0 0 16px rgba(13,148,136,0.18); }
+    }
+    .op-flow-connector {
+      display: flex; justify-content: center; gap: 60px; width: 100%; height: 28px;
+      align-items: center;
+    }
+    .op-flow-line {
+      width: 1px; height: 100%;
+      background: linear-gradient(to bottom, rgba(13,148,136,0.4), rgba(13,148,136,0.1));
+    }
+    .op-flow-chips {
+      display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 24px;
+    }
+    .op-flow-chip {
+      font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 6px;
+      background: rgba(13,148,136,0.08); border: 1px solid rgba(13,148,136,0.15);
+      color: var(--operon-light);
+    }
+
+    /* Features */
+    .op-features-section { padding: 100px 0; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .op-feature-card {
+      background: var(--bg-base); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      transition: var(--transition);
+    }
+    .op-feature-card:hover { border-color: rgba(13,148,136,0.3); background: var(--bg-card-hover); }
+    .op-feature-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px;
+    }
+    .op-feature-icon.teal   { background: rgba(13,148,136,0.12); }
+    .op-feature-icon.cyan   { background: rgba(6,182,212,0.10); }
+    .op-feature-icon.orange { background: rgba(249,115,22,0.10); }
+    .op-feature-icon.blue   { background: rgba(154,142,230,0.10); }
+  </style>
+</head>
+<body>
+
+  <!-- nav + footer injected by nav.js -->
+
+  <!-- ── Coming Soon Banner ──────────────────────────────────────── -->
+  <div class="coming-soon-band" style="margin-top:104px;">
+    <div class="coming-soon-inner">
+      <div class="coming-soon-dot"></div>
+      Operon is coming soon — join the waitlist for early access
+      <a href="contact.html" style="color:var(--operon-light);text-decoration:underline;font-weight:700;">Join Waitlist →</a>
+    </div>
+  </div>
+
+  <!-- ── Hero ──────────────────────────────────────────────────────── -->
+  <section class="op-hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="op-badge">
+        <div class="op-badge-dot"></div>
+        Process Orchestration by Xflore
+      </div>
+      <h1>
+        Orchestrate every<br />
+        <span class="op-grad-text">process, end to end.</span>
+      </h1>
+      <p class="op-hero-sub">
+        Operon lets you design, execute, and monitor complex multi-step workflows. Connect your systems, people, and logic into coherent, auditable processes.
+      </p>
+      <div class="op-hero-actions">
+        <a href="contact.html" class="btn btn-operon-primary" style="font-size:16px;padding:14px 28px;">Join the Waitlist →</a>
+        <a href="index.html" class="btn btn-operon-outline" style="font-size:16px;padding:14px 28px;">Back to Xflore</a>
+      </div>
+      <div class="op-hero-stats">
+        <div class="op-stat">
+          <div class="op-stat-num">Multi-step</div>
+          <div class="op-stat-label">Workflow Engine</div>
+        </div>
+        <div class="op-stat">
+          <div class="op-stat-num">Real-time</div>
+          <div class="op-stat-label">Process Monitoring</div>
+        </div>
+        <div class="op-stat">
+          <div class="op-stat-num">Full</div>
+          <div class="op-stat-label">Audit Trail</div>
+        </div>
+        <div class="op-stat">
+          <div class="op-stat-num">Visual</div>
+          <div class="op-stat-label">Workflow Designer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Workflow Demo ──────────────────────────────────────────────── -->
+  <section class="op-demo-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag" style="color:var(--operon-light);background:rgba(13,148,136,0.08);border-color:rgba(13,148,136,0.2);">Visual Designer</span>
+        <h2>Design workflows<br /><span class="op-grad-text">visually, not in code.</span></h2>
+        <p>Drag, connect, and configure nodes in a visual canvas. From simple sequences to branching, parallel, and conditional flows.</p>
+      </div>
+
+      <div class="op-workflow-shell">
+        <div class="op-workflow-topbar">
+          <div class="op-window-dots"><span></span><span></span><span></span></div>
+          <div class="op-window-title">Operon Studio | Workflow Designer</div>
+          <div class="op-window-badge">LIVE DEMO</div>
+        </div>
+        <div class="op-workflow-body">
+          <div style="width:100%;">
+            <div class="op-flow-diagram">
+              <div class="op-flow-row">
+                <div class="op-flow-node trigger-node">EVENT TRIGGER</div>
+              </div>
+              <div class="op-flow-connector">
+                <div class="op-flow-line"></div>
+              </div>
+              <div class="op-flow-row">
+                <div class="op-flow-node step-node">VALIDATE INPUT</div>
+              </div>
+              <div class="op-flow-connector">
+                <div class="op-flow-line"></div>
+                <div class="op-flow-line"></div>
+              </div>
+              <div class="op-flow-row">
+                <div class="op-flow-node branch-node">BRANCH: CONDITION</div>
+                <div class="op-flow-node wait-node">WAIT / TIMER</div>
+              </div>
+              <div class="op-flow-connector">
+                <div class="op-flow-line"></div>
+                <div class="op-flow-line"></div>
+              </div>
+              <div class="op-flow-row">
+                <div class="op-flow-node action-node">EXECUTE ACTION</div>
+                <div class="op-flow-node action-node">SEND NOTIFICATION</div>
+              </div>
+              <div class="op-flow-connector">
+                <div class="op-flow-line"></div>
+                <div class="op-flow-line"></div>
+              </div>
+              <div class="op-flow-row">
+                <div class="op-flow-node end-node">PROCESS COMPLETE</div>
+              </div>
+            </div>
+            <div class="op-flow-chips">
+              <div class="op-flow-chip">Event Triggers</div>
+              <div class="op-flow-chip">Conditional Branching</div>
+              <div class="op-flow-chip">Timers &amp; Waits</div>
+              <div class="op-flow-chip">Parallel Execution</div>
+              <div class="op-flow-chip">System Actions</div>
+              <div class="op-flow-chip">Notifications</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Features ──────────────────────────────────────────────────── -->
+  <section class="op-features-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag" style="color:var(--operon-light);background:rgba(13,148,136,0.08);border-color:rgba(13,148,136,0.2);">Features</span>
+        <h2>Everything you need to<br /><span class="op-grad-text">orchestrate at scale</span></h2>
+        <p>Operon is purpose-built for complex, long-running processes with full observability.</p>
+      </div>
+      <div class="features-grid">
+        <div class="op-feature-card">
+          <div class="op-feature-icon teal">🗺️</div>
+          <h3>Visual Workflow Designer</h3>
+          <p style="color:var(--text-secondary);font-size:14px;line-height:1.65;margin-top:8px;">Drag-and-drop canvas to design processes. Connect triggers, steps, branches, waits, and actions — no code required.</p>
+        </div>
+        <div class="op-feature-card">
+          <div class="op-feature-icon cyan">⚡</div>
+          <h3>Event-Driven Triggers</h3>
+          <p style="color:var(--text-secondary);font-size:14px;line-height:1.65;margin-top:8px;">Start workflows from webhooks, schedules, system events, or manual invocations. React to what happens in your systems.</p>
+        </div>
+        <div class="op-feature-card">
+          <div class="op-feature-icon orange">🔀</div>
+          <h3>Branching &amp; Parallel Flows</h3>
+          <p style="color:var(--text-secondary);font-size:14px;line-height:1.65;margin-top:8px;">Model complex conditional logic, parallel branches, and merge points. Handle every exception path explicitly.</p>
+        </div>
+        <div class="op-feature-card">
+          <div class="op-feature-icon blue">📊</div>
+          <h3>Real-Time Monitoring</h3>
+          <p style="color:var(--text-secondary);font-size:14px;line-height:1.65;margin-top:8px;">See live execution state for every running workflow. Spot failures, timeouts, and bottlenecks the moment they happen.</p>
+        </div>
+        <div class="op-feature-card">
+          <div class="op-feature-icon teal">🔌</div>
+          <h3>System Connectors</h3>
+          <p style="color:var(--text-secondary);font-size:14px;line-height:1.65;margin-top:8px;">Connect to external APIs, databases, messaging queues, and Xflore Rule-X — making Operon the glue between your systems.</p>
+        </div>
+        <div class="op-feature-card">
+          <div class="op-feature-icon cyan">📋</div>
+          <h3>Full Audit Trail</h3>
+          <p style="color:var(--text-secondary);font-size:14px;line-height:1.65;margin-top:8px;">Every process step, decision, and state transition is recorded. Complete history for compliance, debugging, and reporting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Rule-X Integration Callout ──────────────────────────────── -->
+  <section style="padding:80px 0;">
+    <div class="container">
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:48px;display:flex;gap:40px;align-items:center;flex-wrap:wrap;">
+        <div style="flex:1;min-width:280px;">
+          <span class="tag" style="color:var(--blue-400);background:rgba(154,142,230,0.08);border-color:rgba(154,142,230,0.2);margin-bottom:20px;display:inline-flex;">Xflore Suite</span>
+          <h2 style="font-size:28px;margin-bottom:16px;">Operon + Rule-X<br /><span class="grad-text">work together.</span></h2>
+          <p style="color:var(--text-secondary);line-height:1.65;margin-bottom:28px;">Operon workflows can invoke Rule-X rule evaluations inline — bringing intelligent decision logic into every step of your process orchestration.</p>
+          <a href="rule-x.html" class="btn btn-primary" style="font-size:14px;padding:11px 22px;">Explore Rule-X →</a>
+        </div>
+        <div style="flex:1;min-width:280px;background:var(--bg-base);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;">Example: Loan Processing Flow</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#22d3ee;flex-shrink:0;"></div>
+              <span style="font-size:13px;color:var(--text-secondary);">Operon: Receive application event</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#2dd4bf;flex-shrink:0;"></div>
+              <span style="font-size:13px;color:var(--text-secondary);">Operon: Gather applicant documents</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#b3a9ee;flex-shrink:0;"></div>
+              <span style="font-size:13px;color:var(--text-secondary);">Rule-X: Evaluate credit scoring rules</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#fb923c;flex-shrink:0;"></div>
+              <span style="font-size:13px;color:var(--text-secondary);">Operon: Route to approval / decline</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#34d399;flex-shrink:0;"></div>
+              <span style="font-size:13px;color:var(--text-secondary);">Operon: Notify applicant &amp; complete</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Band ───────────────────────────────────────────────────── -->
+  <div class="cta-band">
+    <div class="cta-inner">
+      <h2>Be first to experience<br /><span class="op-grad-text">Operon.</span></h2>
+      <p>Operon is in active development. Join the waitlist to get early access and shape the product.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-operon-primary" style="font-size:16px;padding:14px 28px;">Join the Waitlist →</a>
+        <a href="index.html" class="btn btn-outline" style="font-size:16px;padding:14px 28px;">Back to Xflore</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="nav.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -22,52 +22,39 @@
 
         <!-- Products -->
         <li class="has-dropdown">
-          <a href="features.html" class="nav-link-btn">Products ${CHEVRON}</a>
-          <div class="dropdown-panel">
-            <div class="dropdown-section-label">Platform</div>
-            <div class="dropdown-grid">
-              <a href="features.html" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);">🎨</div>
-                <div>
-                  <div class="dropdown-item-title">Visual Block Builder</div>
-                  <div class="dropdown-item-desc">Drag-and-drop rule authoring</div>
-                </div>
-              </a>
-              <a href="features.html#ai" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);">🤖</div>
-                <div>
-                  <div class="dropdown-item-title">AI Rule Generation</div>
-                  <div class="dropdown-item-desc">Natural language to rules</div>
-                </div>
-              </a>
-              <a href="block-types.html" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(52,211,153,0.1);border-color:rgba(52,211,153,0.2);">🧩</div>
-                <div>
-                  <div class="dropdown-item-title">Block Types</div>
-                  <div class="dropdown-item-desc">13 block types for every pattern</div>
-                </div>
-              </a>
-              <a href="deployments.html" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(251,146,60,0.1);border-color:rgba(251,146,60,0.2);">🚀</div>
-                <div>
-                  <div class="dropdown-item-title">Deployment Pipeline</div>
-                  <div class="dropdown-item-desc">CI/CD for business rules</div>
-                </div>
-              </a>
-              <a href="features.html#tables" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(20,184,166,0.1);border-color:rgba(20,184,166,0.2);">📋</div>
-                <div>
-                  <div class="dropdown-item-title">Decision Tables</div>
-                  <div class="dropdown-item-desc">DMN-compliant spreadsheet rules</div>
-                </div>
-              </a>
-              <a href="features.html#collab" class="dropdown-item">
-                <div class="dropdown-item-icon" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);">👥</div>
-                <div>
-                  <div class="dropdown-item-title">Collaboration</div>
-                  <div class="dropdown-item-desc">Real-time team rule authoring</div>
-                </div>
-              </a>
+          <a href="index.html#products" class="nav-link-btn">Products ${CHEVRON}</a>
+          <div class="dropdown-panel dropdown-panel-wide">
+            <div class="dropdown-columns">
+              <div>
+                <a href="rule-x.html" class="dropdown-product-heading" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;text-decoration:none;">
+                  <div style="width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#9a8ee6,#d19efb);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;flex-shrink:0;">X</div>
+                  <div>
+                    <div style="font-size:13px;font-weight:700;color:var(--text-primary);">Rule-X</div>
+                    <div style="font-size:11px;color:var(--text-secondary);">AI-Powered Rule Engine</div>
+                  </div>
+                </a>
+                <a href="features.html" class="dropdown-item-simple"><span>🎨</span> Visual Block Builder</a>
+                <a href="features.html#ai" class="dropdown-item-simple"><span>🤖</span> AI Rule Generation</a>
+                <a href="block-types.html" class="dropdown-item-simple"><span>🧩</span> Block Types</a>
+                <a href="deployments.html" class="dropdown-item-simple"><span>🚀</span> Deployment Pipeline</a>
+                <a href="features.html#tables" class="dropdown-item-simple"><span>📋</span> Decision Tables</a>
+                <a href="features.html#collab" class="dropdown-item-simple"><span>👥</span> Collaboration</a>
+              </div>
+              <div>
+                <a href="operon.html" class="dropdown-product-heading" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;text-decoration:none;">
+                  <div style="width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#0d9488,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;flex-shrink:0;">O</div>
+                  <div>
+                    <div style="font-size:13px;font-weight:700;color:var(--text-primary);">Operon</div>
+                    <div style="font-size:11px;color:var(--text-secondary);">Process Orchestration</div>
+                  </div>
+                </a>
+                <a href="operon.html#features" class="dropdown-item-simple"><span>🗺️</span> Visual Workflow Designer</a>
+                <a href="operon.html#features" class="dropdown-item-simple"><span>⚡</span> Event-Driven Triggers</a>
+                <a href="operon.html#features" class="dropdown-item-simple"><span>🔀</span> Branching &amp; Parallel Flows</a>
+                <a href="operon.html#features" class="dropdown-item-simple"><span>📊</span> Real-Time Monitoring</a>
+                <a href="operon.html#features" class="dropdown-item-simple"><span>🔌</span> System Connectors</a>
+                <a href="contact.html" class="dropdown-item-simple" style="color:#2dd4bf;"><span>✉️</span> Join Waitlist →</a>
+              </div>
             </div>
           </div>
         </li>
@@ -155,11 +142,15 @@
 
   <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-inner">
-      <div class="mobile-section-label">Product</div>
+      <div class="mobile-section-label">Rule-X</div>
+      <a href="rule-x.html">Rule-X Overview</a>
       <a href="features.html">Features</a>
       <a href="block-types.html">Block Types</a>
       <a href="deployments.html">Deployments</a>
       <a href="use-cases.html">Use Cases</a>
+      <div class="mobile-section-label">Operon</div>
+      <a href="operon.html">Operon Overview</a>
+      <a href="contact.html">Join Waitlist</a>
       <div class="mobile-section-label">Company</div>
       <a href="customers.html">Customers</a>
       <a href="open-source.html">Open Source</a>
@@ -203,7 +194,7 @@
             <div class="nav-logo-icon">X</div>
             Xflore
           </a>
-          <p>The AI-powered rule engine platform for teams that need intelligent, auditable, and collaborative decision automation at scale.</p>
+          <p>Intelligent business automation. Two products — Rule-X for rule-driven decisions, Operon for process orchestration — built for enterprise teams.</p>
           <div class="footer-social">
             <a href="#" class="social-btn" title="LinkedIn">in</a>
             <a href="#" class="social-btn" title="Twitter">𝕏</a>
@@ -211,13 +202,22 @@
           </div>
         </div>
         <div class="footer-col">
-          <h4>Product</h4>
+          <h4>Rule-X</h4>
           <ul>
+            <li><a href="rule-x.html">Overview</a></li>
             <li><a href="features.html">Features</a></li>
             <li><a href="block-types.html">Block Types</a></li>
             <li><a href="deployments.html">Deployments</a></li>
             <li><a href="use-cases.html">Use Cases</a></li>
             <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Operon</h4>
+          <ul>
+            <li><a href="operon.html">Overview</a></li>
+            <li><a href="operon.html#features">Features</a></li>
+            <li><a href="contact.html">Join Waitlist</a></li>
           </ul>
         </div>
         <div class="footer-col">

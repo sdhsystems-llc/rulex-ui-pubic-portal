@@ -3,446 +3,489 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rule-X — The AI-powered rule engine platform. Author, version, deploy, and collaborate on business rules at enterprise scale." />
-  <meta property="og:title" content="Rule-X — AI-Powered Rule Engine Platform" />
-  <meta property="og:description" content="Author, version, deploy, and collaborate on business rules at enterprise scale." />
+  <meta name="description" content="Xflore — Intelligent business automation. Two products, one platform: Rule-X for business rule management and Operon for process orchestration." />
+  <meta property="og:title" content="Xflore — Intelligent Business Automation" />
+  <meta property="og:description" content="The company building next-generation intelligent automation products for enterprise teams." />
   <meta property="og:type" content="website" />
-  <title>Rule-X — AI-Powered Rule Engine Platform</title>
+  <title>Xflore — Intelligent Business Automation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='100%25' y2='100%25'><stop offset='0' stop-color='%239a8ee6'/><stop offset='1' stop-color='%23d19efb'/></linearGradient></defs><text y='.9em' font-size='72' text-anchor='middle' x='50' font-family='sans-serif' font-weight='800' fill='white'>X</text></svg>" />
+  <style>
+    /* ── Xflore Homepage Styles ── */
+    .xflore-hero {
+      position: relative;
+      padding: 140px 0 100px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .xflore-hero .hero-grid-bg {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(154,142,230,0.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(154,142,230,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    .xflore-hero .hero-glow {
+      position: absolute; top: -120px; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(ellipse at center, rgba(154,142,230,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .xflore-hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(154,142,230,0.08); border: 1px solid rgba(154,142,230,0.2);
+      color: var(--blue-400); font-size: 13px; font-weight: 600;
+      padding: 6px 16px; border-radius: 99px; margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+    .xflore-hero-badge-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--blue-400);
+      box-shadow: 0 0 6px var(--blue-400);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    .xflore-hero h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 900; line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
+    }
+    .xflore-hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--text-secondary);
+      max-width: 600px; margin: 0 auto 40px;
+      line-height: 1.65;
+    }
+    .xflore-hero-actions {
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 72px;
+    }
+    .xflore-stats {
+      display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+    .xflore-stat-item { text-align: center; }
+    .xflore-stat-num {
+      font-size: 28px; font-weight: 800; letter-spacing: -0.03em;
+      background: var(--grad-text);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .xflore-stat-label { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+    /* ── Products Section ── */
+    .products-section {
+      padding: 100px 0;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 56px;
+    }
+    @media (max-width: 768px) { .products-grid { grid-template-columns: 1fr; } }
+
+    .product-card {
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex; flex-direction: column;
+    }
+    .product-card:hover {
+      border-color: var(--border-bright);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-glow), var(--shadow-card);
+    }
+
+    .product-card-video-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #0d0d1a;
+      overflow: hidden;
+    }
+    .product-card-video-wrap video {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block;
+    }
+    .product-card-video-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 12px;
+      position: absolute; inset: 0;
+    }
+    .product-card-video-topbar {
+      position: absolute; top: 0; left: 0; right: 0;
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 16px;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      z-index: 2;
+    }
+    .product-video-dots { display: flex; gap: 5px; }
+    .product-video-dots span {
+      width: 9px; height: 9px; border-radius: 50%;
+    }
+    .product-video-dots span:nth-child(1) { background: #ff5f57; }
+    .product-video-dots span:nth-child(2) { background: #febc2e; }
+    .product-video-dots span:nth-child(3) { background: #28c840; }
+    .product-video-title {
+      font-size: 11px; color: var(--text-secondary); font-weight: 500;
+      flex: 1;
+    }
+    .product-video-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+      color: var(--blue-400); background: rgba(154,142,230,0.12);
+      border: 1px solid rgba(154,142,230,0.2);
+      padding: 2px 8px; border-radius: 99px;
+    }
+
+    /* animated placeholder SVG art */
+    .product-anim-rulex {
+      background: linear-gradient(135deg, rgba(154,142,230,0.06) 0%, rgba(209,158,251,0.06) 100%);
+    }
+    .product-anim-operon {
+      background: linear-gradient(135deg, rgba(20,184,166,0.06) 0%, rgba(6,182,212,0.06) 100%);
+    }
+
+    .anim-canvas {
+      width: 100%; height: 100%;
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      padding: 40px 24px 16px;
+    }
+
+    /* Rule-X animation: flowing blocks */
+    .rx-anim { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 420px; }
+    .rx-row { display: flex; gap: 8px; align-items: center; }
+    .rx-block {
+      height: 32px; border-radius: 6px; display: flex; align-items: center;
+      padding: 0 12px; font-size: 11px; font-weight: 600; white-space: nowrap;
+      border: 1px solid transparent;
+    }
+    .rx-block.input  { background: rgba(209,158,251,0.12); border-color: rgba(209,158,251,0.25); color: #d19efb; flex: 0 0 110px; animation: rx-pulse 2.4s ease-in-out infinite; }
+    .rx-block.rule   { background: rgba(154,142,230,0.12); border-color: rgba(154,142,230,0.25); color: #b3a9ee; flex: 1; animation: rx-pulse 2.4s ease-in-out 0.3s infinite; }
+    .rx-block.cep    { background: rgba(249,115,22,0.10); border-color: rgba(249,115,22,0.2); color: #fb923c; flex: 0 0 90px; animation: rx-pulse 2.4s ease-in-out 0.6s infinite; }
+    .rx-block.output { background: rgba(52,211,153,0.10); border-color: rgba(52,211,153,0.2); color: #34D399; flex: 1; animation: rx-pulse 2.4s ease-in-out 0.9s infinite; }
+    .rx-block.ai     { background: rgba(236,72,153,0.10); border-color: rgba(236,72,153,0.2); color: #f472b6; flex: 0 0 80px; animation: rx-pulse 2.4s ease-in-out 1.2s infinite; }
+    .rx-arrow { color: var(--text-muted); font-size: 14px; flex-shrink: 0; }
+    .rx-env {
+      display: flex; gap: 6px; margin-top: 4px;
+    }
+    .rx-env-pill {
+      font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 99px;
+      animation: rx-pulse 3s ease-in-out infinite;
+    }
+    .rx-env-pill.dev  { background: rgba(154,142,230,0.12); color: #b3a9ee; border: 1px solid rgba(154,142,230,0.2); }
+    .rx-env-pill.qa   { background: rgba(20,184,166,0.10); color: #2dd4bf; border: 1px solid rgba(20,184,166,0.2); animation-delay: 0.6s; }
+    .rx-env-pill.prod { background: rgba(52,211,153,0.10); color: #34d399; border: 1px solid rgba(52,211,153,0.2); animation-delay: 1.2s; }
+    .rx-env-sep { color: var(--text-muted); font-size: 11px; align-self: center; }
+    @keyframes rx-pulse {
+      0%, 100% { opacity: 0.7; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.01); }
+    }
+
+    /* Operon animation: workflow graph */
+    .op-anim {
+      width: 100%; max-width: 420px;
+      display: flex; flex-direction: column; align-items: center; gap: 0;
+      position: relative;
+    }
+    .op-row { display: flex; justify-content: center; gap: 16px; width: 100%; }
+    .op-node {
+      width: 80px; height: 36px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.04em;
+      border: 1px solid transparent;
+      animation: op-glow 2.8s ease-in-out infinite;
+    }
+    .op-node.trigger { background: rgba(6,182,212,0.12); border-color: rgba(6,182,212,0.25); color: #22d3ee; }
+    .op-node.step    { background: rgba(20,184,166,0.12); border-color: rgba(20,184,166,0.25); color: #2dd4bf; animation-delay: 0.4s; }
+    .op-node.branch  { background: rgba(154,142,230,0.12); border-color: rgba(154,142,230,0.25); color: #b3a9ee; animation-delay: 0.8s; }
+    .op-node.action  { background: rgba(249,115,22,0.10); border-color: rgba(249,115,22,0.2); color: #fb923c; animation-delay: 1.2s; }
+    .op-node.end     { background: rgba(52,211,153,0.10); border-color: rgba(52,211,153,0.2); color: #34d399; animation-delay: 1.6s; }
+    .op-connector {
+      display: flex; justify-content: center; align-items: center;
+      height: 20px; gap: 40px;
+    }
+    .op-connector-line {
+      width: 1px; height: 100%;
+      background: linear-gradient(to bottom, rgba(154,142,230,0.3), rgba(154,142,230,0.1));
+    }
+    @keyframes op-glow {
+      0%, 100% { opacity: 0.65; box-shadow: none; }
+      50% { opacity: 1; box-shadow: 0 0 12px rgba(20,184,166,0.2); }
+    }
+
+    .product-card-body {
+      padding: 28px 28px 32px;
+      display: flex; flex-direction: column; gap: 16px; flex: 1;
+    }
+    .product-card-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .product-card-label.rulex { color: var(--blue-400); }
+    .product-card-label.operon { color: #2dd4bf; }
+    .product-card-name {
+      font-size: 26px; font-weight: 800; letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+    .product-card-desc {
+      font-size: 15px; color: var(--text-secondary); line-height: 1.65;
+    }
+    .product-card-tags {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .product-card-tag {
+      font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 6px;
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .product-card-actions {
+      display: flex; gap: 12px; flex-wrap: wrap; margin-top: auto; padding-top: 8px;
+    }
+    .btn-teal {
+      background: linear-gradient(135deg, #0d9488, #06b6d4);
+      color: #fff; box-shadow: 0 0 20px rgba(13,148,136,0.28);
+    }
+    .btn-teal:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 32px rgba(13,148,136,0.44);
+    }
+
+    /* ── Company Values ── */
+    .values-section { padding: 100px 0; }
+    .values-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px;
+    }
+    @media (max-width: 768px) { .values-grid { grid-template-columns: 1fr; } }
+    .value-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      transition: var(--transition);
+    }
+    .value-card:hover {
+      border-color: var(--border-bright);
+      background: var(--bg-card-hover);
+    }
+    .value-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; margin-bottom: 16px;
+    }
+    .value-icon.blue   { background: rgba(154,142,230,0.12); }
+    .value-icon.teal   { background: rgba(20,184,166,0.12); }
+    .value-icon.orange { background: rgba(249,115,22,0.10); }
+  </style>
 </head>
 <body>
 
   <!-- nav + footer injected by nav.js -->
 
-  <!-- ── Hero ────────────────────────────────────────────────────── -->
-  <section class="hero">
+  <!-- ── Hero ─────────────────────────────────────────────────────── -->
+  <section class="xflore-hero">
     <div class="hero-grid-bg"></div>
     <div class="hero-glow"></div>
-    <div class="hero-glow-2"></div>
-    <div class="container">
-      <div class="hero-badge">
-        <div class="hero-badge-dot"></div>
-        AI for Everything After Code
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="xflore-hero-badge">
+        <div class="xflore-hero-badge-dot"></div>
+        Intelligent Automation Platform
       </div>
       <h1>
-        The Rule Engine for<br />
-        <span class="grad-text">Everything After Logic</span>
+        Automation that thinks.<br />
+        <span class="grad-text">Software that decides.</span>
       </h1>
-      <p class="hero-sub">
-        Rule-X delivers intelligent AI automation so your team ships business logic faster, safer, and smarter.
-        Visual builder, AI assistance, real-time collaboration — all in one platform.
+      <p class="xflore-hero-sub">
+        Xflore builds intelligent automation products for enterprises. From rule-driven decision engines to orchestrated process flows — we give teams the tools to operate smarter.
       </p>
-      <div class="hero-actions">
-        <a href="pricing.html" class="btn btn-primary" style="font-size:16px; padding:14px 28px;">
-          Get Started Free →
-        </a>
-        <a href="contact.html" class="btn btn-outline" style="font-size:16px; padding:14px 28px;">
-          Request Demo
-        </a>
+      <div class="xflore-hero-actions">
+        <a href="rule-x.html" class="btn btn-primary" style="font-size:16px;padding:14px 28px;">Explore Rule-X →</a>
+        <a href="operon.html" class="btn btn-outline" style="font-size:16px;padding:14px 28px;">Explore Operon</a>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-number">13+</div>
-          <div class="hero-stat-label">Block Types</div>
+      <div class="xflore-stats">
+        <div class="xflore-stat-item">
+          <div class="xflore-stat-num">2</div>
+          <div class="xflore-stat-label">Products</div>
         </div>
-        <div class="hero-stat">
-          <div class="hero-stat-number">3</div>
-          <div class="hero-stat-label">Authoring Modes</div>
+        <div class="xflore-stat-item">
+          <div class="xflore-stat-num">13+</div>
+          <div class="xflore-stat-label">Rule Block Types</div>
         </div>
-        <div class="hero-stat">
-          <div class="hero-stat-number">∞</div>
-          <div class="hero-stat-label">Version History</div>
+        <div class="xflore-stat-item">
+          <div class="xflore-stat-num">∞</div>
+          <div class="xflore-stat-label">Version History</div>
         </div>
-        <div class="hero-stat">
-          <div class="hero-stat-number">Real‑time</div>
-          <div class="hero-stat-label">Collaboration</div>
+        <div class="xflore-stat-item">
+          <div class="xflore-stat-num">Real-time</div>
+          <div class="xflore-stat-label">Collaboration</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Pipeline Walkthrough (Video) ──────────────────────────────── -->
-  <section class="pipeline-welcome">
+  <!-- ── Products ──────────────────────────────────────────────────── -->
+  <section class="products-section">
     <div class="container">
       <div class="section-header">
-        <span class="tag tag-green">Welcome Tour</span>
-        <h2>See the deployment pipeline<br /><span class="grad-text">in action</span></h2>
-        <p>A quick product walkthrough of Rule-X Studio: authoring, testing, pull request approvals, and multi-environment deployment flow.</p>
+        <span class="tag">Our Products</span>
+        <h2>Two products.<br /><span class="grad-text">One intelligent platform.</span></h2>
+        <p>Each product is purpose-built — deeply focused on its domain, yet designed to complement the other.</p>
       </div>
-      <div class="pipeline-video-shell" data-video-url="assets/rulex-pipeline-walkthrough.mp4" data-embed-url="">
-        <div class="pipeline-video-topbar">
-          <div class="pipeline-window-dots"><span></span><span></span><span></span></div>
-          <div class="pipeline-window-title">Rule-X Studio | Deployment Tour</div>
-          <div class="pipeline-window-live">LIVE DEMO</div>
-        </div>
-        <div class="pipeline-video-stage">
-          <video id="pipelineDemoVideo" class="pipeline-video" autoplay muted loop playsinline controls poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%239a8ee6' stop-opacity='.24'/%3E%3Cstop offset='1' stop-color='%23d19efb' stop-opacity='.24'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='%2314143a'/%3E%3Crect x='24' y='24' width='1552' height='852' rx='22' fill='url(%23g)' stroke='rgba(255,255,255,.20)'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23eeeeee' font-size='40' font-family='Inter,sans-serif'%3ERule-X Pipeline Walkthrough%3C/text%3E%3C/svg%3E">
-            <source id="pipelineDemoSource" src="assets/rulex-pipeline-walkthrough.mp4" type="video/mp4" />
-            Your browser does not support embedded video.
-          </video>
-          <iframe id="pipelineDemoEmbed" class="pipeline-video-embed" title="Rule-X walkthrough video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          <div id="pipelineVideoFallback" class="pipeline-video-fallback" aria-hidden="true">
-            <div class="fallback-grid"></div>
-            <div class="fallback-flow-line"></div>
-            <div class="fallback-panels">
-              <div class="fallback-panel">
-                <div class="fallback-dot"></div>
-                <div class="fallback-bar"></div>
-                <div class="fallback-bar short"></div>
-              </div>
-              <div class="fallback-panel">
-                <div class="fallback-dot purple"></div>
-                <div class="fallback-bar"></div>
-                <div class="fallback-bar short"></div>
-              </div>
-              <div class="fallback-panel">
-                <div class="fallback-dot green"></div>
-                <div class="fallback-bar"></div>
-                <div class="fallback-bar short"></div>
+
+      <div class="products-grid">
+
+        <!-- Rule-X Card -->
+        <div class="product-card">
+          <div class="product-card-video-wrap product-anim-rulex">
+            <div class="product-card-video-topbar">
+              <div class="product-video-dots"><span></span><span></span><span></span></div>
+              <div class="product-video-title">Rule-X Studio | Live Preview</div>
+              <div class="product-video-badge">RULE ENGINE</div>
+            </div>
+            <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.001;" aria-hidden="true">
+              <source src="assets/rulex-pipeline-walkthrough.mp4" type="video/mp4" />
+            </video>
+            <div class="anim-canvas" id="rulexAnimCanvas">
+              <div class="rx-anim">
+                <div class="rx-row">
+                  <div class="rx-block input">Input Schema</div>
+                  <div class="rx-arrow">→</div>
+                  <div class="rx-block rule">IF / THEN Rule Row</div>
+                  <div class="rx-arrow">→</div>
+                  <div class="rx-block cep">CEP Rule</div>
+                </div>
+                <div class="rx-row">
+                  <div class="rx-block ai">AI Build</div>
+                  <div class="rx-arrow">→</div>
+                  <div class="rx-block output">Output Schema</div>
+                </div>
+                <div class="rx-env" style="margin-top:12px;">
+                  <div class="rx-env-pill dev">Dev</div>
+                  <div class="rx-env-sep">→</div>
+                  <div class="rx-env-pill qa">QA</div>
+                  <div class="rx-env-sep">→</div>
+                  <div class="rx-env-pill prod">Production</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="pipeline-video-meta">
-          <div class="pipeline-video-chip">Temporal Rules</div>
-          <div class="pipeline-video-chip">CEP Windows</div>
-          <div class="pipeline-video-chip">AI Builder</div>
-          <div class="pipeline-video-chip">PR Approvals</div>
-        </div>
-        <div class="pipeline-video-note" id="pipelineVideoNote">
-          Add your real MP4 at <code>assets/rulex-pipeline-walkthrough.mp4</code> or set <code>data-embed-url</code> on this section to your shared video link.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Platform Architecture (Repo-Accurate) ─────────────────────── -->
-  <section id="platform-architecture">
-    <div class="container">
-      <div class="section-header">
-        <span class="tag">Harness-Style Portal Architecture</span>
-        <h2>Built from your real repos,<br /><span class="grad-text">not placeholder marketing copy</span></h2>
-        <p>This portal combines a Harness-inspired product homepage with a docs-portal information architecture mapped to your actual codebases, services, and APIs.</p>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon blue">🖥️</div>
-          <h3>Frontend Experience</h3>
-          <p><strong>Repo:</strong> rulex-studio-ui-main. React + Vite UI that handles login, organization/project/rule flows, pull requests, and deployment operations through typed service modules.</p>
-          <a href="docs.html#repo-map" class="learn-more">View architecture map →</a>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon purple">🔐</div>
-          <h3>Identity & Session Layer</h3>
-          <p><strong>Repo:</strong> rulex-identity-api. .NET 8 identity service with login, refresh, logout, JWT issuance, correlation-id propagation, and refresh-token rotation.</p>
-          <a href="api-reference.html#identity-api" class="learn-more">See auth endpoints →</a>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon green">⚙️</div>
-          <h3>Rule Authoring & Deployment APIs</h3>
-          <p><strong>Repo:</strong> rulex-studio-api. .NET 8 service for organization/domain/project/rule/version/deployment/pull-request modules with approval and rollback workflows.</p>
-          <a href="api-reference.html#studio-api" class="learn-more">Explore API surface →</a>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon orange">📦</div>
-          <h3>Shared Platform Contracts</h3>
-          <p><strong>Repo:</strong> rulex-common-lib. Shared JWT auth middleware, exception management, and request logging used by both identity and studio APIs.</p>
-          <a href="docs.html#shared-lib" class="learn-more">Review shared contracts →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Developer Hub Modules ─────────────────────────────────────── -->
-  <section id="developer-hub-modules" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-    <div class="container">
-      <div class="section-header">
-        <span class="tag">Developer Hub</span>
-        <h2>Docs portal modeled after modern<br /><span class="grad-text">enterprise developer hubs</span></h2>
-        <p>Browse platform foundations, code collaboration guides, and a full searchable endpoint inventory for your Rule-X services.</p>
-      </div>
-      <div class="docs-topic-grid">
-        <a class="docs-topic-card" href="docs.html"><div class="docs-topic-title">Developer Hub Home</div><div class="docs-topic-desc">Architecture overview, request flow, and integration priorities.</div></a>
-        <a class="docs-topic-card" href="platform.html"><div class="docs-topic-title">Platform Documentation</div><div class="docs-topic-desc">Auth, org/project model, governance, templates, approvals, and automation.</div></a>
-        <a class="docs-topic-card" href="code-repository.html"><div class="docs-topic-title">Code Repository Docs</div><div class="docs-topic-desc">Repository lifecycle, collaboration, pull requests, and integrations.</div></a>
-        <a class="docs-topic-card" href="api-reference.html"><div class="docs-topic-title">API Reference Explorer</div><div class="docs-topic-desc">Complete Studio + Identity endpoint coverage with search and quick copy.</div></a>
-      </div>
-      <div style="text-align:center;margin-top:34px;">
-        <a href="docs.html" class="btn btn-outline" style="font-size:15px;padding:12px 28px;">Open Developer Hub →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Logo Strip ───────────────────────────────────────────────── -->
-  <div class="logos-strip">
-    <div class="container">
-      <p class="logos-label">Trusted by teams building intelligent automation</p>
-      <div class="logos-row">
-        <div class="logo-pill"><div class="logo-icon" style="background:#1a1f2e;">🏦</div>Banking &amp; Finance</div>
-        <div class="logo-pill"><div class="logo-icon" style="background:#1a1f2e;">🏥</div>Healthcare</div>
-        <div class="logo-pill"><div class="logo-icon" style="background:#1a1f2e;">🛒</div>E-Commerce</div>
-        <div class="logo-pill"><div class="logo-icon" style="background:#1a1f2e;">⚡</div>Insurtech</div>
-        <div class="logo-pill"><div class="logo-icon" style="background:#1a1f2e;">🏭</div>Manufacturing</div>
-        <div class="logo-pill"><div class="logo-icon" style="background:#1a1f2e;">🚚</div>Logistics</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── Features ─────────────────────────────────────────────────── -->
-  <section id="features">
-    <div class="container">
-      <div class="section-header">
-        <span class="tag">Features</span>
-        <h2>Everything you need to build<br /><span class="grad-text">intelligent rule systems</span></h2>
-        <p>From simple condition checks to complex event processing — Rule-X covers every pattern in enterprise business logic.</p>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon blue">🎨</div>
-          <h3>Visual Block Builder</h3>
-          <p>Drag-and-drop rule authoring with 13 block types. Build complex rule logic visually — no code required.</p>
-          <a href="block-types.html" class="learn-more">Explore block types →</a>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon purple">🤖</div>
-          <h3>AI Rule Generation</h3>
-          <p>Describe your business logic in plain English. The AI Builder interprets your intent and generates structured rule configurations instantly.</p>
-          <a href="features.html#ai" class="learn-more">See AI in action →</a>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon green">🚀</div>
-          <h3>Multi-Environment Deployment</h3>
-          <p>Promote rules across Dev → QA → Production with a guided deployment wizard and live status updates.</p>
-          <a href="deployments.html" class="learn-more">Explore deployments →</a>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon orange">📋</div>
-          <h3>DMN Decision Tables</h3>
-          <p>Spreadsheet-style decision tables with FIRST, PRIORITY, ALL, and COLLECT hit policies. Import/export and validate coverage.</p>
-          <a href="features.html#tables" class="learn-more">Learn more →</a>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon blue">🔄</div>
-          <h3>Version Control &amp; History</h3>
-          <p>Full semantic versioning for every rule. Commit with messages, browse history, diff versions, and rollback instantly.</p>
-          <a href="features.html" class="learn-more">Learn more →</a>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon purple">👥</div>
-          <h3>Real-Time Collaboration</h3>
-          <p>See who's editing in real-time. Conflict detection on commit, resolution modal, and draft auto-save every 3 seconds.</p>
-          <a href="features.html#collab" class="learn-more">Learn more →</a>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon green">🔀</div>
-          <h3>Pull Request Workflow</h3>
-          <p>Git-style PR flow for promoting rules. Inline diff comments, reviewer assignment, and "Merge &amp; Deploy" in one action.</p>
-          <a href="features.html" class="learn-more">Learn more →</a>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon orange">🧪</div>
-          <h3>Integrated Test Suite</h3>
-          <p>Write and run test scenarios directly inside the studio. See pass/fail per block and coverage metrics before you deploy.</p>
-          <a href="features.html" class="learn-more">Learn more →</a>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon blue">💡</div>
-          <h3>Explainability &amp; Audit</h3>
-          <p>Every rule decision is traceable. Visual decision flow, plain-English explanations, and a complete audit trail.</p>
-          <a href="features.html" class="learn-more">Learn more →</a>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:48px;">
-        <a href="features.html" class="btn btn-outline" style="font-size:15px;padding:12px 28px;">View All Features →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Block Types ───────────────────────────────────────────────── -->
-  <section class="blocks-section" id="block-types">
-    <div class="container">
-      <div class="section-header">
-        <span class="tag tag-purple">Rule Block Types</span>
-        <h2>13 block types.<br /><span class="grad-text">Every rule pattern covered.</span></h2>
-        <p>From simple condition checks to full temporal logic, CEP streaming, and AI inference.</p>
-      </div>
-      <div class="blocks-grid">
-        <div class="block-pill"><div class="block-dot" style="background:#d19efb;box-shadow:0 0 6px #d19efb;"></div><span>Input Schema</span></div>
-        <div class="block-pill"><div class="block-dot" style="background:#34D399;box-shadow:0 0 6px #34D399;"></div><span>Local JSON</span></div>
-        <div class="block-pill"><div class="block-dot" style="background:#9a8ee6;box-shadow:0 0 6px #9a8ee6;"></div><span>External API</span></div>
-        <div class="block-pill"><div class="block-dot" style="background:#F59E0B;box-shadow:0 0 6px #F59E0B;"></div><span>SQL Query</span></div>
-        <div class="block-pill"><div class="block-dot" style="background:#EC4899;box-shadow:0 0 6px #EC4899;"></div><span>Rule Row (IF/THEN)</span></div>
-        <div class="block-pill"><div class="block-dot" style="background:#7b6fd4;box-shadow:0 0 6px #7b6fd4;"></div><span>Temporal Rule</span></div>
-        <div class="block-pill"><div class="block-dot" style="background:#F97316;box-shadow:0 0 6px #F97316;"></div><span>CEP Rule</span></div>
-        <div class="block-pill"><div class="block-dot" style="background:#06B6D4;box-shadow:0 0 6px #06B6D4;"></div><span>Collection Op</span></div>
-        <div class="block-pill"><div class="block-dot" style="background:#84CC16;box-shadow:0 0 6px #84CC16;"></div><span>Execute Sub-Rule</span></div>
-        <div class="block-pill"><div class="block-dot" style="background:#14B8A6;box-shadow:0 0 6px #14B8A6;"></div><span>Decision Table</span></div>
-        <div class="block-pill"><div class="block-dot" style="background:#b3a9ee;box-shadow:0 0 6px #b3a9ee;"></div><span>Inference Engine</span></div>
-        <div class="block-pill"><div class="block-dot" style="background:#64748B;box-shadow:0 0 6px #64748B;"></div><span>Log Block</span></div>
-        <div class="block-pill"><div class="block-dot" style="background:#F43F5E;box-shadow:0 0 6px #F43F5E;"></div><span>Output Schema</span></div>
-      </div>
-      <div style="text-align:center;margin-top:48px;">
-        <a href="block-types.html" class="btn btn-outline" style="font-size:15px;padding:12px 28px;">Explore All Block Types →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── How It Works ──────────────────────────────────────────────── -->
-  <section id="how-it-works">
-    <div class="container">
-      <div class="section-header">
-        <span class="tag">How It Works</span>
-        <h2>From idea to production<br /><span class="grad-text">in four steps</span></h2>
-        <p>Rule-X brings structure to every stage of the rule lifecycle — from authoring to auditing.</p>
-      </div>
-      <div class="steps-wrapper">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>Model Your Rule</h3>
-          <p>Use the Visual Builder, AI Builder, or Canvas Editor to define your rule logic using blocks.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>Test &amp; Validate</h3>
-          <p>Run test scenarios inside the studio. See pass/fail per block and coverage before you commit.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>Review &amp; Approve</h3>
-          <p>Open a pull request to promote the rule. Assign reviewers, leave inline comments, and track approvals.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <h3>Deploy &amp; Monitor</h3>
-          <p>Deploy to any environment with the guided wizard. Monitor live step execution and roll back with one click.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Deployment Pipeline ───────────────────────────────────────── -->
-  <section class="pipeline-section" id="deployments">
-    <div class="container">
-      <div class="section-header">
-        <span class="tag tag-green">Deployments</span>
-        <h2>CI/CD for your<br /><span class="grad-text">business rules</span></h2>
-        <p>Promote rules across environments with guardrails. Every deployment is tracked, audited, and reversible.</p>
-      </div>
-      <div class="pipeline-visual">
-        <div class="pipeline-header">
-          <div style="width:36px;height:36px;background:linear-gradient(135deg,#9a8ee6,#d19efb);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;">🚀</div>
-          <div>
-            <div class="pipeline-title">Deploy: credit-scoring-v2.1.0 → Production</div>
-            <div class="pipeline-subtitle">Triggered by PR #47 merge · reviewed by 2 approvers</div>
-          </div>
-          <div style="margin-left:auto;"><span class="tag tag-green" style="font-size:11px;">● Live</span></div>
-        </div>
-        <div class="pipeline-environments">
-          <div class="env-block env-dev"><div class="env-label">Source</div><div class="env-name">Development</div><div class="env-badge">v2.1.0</div></div>
-          <div class="env-arrow">→</div>
-          <div class="env-block env-qa"><div class="env-label">Staging</div><div class="env-name">QA</div><div class="env-badge">Passed ✓</div></div>
-          <div class="env-arrow">→</div>
-          <div class="env-block env-prod"><div class="env-label">Target</div><div class="env-name">Production</div><div class="env-badge">Deploying…</div></div>
-        </div>
-        <div class="pipeline-steps">
-          <div class="p-step done"><div class="p-step-icon">✅</div>Validate Rule</div>
-          <div class="p-step done"><div class="p-step-icon">✅</div>Run Tests</div>
-          <div class="p-step done"><div class="p-step-icon">✅</div>Approval Check</div>
-          <div class="p-step doing"><div class="p-step-icon">⟳</div>Deploy Artifact</div>
-          <div class="p-step"><div class="p-step-icon">○</div>Smoke Test</div>
-          <div class="p-step"><div class="p-step-icon">○</div>Notify</div>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:40px;">
-        <a href="deployments.html" class="btn btn-outline" style="font-size:15px;padding:12px 28px;">Learn About Deployments →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Use Cases ─────────────────────────────────────────────────── -->
-  <section id="use-cases" style="background:var(--bg-card);border-top:1px solid var(--border);">
-    <div class="container">
-      <div class="section-header">
-        <span class="tag tag-purple">Use Cases</span>
-        <h2>Built for every industry<br /><span class="grad-text">that runs on decisions</span></h2>
-        <p>Rule-X is domain-agnostic. If your business runs on logic, Rule-X handles it.</p>
-      </div>
-      <div class="use-cases-grid">
-        <div class="use-case-card">
-          <div class="uc-icon">🏦</div>
-          <h3>Credit &amp; Underwriting</h3>
-          <p>Model credit scoring, loan eligibility, and risk assessment rules with DMN hit policies for full auditability.</p>
-          <div class="uc-tags"><span class="uc-tag">Decision Table</span><span class="uc-tag">Inference Engine</span></div>
-        </div>
-        <div class="use-case-card">
-          <div class="uc-icon">🛡️</div>
-          <h3>Fraud Detection</h3>
-          <p>Stream event data through CEP windows to detect suspicious patterns in real time.</p>
-          <div class="uc-tags"><span class="uc-tag">CEP Rule</span><span class="uc-tag">Temporal Rule</span></div>
-        </div>
-        <div class="use-case-card">
-          <div class="uc-icon">💊</div>
-          <h3>Clinical Decision Support</h3>
-          <p>Encode clinical guidelines as inference engine rules with full audit trail for regulatory compliance.</p>
-          <div class="uc-tags"><span class="uc-tag">Inference Engine</span><span class="uc-tag">Audit Log</span></div>
-        </div>
-        <div class="use-case-card">
-          <div class="uc-icon">📦</div>
-          <h3>Pricing &amp; Promotions</h3>
-          <p>Dynamic pricing rules, discount eligibility, and loyalty tier calculations. Every change version-controlled.</p>
-          <div class="uc-tags"><span class="uc-tag">Rule Row</span><span class="uc-tag">Collection Op</span></div>
-        </div>
-        <div class="use-case-card">
-          <div class="uc-icon">🚚</div>
-          <h3>Supply Chain Logic</h3>
-          <p>Routing rules, inventory reorder triggers, and SLA violation detection via External API blocks.</p>
-          <div class="uc-tags"><span class="uc-tag">External API</span><span class="uc-tag">CEP Rule</span></div>
-        </div>
-        <div class="use-case-card">
-          <div class="uc-icon">⚡</div>
-          <h3>Insurance Underwriting</h3>
-          <p>Risk scoring, policy eligibility, and claims triage with explainability output for regulators.</p>
-          <div class="uc-tags"><span class="uc-tag">Decision Table</span><span class="uc-tag">Explainability</span></div>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:48px;">
-        <a href="use-cases.html" class="btn btn-outline" style="font-size:15px;padding:12px 28px;">See All Use Cases →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Testimonials ──────────────────────────────────────────────── -->
-  <section>
-    <div class="container">
-      <div class="section-header">
-        <span class="tag">What Teams Say</span>
-        <h2>Teams love<br /><span class="grad-text">Rule-X</span></h2>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p class="quote">Rule-X replaced three separate rule engines we were maintaining. The Visual Builder alone cut our rule authoring time in half — non-technical staff can now update rules without engineering involvement.</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">SR</div>
-            <div><div class="author-name">Sarah R.</div><div class="author-title">Head of Decision Science, FinTech startup</div></div>
+          <div class="product-card-body">
+            <div class="product-card-label rulex">Rule-X</div>
+            <div class="product-card-name">The AI-Powered<br />Rule Engine</div>
+            <p class="product-card-desc">
+              Author, version, test, and deploy business rules at enterprise scale. Visual block builder, AI generation, real-time collaboration, and a full CI/CD pipeline for rules.
+            </p>
+            <div class="product-card-tags">
+              <span class="product-card-tag">Visual Block Builder</span>
+              <span class="product-card-tag">AI Rule Generation</span>
+              <span class="product-card-tag">Decision Tables</span>
+              <span class="product-card-tag">Deployment Pipeline</span>
+              <span class="product-card-tag">Version Control</span>
+            </div>
+            <div class="product-card-actions">
+              <a href="rule-x.html" class="btn btn-primary" style="font-size:14px;padding:11px 22px;">Explore Rule-X →</a>
+              <a href="features.html" class="btn btn-outline" style="font-size:14px;padding:11px 22px;">View Features</a>
+            </div>
           </div>
         </div>
-        <div class="testimonial-card">
-          <p class="quote">The deployment pipeline with real-time step tracking and one-click rollback is exactly what we needed. We now deploy rule changes with the same confidence as code deployments.</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">MK</div>
-            <div><div class="author-name">Marcus K.</div><div class="author-title">Platform Engineering Lead, Insurance Group</div></div>
+
+        <!-- Operon Card -->
+        <div class="product-card">
+          <div class="product-card-video-wrap product-anim-operon">
+            <div class="product-card-video-topbar">
+              <div class="product-video-dots"><span></span><span></span><span></span></div>
+              <div class="product-video-title">Operon Studio | Live Preview</div>
+              <div class="product-video-badge" style="color:#2dd4bf;background:rgba(13,148,136,0.12);border-color:rgba(13,148,136,0.25);">ORCHESTRATION</div>
+            </div>
+            <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.001;" aria-hidden="true">
+              <source src="assets/operon-walkthrough.mp4" type="video/mp4" />
+            </video>
+            <div class="anim-canvas">
+              <div class="op-anim">
+                <div class="op-row">
+                  <div class="op-node trigger">TRIGGER</div>
+                </div>
+                <div class="op-connector">
+                  <div class="op-connector-line"></div>
+                </div>
+                <div class="op-row">
+                  <div class="op-node step">STEP 1</div>
+                  <div class="op-node branch">BRANCH</div>
+                </div>
+                <div class="op-connector">
+                  <div class="op-connector-line"></div>
+                  <div class="op-connector-line"></div>
+                </div>
+                <div class="op-row">
+                  <div class="op-node action">ACTION</div>
+                  <div class="op-node action">NOTIFY</div>
+                </div>
+                <div class="op-connector">
+                  <div class="op-connector-line"></div>
+                  <div class="op-connector-line"></div>
+                </div>
+                <div class="op-row">
+                  <div class="op-node end">COMPLETE</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-label operon">Operon</div>
+            <div class="product-card-name">Process<br />Orchestration</div>
+            <p class="product-card-desc">
+              Design, execute, and monitor complex multi-step workflows. Operon connects your systems, people, and logic into coherent, auditable processes — coming soon.
+            </p>
+            <div class="product-card-tags">
+              <span class="product-card-tag">Workflow Designer</span>
+              <span class="product-card-tag">Process Monitoring</span>
+              <span class="product-card-tag">Event Triggers</span>
+              <span class="product-card-tag">System Connectors</span>
+              <span class="product-card-tag">Audit Trail</span>
+            </div>
+            <div class="product-card-actions">
+              <a href="operon.html" class="btn btn-teal" style="font-size:14px;padding:11px 22px;">Explore Operon →</a>
+              <a href="contact.html" class="btn btn-outline" style="font-size:14px;padding:11px 22px;">Join Waitlist</a>
+            </div>
           </div>
         </div>
-        <div class="testimonial-card">
-          <p class="quote">The CEP and temporal rule blocks are game-changers for fraud detection. We model complex time-window patterns in minutes instead of weeks of custom code.</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">PL</div>
-            <div><div class="author-name">Priya L.</div><div class="author-title">Data Engineering Manager, Payments Platform</div></div>
-          </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Company Values ────────────────────────────────────────────── -->
+  <section class="values-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Why Xflore</span>
+        <h2>Built for the teams who<br /><span class="grad-text">run the world's decisions</span></h2>
+        <p>We believe business logic deserves the same engineering rigor as application code.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon blue">🧠</div>
+          <h3>Intelligence First</h3>
+          <p style="color:var(--text-secondary);font-size:15px;line-height:1.65;margin-top:10px;">Every product we ship has AI at its core — not as a feature, but as a foundation. We automate the hard parts so humans focus on outcomes.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon teal">🔒</div>
+          <h3>Auditability by Design</h3>
+          <p style="color:var(--text-secondary);font-size:15px;line-height:1.65;margin-top:10px;">Regulated industries trust Xflore products because every decision, change, and deployment is fully traceable — always.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon orange">⚡</div>
+          <h3>Developer Velocity</h3>
+          <p style="color:var(--text-secondary);font-size:15px;line-height:1.65;margin-top:10px;">We build tools that remove friction from shipping logic. Less boilerplate, more output — from authoring all the way to production.</p>
         </div>
       </div>
     </div>
@@ -451,11 +494,11 @@
   <!-- ── CTA Band ───────────────────────────────────────────────────── -->
   <div class="cta-band">
     <div class="cta-inner">
-      <h2>Ready to modernize your<br /><span class="grad-text">rule engine?</span></h2>
-      <p>Join teams already shipping intelligent automation with Rule-X. Get started in minutes.</p>
+      <h2>Ready to automate your<br /><span class="grad-text">business decisions?</span></h2>
+      <p>Explore Rule-X today, or get in touch to learn what Xflore can do for your team.</p>
       <div class="cta-actions">
-        <a href="contact.html" class="btn btn-primary" style="font-size:16px;padding:14px 28px;">Request a Demo →</a>
-        <a href="pricing.html" class="btn btn-outline" style="font-size:16px;padding:14px 28px;">View Pricing</a>
+        <a href="rule-x.html" class="btn btn-primary" style="font-size:16px;padding:14px 28px;">Get Started with Rule-X →</a>
+        <a href="contact.html" class="btn btn-outline" style="font-size:16px;padding:14px 28px;">Contact Us</a>
       </div>
     </div>
   </div>
