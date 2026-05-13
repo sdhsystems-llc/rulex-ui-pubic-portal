@@ -92,8 +92,8 @@ h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
 }
 .btn-outline {
   background: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--border);
+  color: var(--blue-400);
+  border: 1px solid rgba(154,142,230,0.25);
 }
 .btn-outline:hover {
   border-color: rgba(154,142,230,0.40);
@@ -138,12 +138,12 @@ nav {
   list-style: none;
 }
 .nav-links a {
-  color: var(--text-secondary); text-decoration: none;
+  color: var(--blue-400); text-decoration: none;
   font-size: 14px; font-weight: 500;
   padding: 8px 14px; border-radius: var(--radius-sm);
   transition: var(--transition);
 }
-.nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+.nav-links a:hover { color: #fff; background: rgba(154,142,230,0.08); }
 .nav-actions { display: flex; align-items: center; gap: 8px; }
 .hamburger {
   display: none; flex-direction: column; gap: 5px;
@@ -755,12 +755,12 @@ footer {
 .nav-link-btn {
   display: flex; align-items: center; gap: 4px;
   background: none; border: none; cursor: pointer;
-  color: var(--text-secondary); text-decoration: none;
+  color: var(--blue-400); text-decoration: none;
   font-size: 14px; font-weight: 500;
   padding: 8px 14px; border-radius: var(--radius-sm);
   transition: var(--transition); font-family: var(--font);
 }
-.nav-link-btn:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+.nav-link-btn:hover { color: #fff; background: rgba(154,142,230,0.08); }
 .nav-chevron { transition: transform 0.2s; margin-top: 1px; flex-shrink: 0; }
 .has-dropdown { position: relative; list-style: none; }
 .has-dropdown.dropdown-open > .nav-link-btn .nav-chevron { transform: rotate(180deg); }
@@ -833,7 +833,7 @@ footer {
 .announcement-close:hover { color: #fff; }
 
 /* Active nav link */
-.nav-active { color: var(--text-primary) !important; }
+.nav-active { color: #fff !important; }
 
 /* ─── Global Experience Widgets ───────────────────────────────────── */
 .page-progress {
