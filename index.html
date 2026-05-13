@@ -117,36 +117,59 @@
     }
     .rx-slide {
       position: absolute; inset: 0;
-      opacity: 0; transition: none;
+      opacity: 0;
       padding: 14px;
       display: flex; flex-direction: column;
       background: #f8fafc;
+      will-change: opacity, transform;
     }
-    /* 5-slide cycle: each slide is visible for 3s out of 17.5s total */
-    .rx-slide:nth-child(1) { animation: slide-fade 17.5s 0s infinite; }
-    .rx-slide:nth-child(2) { animation: slide-fade 17.5s 3.5s infinite; }
-    .rx-slide:nth-child(3) { animation: slide-fade 17.5s 7s infinite; }
-    .rx-slide:nth-child(4) { animation: slide-fade 17.5s 10.5s infinite; }
-    .rx-slide:nth-child(5) { animation: slide-fade 17.5s 14s infinite; }
-    @keyframes slide-fade {
-      0%    { opacity: 0; }
-      2%    { opacity: 1; }
-      18%   { opacity: 1; }
-      20%   { opacity: 0; }
-      100%  { opacity: 0; }
+    /* 5-slide rise-fade */
+    .rx-slide:nth-child(1) { animation: slide-rise 17.5s 0s infinite; }
+    .rx-slide:nth-child(2) { animation: slide-rise 17.5s 3.5s infinite; }
+    .rx-slide:nth-child(3) { animation: slide-rise 17.5s 7s infinite; }
+    .rx-slide:nth-child(4) { animation: slide-rise 17.5s 10.5s infinite; }
+    .rx-slide:nth-child(5) { animation: slide-rise 17.5s 14s infinite; }
+    @keyframes slide-rise {
+      0%   { opacity: 0; transform: translateY(10px); }
+      3%   { opacity: 1; transform: translateY(0); }
+      17%  { opacity: 1; transform: translateY(0); }
+      20%  { opacity: 0; transform: translateY(-7px); }
+      100% { opacity: 0; transform: translateY(10px); }
+    }
+
+    /* Progress bar (sits between topbar and slides) */
+    .rx-progress {
+      position: absolute; top: 38px; left: 0; right: 0; height: 2px;
+      background: #e8ecf0; z-index: 15; overflow: hidden;
+    }
+    .rx-progress-fill {
+      position: absolute; left: 0; top: 0; height: 100%;
+      background: linear-gradient(90deg, #6d5ce7, #9d8df0);
+    }
+    .rx-progress-fill:nth-child(1) { animation: rx-prog 17.5s 0s infinite; }
+    .rx-progress-fill:nth-child(2) { animation: rx-prog 17.5s 3.5s infinite; }
+    .rx-progress-fill:nth-child(3) { animation: rx-prog 17.5s 7s infinite; }
+    .rx-progress-fill:nth-child(4) { animation: rx-prog 17.5s 10.5s infinite; }
+    .rx-progress-fill:nth-child(5) { animation: rx-prog 17.5s 14s infinite; }
+    @keyframes rx-prog {
+      0%   { width: 0%;   opacity: 1; }
+      1%   { width: 0%;   opacity: 1; }
+      19%  { width: 100%; opacity: 1; }
+      20%  { width: 100%; opacity: 0; }
+      100% { width: 0%;   opacity: 0; }
     }
 
     /* Slide label strip at bottom */
     .rx-slide-labels {
       position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
-      display: flex; gap: 0;
+      display: flex;
       border-top: 1px solid #e8ecf0; background: #fff;
     }
     .rx-slide-label {
       flex: 1; text-align: center; font-size: 10px; font-weight: 600;
       letter-spacing: 0.03em; padding: 7px 4px;
       color: #94a3b8; border-right: 1px solid #e8ecf0;
-      transition: color 0.3s;
+      position: relative; overflow: hidden;
     }
     .rx-slide-label:last-child { border-right: none; }
     .rx-slide-label:nth-child(1) { animation: label-active 17.5s 0s infinite; }
@@ -156,10 +179,76 @@
     .rx-slide-label:nth-child(5) { animation: label-active 17.5s 14s infinite; }
     @keyframes label-active {
       0%   { color: #94a3b8; background: #fff; }
-      2%   { color: #6d5ce7; background: rgba(109,92,231,0.06); }
-      18%  { color: #6d5ce7; background: rgba(109,92,231,0.06); }
+      3%   { color: #6d5ce7; background: rgba(109,92,231,0.07); }
+      17%  { color: #6d5ce7; background: rgba(109,92,231,0.07); }
       20%  { color: #94a3b8; background: #fff; }
       100% { color: #94a3b8; background: #fff; }
+    }
+    /* Draining underline */
+    .rx-slide-label::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      height: 2px; background: #6d5ce7; border-radius: 2px; width: 0;
+    }
+    .rx-slide-label:nth-child(1)::after { animation: rx-underline 17.5s 0s infinite; }
+    .rx-slide-label:nth-child(2)::after { animation: rx-underline 17.5s 3.5s infinite; }
+    .rx-slide-label:nth-child(3)::after { animation: rx-underline 17.5s 7s infinite; }
+    .rx-slide-label:nth-child(4)::after { animation: rx-underline 17.5s 10.5s infinite; }
+    .rx-slide-label:nth-child(5)::after { animation: rx-underline 17.5s 14s infinite; }
+    @keyframes rx-underline {
+      0%   { width: 0%;   opacity: 0; }
+      3%   { width: 0%;   opacity: 1; }
+      19%  { width: 100%; opacity: 1; }
+      20%  { width: 100%; opacity: 0; }
+      100% { width: 0%;   opacity: 0; }
+    }
+
+    /* ── Micro-animation keyframes ── */
+    @keyframes rx-card-rise {
+      0%    { opacity:0; transform: translateY(16px) scale(0.97); }
+      3%    { opacity:1; transform: translateY(0) scale(1); }
+      17%   { opacity:1; transform: translateY(0) scale(1); }
+      20%   { opacity:0; transform: translateY(-8px) scale(0.98); }
+      100%  { opacity:0; transform: translateY(16px) scale(0.97); }
+    }
+    @keyframes rx-btn-glow {
+      0%, 100% { box-shadow: 0 3px 12px rgba(37,99,235,0.4); }
+      50%       { box-shadow: 0 5px 24px rgba(37,99,235,0.65); }
+    }
+    @keyframes rx-row-in {
+      0%    { opacity:0; transform: translateY(7px); }
+      2%    { opacity:1; transform: translateY(0); }
+      17%   { opacity:1; transform: translateY(0); }
+      20%   { opacity:0; }
+      100%  { opacity:0; transform: translateY(7px); }
+    }
+    @keyframes rx-block-in {
+      0%    { opacity:0; transform: translateX(-8px); }
+      2%    { opacity:1; transform: translateX(0); }
+      17%   { opacity:1; transform: translateX(0); }
+      20%   { opacity:0; }
+      100%  { opacity:0; transform: translateX(-8px); }
+    }
+    @keyframes rx-ok-pulse {
+      0%, 100% { opacity:1; box-shadow: 0 0 0 0 rgba(74,222,128,0.5); }
+      50%       { opacity:0.6; box-shadow: 0 0 0 3px rgba(74,222,128,0); }
+    }
+    @keyframes rx-res-in {
+      0%    { opacity:0; transform: translateX(5px); }
+      2%    { opacity:1; transform: translateX(0); }
+      17%   { opacity:1; transform: translateX(0); }
+      20%   { opacity:0; }
+      100%  { opacity:0; transform: translateX(5px); }
+    }
+    @keyframes rx-deploying {
+      0%, 100% { opacity:1; }
+      50%       { opacity:0.35; }
+    }
+    @keyframes rx-deploy-bar {
+      0%    { width:0%;  opacity:0; }
+      3%    { width:0%;  opacity:1; }
+      16%   { width:78%; opacity:1; }
+      20%   { width:78%; opacity:0; }
+      100%  { width:0%;  opacity:0; }
     }
 
     /* ── SCREEN 1: Visual Builder ── */
@@ -443,24 +532,33 @@
               <div class="preview-bar-badge badge-rulex">RULE ENGINE</div>
             </div>
 
+            <!-- Sweeping progress bar -->
+            <div class="rx-progress">
+              <div class="rx-progress-fill"></div>
+              <div class="rx-progress-fill"></div>
+              <div class="rx-progress-fill"></div>
+              <div class="rx-progress-fill"></div>
+              <div class="rx-progress-fill"></div>
+            </div>
+
             <div class="rx-slides">
 
               <!-- SLIDE 1: Login -->
-              <div class="rx-slide" style="background:linear-gradient(135deg,#f0f4ff 0%,#f8fafc 100%);align-items:center;justify-content:center;">
-                <div style="width:220px;background:#fff;border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,0.10);padding:24px 20px;display:flex;flex-direction:column;align-items:center;gap:0;">
-                  <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#2563eb,#1d4ed8);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;margin-bottom:10px;">X</div>
+              <div class="rx-slide" style="background:linear-gradient(135deg,#eef2ff 0%,#f0f9ff 60%,#f8fafc 100%);align-items:center;justify-content:center;">
+                <div style="width:210px;background:#fff;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,0.12);padding:24px 20px;display:flex;flex-direction:column;align-items:center;animation:rx-card-rise 17.5s 0s infinite;">
+                  <div style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#2563eb,#1d4ed8);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#fff;margin-bottom:12px;box-shadow:0 4px 14px rgba(37,99,235,0.4);">X</div>
                   <div style="font-size:13px;font-weight:700;color:#1e293b;margin-bottom:2px;">Welcome to Rule-X</div>
                   <div style="font-size:10px;color:#94a3b8;margin-bottom:16px;">Sign in to your workspace</div>
                   <div style="width:100%;margin-bottom:8px;">
                     <div style="font-size:9px;font-weight:600;color:#475569;margin-bottom:4px;">Email</div>
-                    <div style="background:#f1f5f9;border:1px solid #e2e8f0;border-radius:7px;padding:7px 10px;font-size:10px;color:#94a3b8;">admin@acme.com</div>
+                    <div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:7px;padding:7px 10px;font-size:10px;color:#64748b;">admin@acme.com</div>
                   </div>
                   <div style="width:100%;margin-bottom:14px;">
                     <div style="font-size:9px;font-weight:600;color:#475569;margin-bottom:4px;">Password</div>
-                    <div style="background:#f1f5f9;border:1px solid #e2e8f0;border-radius:7px;padding:7px 10px;font-size:10px;color:#94a3b8;">••••••••••</div>
+                    <div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:7px;padding:7px 10px;font-size:10px;color:#64748b;">••••••••••</div>
                   </div>
-                  <div style="width:100%;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;text-align:center;border-radius:7px;padding:8px;font-size:11px;font-weight:700;letter-spacing:0.02em;">Sign In →</div>
-                  <div style="font-size:9px;color:#94a3b8;margin-top:10px;">Forgot password? <span style="color:#2563eb;">Reset</span></div>
+                  <div style="width:100%;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;text-align:center;border-radius:8px;padding:9px;font-size:11px;font-weight:700;box-shadow:0 3px 12px rgba(37,99,235,0.4);animation:rx-btn-glow 2s ease-in-out infinite;">Sign In →</div>
+                  <div style="font-size:9px;color:#94a3b8;margin-top:10px;">Forgot password? <span style="color:#2563eb;font-weight:600;">Reset</span></div>
                 </div>
               </div>
 
@@ -469,36 +567,36 @@
                 <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
                   <div style="font-size:12px;font-weight:700;color:#1e293b;flex:1;">My Rules</div>
                   <div style="font-size:8px;color:#64748b;background:#f1f5f9;padding:2px 7px;border-radius:99px;border:1px solid #e2e8f0;">12 rules</div>
-                  <div style="font-size:9px;font-weight:700;padding:4px 9px;border-radius:5px;background:#2563eb;color:#fff;">+ New Rule</div>
+                  <div style="font-size:9px;font-weight:700;padding:4px 9px;border-radius:5px;background:#2563eb;color:#fff;box-shadow:0 2px 6px rgba(37,99,235,0.3);">+ New Rule</div>
                 </div>
                 <div style="display:flex;gap:6px;margin-bottom:10px;">
-                  <div style="flex:1;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px;text-align:center;">
+                  <div style="flex:1;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
                     <div style="font-size:16px;font-weight:800;color:#1e293b;">12</div>
                     <div style="font-size:9px;color:#94a3b8;">Total</div>
                   </div>
-                  <div style="flex:1;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px;text-align:center;">
+                  <div style="flex:1;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
                     <div style="font-size:16px;font-weight:800;color:#16a34a;">9</div>
                     <div style="font-size:9px;color:#94a3b8;">Active</div>
                   </div>
-                  <div style="flex:1;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px;text-align:center;">
+                  <div style="flex:1;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
                     <div style="font-size:16px;font-weight:800;color:#f59e0b;">3</div>
                     <div style="font-size:9px;color:#94a3b8;">Draft</div>
                   </div>
                 </div>
                 <div style="display:flex;flex-direction:column;gap:5px;">
-                  <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px 10px;display:flex;align-items:center;gap:8px;">
+                  <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px 10px;display:flex;align-items:center;gap:8px;box-shadow:0 1px 3px rgba(0,0,0,0.04);animation:rx-row-in 17.5s 3.5s infinite;">
                     <div style="width:7px;height:7px;border-radius:50%;background:#16a34a;flex-shrink:0;"></div>
                     <div style="flex:1;font-size:10px;font-weight:600;color:#1e293b;">Account Status Check</div>
                     <div style="font-size:8px;color:#64748b;">v7</div>
                     <div style="font-size:8px;font-weight:700;padding:2px 6px;border-radius:4px;background:rgba(22,163,74,0.1);color:#16a34a;">Active</div>
                   </div>
-                  <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px 10px;display:flex;align-items:center;gap:8px;">
+                  <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px 10px;display:flex;align-items:center;gap:8px;box-shadow:0 1px 3px rgba(0,0,0,0.04);animation:rx-row-in 17.5s 3.5s infinite;animation-delay:calc(3.5s + 0.15s);">
                     <div style="width:7px;height:7px;border-radius:50%;background:#16a34a;flex-shrink:0;"></div>
                     <div style="flex:1;font-size:10px;font-weight:600;color:#1e293b;">Credit Risk Evaluation</div>
                     <div style="font-size:8px;color:#64748b;">v14</div>
                     <div style="font-size:8px;font-weight:700;padding:2px 6px;border-radius:4px;background:rgba(22,163,74,0.1);color:#16a34a;">Active</div>
                   </div>
-                  <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px 10px;display:flex;align-items:center;gap:8px;">
+                  <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px 10px;display:flex;align-items:center;gap:8px;box-shadow:0 1px 3px rgba(0,0,0,0.04);animation:rx-row-in 17.5s 3.5s infinite;animation-delay:calc(3.5s + 0.3s);">
                     <div style="width:7px;height:7px;border-radius:50%;background:#f59e0b;flex-shrink:0;"></div>
                     <div style="flex:1;font-size:10px;font-weight:600;color:#1e293b;">Fraud Detection v2</div>
                     <div style="font-size:8px;color:#64748b;">v2</div>
@@ -508,96 +606,81 @@
               </div>
 
               <!-- SLIDE 3: Create Rule -->
-              <div class="rx-slide">
+              <div class="rx-slide" style="background:#f8fafc;">
                 <div class="vb-toolbar">
                   <span class="vb-topbar-title">Fraud Detection v2</span>
                   <span class="vb-tab active">Visual Builder</span>
                   <span class="vb-tab">AI Builder</span>
-                  <span class="vb-tab">JSON</span>
                   <span class="vb-tab">Testing</span>
                   <span style="margin-left:auto;display:flex;gap:4px;">
-                    <span class="vb-btn vb-btn-debug">⚙ Debug</span>
                     <span class="vb-btn vb-btn-add">+ Add Block</span>
                   </span>
                 </div>
-                <div class="vb-block-row">
+                <div class="vb-block-row" style="animation:rx-block-in 17.5s 7s infinite;">
                   <div class="vb-block-accent" style="background:#f59e0b;"></div>
                   <div class="vb-block-icon" style="background:rgba(245,158,11,0.15);">🔵</div>
-                  <div class="vb-block-content">
-                    <div class="vb-block-name">TransactionInput</div>
-                    <div class="vb-block-sub">Sample JSON • 6 fields defined</div>
-                  </div>
+                  <div class="vb-block-content"><div class="vb-block-name">TransactionInput</div><div class="vb-block-sub">Sample JSON • 6 fields defined</div></div>
                   <div class="vb-block-type" style="color:#f59e0b;background:rgba(245,158,11,0.1);">INPUT</div>
                 </div>
-                <div class="vb-block-row" style="border-color:rgba(37,99,235,0.2);">
+                <div class="vb-block-row" style="border-color:rgba(37,99,235,0.2);animation:rx-block-in 17.5s 7s infinite;animation-delay:calc(7s + 0.12s);">
                   <div class="vb-block-accent" style="background:#2563eb;"></div>
                   <div class="vb-block-icon" style="background:rgba(37,99,235,0.12);">📐</div>
-                  <div class="vb-block-content">
-                    <div class="vb-block-name">RiskScoreRule</div>
-                    <div class="vb-block-sub">IF amount &gt; 10000 AND country != "US"</div>
-                  </div>
+                  <div class="vb-block-content"><div class="vb-block-name">RiskScoreRule</div><div class="vb-block-sub">IF amount &gt; 10000 AND country != "US"</div></div>
                   <div class="vb-block-type" style="color:#2563eb;background:rgba(37,99,235,0.1);">RULE ROW</div>
                 </div>
-                <div class="vb-nested">
+                <div class="vb-nested" style="animation:rx-block-in 17.5s 7s infinite;animation-delay:calc(7s + 0.24s);">
                   <div class="vb-foreach-pill">DECISION TABLE • 4 conditions • 3 actions</div>
                   <div class="vb-block-row" style="background:rgba(37,99,235,0.04);border-color:rgba(37,99,235,0.15);">
                     <div class="vb-block-accent" style="background:#2563eb;"></div>
                     <div class="vb-block-icon" style="background:rgba(37,99,235,0.12);">📋</div>
-                    <div class="vb-block-content">
-                      <div class="vb-block-name">FraudDecisionTable</div>
-                      <div class="vb-block-sub">DECISION TABLE</div>
-                    </div>
+                    <div class="vb-block-content"><div class="vb-block-name">FraudDecisionTable</div><div class="vb-block-sub">DECISION TABLE</div></div>
                   </div>
                 </div>
-                <div class="vb-block-row" style="margin-top:4px;">
+                <div class="vb-block-row" style="animation:rx-block-in 17.5s 7s infinite;animation-delay:calc(7s + 0.36s);">
                   <div class="vb-block-accent" style="background:#f97316;"></div>
                   <div class="vb-block-icon" style="background:rgba(249,115,22,0.15);">🔴</div>
-                  <div class="vb-block-content">
-                    <div class="vb-block-name">FraudOutput</div>
-                    <div class="vb-block-sub">risk_score, action, reason</div>
-                  </div>
+                  <div class="vb-block-content"><div class="vb-block-name">FraudOutput</div><div class="vb-block-sub">risk_score, action, reason</div></div>
                   <div class="vb-block-type" style="color:#f97316;background:rgba(249,115,22,0.1);">OUTPUT</div>
                 </div>
                 <div class="vb-count">3 blocks in execution flow</div>
               </div>
 
               <!-- SLIDE 4: Execute -->
-              <div class="rx-slide" style="background:#f8fafc;">
-                <div class="vb-toolbar">
-                  <span class="vb-topbar-title">Fraud Detection v2</span>
-                  <span class="vb-tab">Visual Builder</span>
-                  <span class="vb-tab">AI Builder</span>
-                  <span class="vb-tab">JSON</span>
-                  <span class="vb-tab active">Testing</span>
+              <div class="rx-slide" style="background:#1a2234;">
+                <div class="vb-toolbar" style="border-bottom-color:rgba(255,255,255,0.08);">
+                  <span class="vb-topbar-title" style="color:#94a3b8;">Fraud Detection v2</span>
+                  <span class="vb-tab" style="color:#475569;">Visual Builder</span>
+                  <span class="vb-tab active" style="background:rgba(255,255,255,0.08);color:#e2e8f0;">Testing</span>
                   <span style="margin-left:auto;">
-                    <span class="vb-btn" style="background:#16a34a;color:#fff;">▷ Execute</span>
+                    <span class="vb-btn" style="background:#16a34a;color:#fff;box-shadow:0 2px 8px rgba(22,163,74,0.4);">▷ Execute</span>
                   </span>
                 </div>
                 <div style="display:flex;gap:8px;flex:1;min-height:0;">
                   <div style="flex:1;display:flex;flex-direction:column;gap:5px;">
-                    <div style="font-size:9px;font-weight:700;color:#475569;letter-spacing:0.05em;">INPUT PAYLOAD</div>
-                    <div style="background:#1e293b;border-radius:8px;padding:10px;font-family:monospace;font-size:9px;line-height:1.6;flex:1;">
-                      <span style="color:#94a3b8;">{</span><br/>
-                      &nbsp;<span style="color:#7dd3fc;">"amount"</span><span style="color:#94a3b8;">:</span> <span style="color:#86efac;">15000</span>,<br/>
-                      &nbsp;<span style="color:#7dd3fc;">"country"</span><span style="color:#94a3b8;">:</span> <span style="color:#fca5a5;">"NG"</span>,<br/>
-                      &nbsp;<span style="color:#7dd3fc;">"card_type"</span><span style="color:#94a3b8;">:</span> <span style="color:#fca5a5;">"VISA"</span>,<br/>
-                      &nbsp;<span style="color:#7dd3fc;">"user_age"</span><span style="color:#94a3b8;">:</span> <span style="color:#86efac;">32</span>,<br/>
-                      &nbsp;<span style="color:#7dd3fc;">"vpn"</span><span style="color:#94a3b8;">:</span> <span style="color:#fb923c;">false</span><br/>
-                      <span style="color:#94a3b8;">}</span>
+                    <div style="font-size:9px;font-weight:700;color:#475569;letter-spacing:0.06em;">INPUT PAYLOAD</div>
+                    <div style="background:#0f172a;border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px;font-family:monospace;font-size:9px;line-height:1.7;flex:1;">
+                      <span style="color:#475569;">{</span><br/>
+                      &nbsp;<span style="color:#7dd3fc;">"amount"</span><span style="color:#475569;">:</span> <span style="color:#86efac;">15000</span>,<br/>
+                      &nbsp;<span style="color:#7dd3fc;">"country"</span><span style="color:#475569;">:</span> <span style="color:#fca5a5;">"NG"</span>,<br/>
+                      &nbsp;<span style="color:#7dd3fc;">"card_type"</span><span style="color:#475569;">:</span> <span style="color:#fca5a5;">"VISA"</span>,<br/>
+                      &nbsp;<span style="color:#7dd3fc;">"user_age"</span><span style="color:#475569;">:</span> <span style="color:#86efac;">32</span>,<br/>
+                      &nbsp;<span style="color:#7dd3fc;">"vpn"</span><span style="color:#475569;">:</span> <span style="color:#fb923c;">false</span><br/>
+                      <span style="color:#475569;">}</span>
                     </div>
                   </div>
                   <div style="flex:1;display:flex;flex-direction:column;gap:5px;">
                     <div style="display:flex;align-items:center;gap:5px;">
-                      <div style="font-size:9px;font-weight:700;color:#475569;letter-spacing:0.05em;">RESULT</div>
-                      <div style="font-size:8px;font-weight:700;padding:1px 6px;border-radius:4px;background:rgba(22,163,74,0.1);color:#16a34a;border:1px solid rgba(22,163,74,0.2);">200 OK • 12ms</div>
+                      <div style="font-size:9px;font-weight:700;color:#475569;letter-spacing:0.06em;">RESULT</div>
+                      <div style="font-size:8px;font-weight:700;padding:2px 7px;border-radius:4px;background:rgba(22,163,74,0.15);color:#4ade80;border:1px solid rgba(22,163,74,0.3);display:flex;align-items:center;gap:3px;">
+                        <span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#4ade80;animation:rx-ok-pulse 1.4s ease-in-out infinite;"></span>200 OK • 12ms
+                      </div>
                     </div>
-                    <div style="background:#1e293b;border-radius:8px;padding:10px;font-family:monospace;font-size:9px;line-height:1.6;flex:1;">
-                      <span style="color:#94a3b8;">{</span><br/>
-                      &nbsp;<span style="color:#7dd3fc;">"risk_score"</span><span style="color:#94a3b8;">:</span> <span style="color:#86efac;">87</span>,<br/>
-                      &nbsp;<span style="color:#7dd3fc;">"action"</span><span style="color:#94a3b8;">:</span> <span style="color:#fca5a5;">"BLOCK"</span>,<br/>
-                      &nbsp;<span style="color:#7dd3fc;">"reason"</span><span style="color:#94a3b8;">:</span> <span style="color:#fca5a5;">"High risk"</span>,<br/>
-                      &nbsp;<span style="color:#7dd3fc;">"rule_hit"</span><span style="color:#94a3b8;">:</span> <span style="color:#fca5a5;">"row_3"</span><br/>
-                      <span style="color:#94a3b8;">}</span>
+                    <div style="background:#0f172a;border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px;font-family:monospace;font-size:9px;line-height:1.7;flex:1;">
+                      <span style="color:#475569;animation:rx-res-in 17.5s 10.5s infinite;">{</span><br/>
+                      <span style="animation:rx-res-in 17.5s 10.5s infinite;animation-delay:calc(10.5s + 0.2s);">&nbsp;<span style="color:#7dd3fc;">"risk_score"</span><span style="color:#475569;">:</span> <span style="color:#86efac;">87</span>,</span><br/>
+                      <span style="animation:rx-res-in 17.5s 10.5s infinite;animation-delay:calc(10.5s + 0.4s);">&nbsp;<span style="color:#7dd3fc;">"action"</span><span style="color:#475569;">:</span> <span style="color:#fca5a5;">"BLOCK"</span>,</span><br/>
+                      <span style="animation:rx-res-in 17.5s 10.5s infinite;animation-delay:calc(10.5s + 0.6s);">&nbsp;<span style="color:#7dd3fc;">"reason"</span><span style="color:#475569;">:</span> <span style="color:#fca5a5;">"High risk"</span></span><br/>
+                      <span style="color:#475569;">}</span>
                     </div>
                   </div>
                 </div>
@@ -611,31 +694,31 @@
                     <div style="font-size:11px;font-weight:700;color:#1e293b;">Deploy Rule</div>
                     <div style="font-size:9px;color:#94a3b8;">Fraud Detection v2 • version 3</div>
                   </div>
-                  <div style="margin-left:auto;font-size:9px;font-weight:700;padding:4px 10px;border-radius:5px;background:#2563eb;color:#fff;">Deploy Now</div>
+                  <div style="margin-left:auto;font-size:9px;font-weight:700;padding:4px 10px;border-radius:5px;background:#2563eb;color:#fff;box-shadow:0 2px 6px rgba(37,99,235,0.3);">Deploy Now</div>
                 </div>
-                <div style="display:flex;gap:5px;margin-bottom:10px;">
-                  <div style="flex:1;border:1px solid #e2e8f0;border-radius:7px;padding:7px;text-align:center;background:#fff;">
+                <div style="display:flex;gap:5px;margin-bottom:10px;align-items:stretch;">
+                  <div style="flex:1;border:1px solid #e2e8f0;border-radius:7px;padding:7px;text-align:center;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
                     <div style="font-size:9px;font-weight:700;color:#f59e0b;margin-bottom:2px;">DEV</div>
-                    <div style="font-size:8px;color:#16a34a;font-weight:600;">Deployed v2</div>
+                    <div style="font-size:8px;color:#16a34a;font-weight:600;">✓ v2</div>
                   </div>
                   <div style="display:flex;align-items:center;color:#cbd5e1;font-size:10px;">→</div>
-                  <div style="flex:1;border:1px solid #e2e8f0;border-radius:7px;padding:7px;text-align:center;background:#fff;">
+                  <div style="flex:1;border:1px solid #e2e8f0;border-radius:7px;padding:7px;text-align:center;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
                     <div style="font-size:9px;font-weight:700;color:#2563eb;margin-bottom:2px;">STAGING</div>
-                    <div style="font-size:8px;color:#16a34a;font-weight:600;">Deployed v2</div>
+                    <div style="font-size:8px;color:#16a34a;font-weight:600;">✓ v2</div>
                   </div>
                   <div style="display:flex;align-items:center;color:#cbd5e1;font-size:10px;">→</div>
-                  <div style="flex:1;border:2px solid #2563eb;border-radius:7px;padding:7px;text-align:center;background:rgba(37,99,235,0.04);">
+                  <div style="flex:1;border:2px solid #2563eb;border-radius:7px;padding:7px;text-align:center;background:rgba(37,99,235,0.04);box-shadow:0 0 0 3px rgba(37,99,235,0.08);">
                     <div style="font-size:9px;font-weight:700;color:#2563eb;margin-bottom:2px;">PROD</div>
-                    <div style="font-size:8px;color:#f59e0b;font-weight:600;">Deploying v3</div>
+                    <div style="font-size:8px;font-weight:700;color:#f59e0b;animation:rx-deploying 1.2s ease-in-out infinite;">⟳ v3</div>
                   </div>
                 </div>
-                <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:10px;margin-bottom:6px;">
+                <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:10px;margin-bottom:6px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
                   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
                     <div style="font-size:9px;font-weight:700;color:#1e293b;">Deployment Progress</div>
                     <div style="font-size:9px;font-weight:700;color:#2563eb;">78%</div>
                   </div>
                   <div style="background:#e2e8f0;border-radius:99px;height:5px;overflow:hidden;">
-                    <div style="width:78%;height:100%;background:linear-gradient(90deg,#2563eb,#3b82f6);border-radius:99px;"></div>
+                    <div style="height:100%;background:linear-gradient(90deg,#2563eb,#3b82f6);border-radius:99px;width:0;animation:rx-deploy-bar 17.5s 14s infinite;"></div>
                   </div>
                   <div style="font-size:8px;color:#94a3b8;margin-top:5px;">Running health checks...</div>
                 </div>
