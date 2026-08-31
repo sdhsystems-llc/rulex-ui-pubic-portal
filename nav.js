@@ -1,6 +1,6 @@
 /* ── Xflore Shared Navigation Component ──────────────────────────── */
 (function () {
-  const FAVICON = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='100%25' y2='100%25'><stop offset='0' stop-color='%239a8ee6'/><stop offset='1' stop-color='%23d19efb'/></linearGradient></defs><text y='.9em' font-size='72' text-anchor='middle' x='50' font-family='sans-serif' font-weight='800' fill='white'>X</text></svg>`;
+  const FAVICON = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'><g fill='none' stroke-width='16' stroke-linecap='round' stroke-linejoin='round'><path d='M382 96 V226 Q382 244 400 244 H426' stroke='%237357E8'/><path d='M426 205 H458' stroke='%237357E8'/><path d='M550 168 A52 52 0 1 0 550 242' stroke='%23071D36'/><path d='M458 205 H548' stroke='%23071D36'/></g><circle cx='426' cy='205' r='8' fill='%2310B7CC'/><circle cx='508' cy='205' r='8' fill='%237357E8'/></svg>`;
 
   const CHEVRON = `<svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
@@ -26,10 +26,10 @@
           <div class="dropdown-panel dropdown-panel-wide">
             <div class="dropdown-columns">
               <div>
-                <a href="rule-x.html" class="dropdown-product-heading" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;text-decoration:none;">
-                  <div style="width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#9a8ee6,#d19efb);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;flex-shrink:0;">X</div>
+                <a href="rulens.html" class="dropdown-product-heading" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;text-decoration:none;">
+                  <img src="assets/Rulens-Symbol.svg" alt="Rulens" style="width:30px;height:30px;flex-shrink:0;" />
                   <div>
-                    <div style="font-size:13px;font-weight:700;color:var(--text-primary);">Rule-X</div>
+                    <div style="font-size:13px;font-weight:700;color:var(--text-primary);">Rulens</div>
                     <div style="font-size:11px;color:var(--text-secondary);">AI-Powered Rule Engine</div>
                   </div>
                 </a>
@@ -140,8 +140,8 @@
 
   <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-inner">
-      <div class="mobile-section-label">Rule-X</div>
-      <a href="rule-x.html">Rule-X Overview</a>
+      <div class="mobile-section-label">Rulens</div>
+      <a href="rulens.html">Rulens Overview</a>
       <a href="features.html">Features</a>
       <a href="block-types.html">Block Types</a>
       <a href="deployments.html">Deployments</a>
@@ -191,7 +191,7 @@
             <div class="nav-logo-icon">X</div>
             Xflore
           </a>
-          <p>Intelligent business automation. Two products — Rule-X for rule-driven decisions, Operon for process orchestration — built for enterprise teams.</p>
+          <p>Intelligent business automation. Two products — Rulens for rule-driven decisions, Operon for process orchestration — built for enterprise teams.</p>
           <div class="footer-social">
             <a href="#" class="social-btn" title="LinkedIn">in</a>
             <a href="#" class="social-btn" title="Twitter">𝕏</a>
@@ -199,9 +199,9 @@
           </div>
         </div>
         <div class="footer-col">
-          <h4>Rule-X</h4>
+          <h4>Rulens</h4>
           <ul>
-            <li><a href="rule-x.html">Overview</a></li>
+            <li><a href="rulens.html">Overview</a></li>
             <li><a href="features.html">Features</a></li>
             <li><a href="block-types.html">Block Types</a></li>
             <li><a href="deployments.html">Deployments</a></li>

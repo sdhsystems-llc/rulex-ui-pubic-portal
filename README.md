@@ -1,9 +1,9 @@
 # rulex-ui-pubic-portal
 
 Initial project setup.
-# Rule-X — Public Landing Page
+# Rulens — Public Landing Page
 
-A fully static, zero-dependency public marketing site for the Rule-X rule engine platform.  
+A fully static, zero-dependency public marketing site for the Rulens rule engine platform.  
 Inspired by the [Harness.io](https://harness.io) design language: dark navy, blue/cyan gradients, modern typography.
 
 ## Stack
@@ -51,7 +51,7 @@ await fetch('https://api.resend.com/emails', {
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    from: 'Rule-X Contact <noreply@rule-x.io>',
+    from: 'Rulens Contact <noreply@rulens.io>',
     to: ['your@email.com'],
     subject: `New enquiry from ${firstName} ${lastName}`,
     html: `
